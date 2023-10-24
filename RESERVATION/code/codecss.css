@@ -1,0 +1,56 @@
+*
+{
+	padding: 0;
+	margin: 0;
+	
+}
+body
+{
+	background: white;
+	background-position: center;
+}
+
+
+
+.start
+{
+	padding-top: 20px;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	margin-top:   25%;
+	font-size: .9em;
+	margin-left: 38%;
+	border-radius: 4px;
+	width: 270px;
+	height: 100px;
+	border: 3px solid  #7d001e;
+	background-color: white;
+	text-align: center;
+	box-shadow: 0  0 2px 2px;
+	
+}
+
+.start h1
+{
+	margin-bottom: 10px;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 18px;
+	font-weight: 400px;
+	
+	
+}
+.start input{
+	height: 30px;
+	padding-left: 10px;
+}
+
+.start button{
+
+	color: white;
+	background:  #7d001e;
+	border-radius: 4px;
+	border: 2px solid white;
+	height: 30px;
+	width: 70px;
+	
+	  
+}

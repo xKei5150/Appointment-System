@@ -1,0 +1,128 @@
+*{
+margin: 0; padding: 0;
+box-sizing: border-box;
+font-family:'Times New Roman', Times, serif;
+}
+
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: white;
+	background-size: cover;
+	background-position: center;
+}
+
+
+header {
+	
+	margin-top: inherit;
+	position: fixed;
+	top: 15px;
+	left: 0;
+	width: 100%;
+	background: url("../APPOINTMENT/393749799_2182194932140111_6895382516013188210_n.jpg");
+	padding: 20px 100px;
+	display: flex;
+	justify-content: space-between; 
+	align-items: center;
+	z-index: 99;
+
+}
+.web-start h1 { 
+font-size:22px;
+color:#F6E4E5;
+user-select: none;
+margin-left: -50px;
+
+}
+
+.web-start h2 { 
+font-size:18px;
+color:#F6E4E5;
+user-select: none;
+margin-left: -50px;
+margin-top: 6px;
+
+}
+
+.navigation a {
+position: relative; 
+font-size: 1.1em; 
+color: white;
+text-decoration: none; 
+font-weight: 500;
+margin-left: 40px;
+}
+.navigation a::after {
+content: '';
+position: absolute;
+left: 0;
+bottom: -6px;
+width: 100%;
+height: 3px;
+background: white;
+border-radius: 5px;
+transform-origin: right;
+transform: scaleX(0);
+transition: transform .5s;
+}
+
+.navigation a:hover::after {
+transform-origin: left;
+ transform: scaleX(1);
+}
+
+.navigation a
+{
+	font-size: 30px;
+    min-width: 55px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+	font: 'Poppins', sans-serif;
+}
+.navigation svg
+{
+	width: 24px;
+	height: 24px;
+}
+
+.web-home{
+	align-items: center;
+    position: absolute;
+    color: maroon;
+    border: #900002;	
+}
+
+.web-home h1 {
+	
+	font-weight: 600px;
+    font-size: 25px;
+    text-align: center;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	margin-top: -5%;
+	margin-left: 20px;
+    position: absolute;
+	color: #7d001e;
+    width: 730px;
+	
+}
+.web-home button{
+	width: 55%;
+	height: 50px;
+	font-size: 18px;
+	font-weight: 600px;
+	margin: 20px 10px 0;
+	padding: 10px 15px;
+	border-radius: 10px;
+	border: 2px solid white;
+	color: white;
+	background: url("../APPOINTMENT/393749799_2182194932140111_6895382516013188210_n.jpg");
+	background-size: cover;
+	margin-left: 23%;
+
+}

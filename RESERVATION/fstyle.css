@@ -1,0 +1,142 @@
+*{
+	margin: 0; padding: 0;
+	box-sizing: border-box;
+	font-family:'Times New Roman', Times, serif;
+	}
+	
+	body{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+		background: white;
+		background-size: cover;
+		background-position: center;
+	}
+	
+	
+	header {
+		
+		margin-top: inherit;
+		position: fixed;
+		top: 15px;
+		left: 0;
+		width: 100%;
+		background: url("../APPOINTMENT/393749799_2182194932140111_6895382516013188210_n.jpg");
+		padding: 20px 100px;
+		display: flex;
+		justify-content: space-between; 
+		align-items: center;
+		z-index: 99;
+	
+	}
+
+	.web-start h1 { 
+		font-size:22px;
+		color:#F6E4E5;
+		user-select: none;
+		margin-left: -40px;
+		margin-top: -20px;;
+		
+		}
+		
+		.web-start h2 { 
+		font-size:20px;
+		color:#F6E4E5;
+		user-select: none;
+		margin-left: -550px;
+		margin-top: 15px;
+		
+		}
+		
+	.navigation a {
+	position: relative; 
+	font-size: 1.1em; 
+	color: white;
+	text-decoration: none; 
+	font-weight: 500;
+	margin-left: 40px;
+	}
+	.navigation a::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -6px;
+	width: 100%;
+	height: 3px;
+	background: white;
+	border-radius: 5px;
+	transform-origin: right;
+	transform: scaleX(0);
+	transition: transform .5s;
+	}
+	
+	.navigation a:hover::after {
+	transform-origin: left;
+	 transform: scaleX(1);
+	}
+	
+	.navigation a
+	{
+		font-size: 30px;
+		min-width: 55px;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font: 'Poppins', sans-serif;
+	}
+	
+	.web-home{
+		align-items: center;
+		position: absolute;
+		margin-top: -100px;
+	}
+	
+	.web-home h1 {
+		
+		font-weight: 600px;
+		font-size: 25px;
+		text-align: center;
+		font-family:'Times New Roman', Times, serif;
+		margin-top: -20%;
+		margin-left: -57%;
+		position: absolute;
+		color: #7d001e;
+		width: 730px;
+		
+	}
+	.web-home button{
+		width: 85%;
+		height: 50px;
+		font-size: 18px;
+		font-weight: 600px;
+		margin: 10px;
+		padding: 10px 15px;
+		border-radius: 10px;
+		border: 2px solid white;
+		color: white;
+		background: url("../RESERVATION/393749799_2182194932140111_6895382516013188210_n.jpg");
+		background-size: cover;
+		margin-left: 10%;
+	
+	}
+	
+	.web-start{
+		display: flex;
+		align-items: center;
+		margin-left: 0px;
+	}
+	.logo-image{
+		display: flex;
+		justify-content: center;
+		min-width: 45px;
+	}
+	.logo-image img{
+		width: 65px;
+		object-fit: cover;
+		border-radius: 50%;
+		margin-left: -100px;
+	
+	}
