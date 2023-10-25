@@ -66,12 +66,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Reset previous selected timeslot
                 if (selectedButton) {
                     selectedButton.checked = false;
-                    selectedRow.classList.remove('bg-success');
+                    selectedRow.classList.remove('bg-danger');
                 }
 
                 // Set current selected timeslot
                 selectRadioButton.checked = true;
-                rowDiv.classList.add('bg-success');
+                rowDiv.classList.add('bg-danger');
 
                 // Store current selected button and row
                 selectedButton = selectRadioButton;

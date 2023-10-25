@@ -56,24 +56,29 @@ document.addEventListener('DOMContentLoaded', function() {
             slotsSpan.textContent = `(${timeslot.slots} slots available)  `;
             rowDiv.appendChild(slotsSpan);
 
-            const selectButton = document.createElement('button');
-            selectButton.className = "btn btn-primary btn-sm";
-            selectButton.textContent = "Select";
-            selectButton.onclick = function() {
+            const selectButton = document.createElement('div');
+            selectButton.className = "custom-control custom-radio";
+
+            const selectsButton = document.createElement('input');
+            selectsButton.type = "radio";
+            selectsButton.className = "custom-control-input";
+            selectsButton.id = `radio-${Math.random().toString(36).substr(2, 9)}`; // Generate a random ID
+            selectsButton.name = "timeSlotSelection"; 
+
+
+            selectsButton.onclick = function() {
                 // Reset previous selected timeslot
                 if (selectedButton) {
                     selectedButton.disabled = false;
-                    selectedButton.textContent = "Select";
-                    selectedRow.classList.remove('bg-success');
+                    selectedRow.classList.remove('bg-danger');
                 }
 
                 // Set current selected timeslot
-                selectButton.disabled = true;
-                selectButton.textContent = "Selected";
-                rowDiv.classList.add('bg-success');
+                selectsButton.disabled = true;
+                rowDiv.classList.add('bg-danger');
 
                 // Store current selected button and row
-                selectedButton = selectButton;
+                selectedButton = selectsButton;
                 selectedRow = rowDiv;
                 selectedDate = document.getElementById('datepicker').value;
                 selectedTimeslot = timeSpan.textContent;
@@ -81,13 +86,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
             };
 
+            const radioLabel = document.createElement('label');
+            radioLabel.className = "custom-control-label";
+            radioLabel.htmlFor = selectsButton.id;
+
+            selectButton.appendChild(selectsButton);
+            selectButton.appendChild(radioLabel);
+
+
             if (timeslot.slots <= 0) {
-                selectButton.disabled = true;
-                selectButton.textContent = "Unavailable";
+                selectsButton.disabled = true;
                 rowDiv.classList.add('bg-light');
             }
 
-            rowDiv.appendChild(selectButton);
+            rowDiv.appendChild(selectsButton);
             timeslotsDiv.appendChild(rowDiv);
         });
     }

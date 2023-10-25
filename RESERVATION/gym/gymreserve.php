@@ -18,11 +18,12 @@
 
   <nev class="web-start">
 	
-	<h1> Welcome to Gymnemsuim Reservation System</h1>
+	<h1> Manuel S. Enverga University Foundation Candelaria Inc.</h1>
+  <h2> Facility Reservation System </h2>
 	
 	</nev>
 		<nav class="navigation">
-		<a href="../index.php" class="fa-solid fa-house" style="color: #ffffff;"></a>
+		<a href="../index.php" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="Back"><path d="M22,15H12.41l2.3-2.29a1,1,0,0,0-1.42-1.42l-4,4a1,1,0,0,0-.21.33,1,1,0,0,0,0,.76,1,1,0,0,0,.21.33l4,4a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L12.41,17H22a1,1,0,0,0,0-2Z" fill="#ffffff" class="color000000 svgShape"></path></svg></a>
 		<button class="btnappoint-popup" id="button">Reserve Facility</button>
 	</nav>
 </header>
@@ -42,40 +43,13 @@
         <p>Available Date / Time</p>
 
         <!-- <input name="date_time" id="datepicker" /> -->
-        <div class="container-xxl">
-        <p id="datepicker" style="height: 200%; width:200%"></p>
+        <div class="container-sm">
+        <p id="datepicker"></p>
         </div>
-        
-<div class="time" id="timeslots"></div>
+        <div class="time" id="timeslots"></div>
 
-        <!-- <div id="cronofy-date-time-picker"></div> -->
-        <!-- <script src="https://elements.cronofy.com/js/CronofyElements.v1.56.3.js"></script>
-        <script>
-        CronofyElements.DateTimePicker({
-        element_token: "{ELEMENT_TOKEN}",
-        target_id: "cronofy-date-time-picker",
-        availability_query: {
-            participants: [
-                {
-                    required: "all",
-                    members: [
-                        { sub: "acc_5ba21743f408617d1269ea1e" },
-                        { sub: "acc_64b17d868090ea21640c914c" }
-                    ]
-                }
-            ],
-            required_duration: { minutes: 30 },
-            query_periods: [
-                { start: "2023-10-17T09:00:00Z", end: "2023-10-17T17:00:00Z" },
-                { start: "2023-10-18T09:00:00Z", end: "2023-10-18T17:00:00Z" }
-            ]
-        },
-        styles: {
-            prefix: "custom-name"
-        },
-        callback: notification => console.log("callback", notification)
-    });
-        </script> -->
+
+      
         <div class="index-btn-wrapper">
           <div class="index-btn" onclick="run(1, 2);">Next</div>
         </div>
@@ -133,7 +107,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <!-- Pikaday -->
+<script src="https://unpkg.com/
+			ionicons@5.5.2/dist/ionicons/ionicons.esm.js" type="module"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/pikaday.min.js"></script>
+<script src="https://kit.fontawesome.com/3adbdef86b.js" crossorigin="anonymous"></script>
  <script src="gymsched.js"></script>
     <script src="reserve.js" ></script>
 

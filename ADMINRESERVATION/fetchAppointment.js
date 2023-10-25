@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const tr = document.createElement('tr');
 
             tr.innerHTML = `
+           
                 <td>${appointment.id}</td>
                 <td>${appointment.firstname} ${appointment.lastname}</td>
                 <td>${appointment.eu_id}</td>

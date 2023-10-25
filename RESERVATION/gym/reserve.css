@@ -29,11 +29,20 @@ header {
 }
 
 .web-start h1 { 
+  font-size:24px;
+  color:#F6E4E5;
+  user-select: none;
+  margin-left: -40px;
+  margin-top: 5px;;
+  
+  }
+  
+  .web-start h2 { 
   font-size:22px;
   color:#F6E4E5;
   user-select: none;
   margin-left: -40px;
-  margin-top: 7px;
+  margin-top: 3px;
   
   }
 
@@ -46,6 +55,15 @@ header {
           margin-left: 10px;
           margin-right: 10px;
           }
+
+          .navigation svg
+{
+    
+	width: 50px;
+	height: 45px;
+    
+    
+}
           
           .navigation a::after {
           content: '';
@@ -127,6 +145,7 @@ input{
 }
 
 .index-btn{
+  margin-top: 20px;
   margin-bottom: -15px;
   background: #7d001e;
   color: #ffffff;
@@ -153,4 +172,13 @@ input{
   border-radius: 50%;
   display: inline-block;
   opacity: 0.25;
+}
+
+.time .bg-danger
+{
+  margin-top: 20px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #bb022d;
 }
