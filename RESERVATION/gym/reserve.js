@@ -1,7 +1,7 @@
  $(".tab").css("display", "none");
       $("#tab-1").css("display", "block");
       function run(hideTab, showTab){
-        if(showTab=== 3) {
+        if(showTab=== 4) {
           populateSummary();
         }
         if(hideTab < showTab){ // If not press previous button
@@ -29,21 +29,48 @@
         $("input").css("background", "#fff");
       }
 
+ const firstname = document.getElementById('firstname');
+ const lastname = document.getElementById('lastname');
+ const ID = document.getElementById('ID');
+ const email = document.getElementById('email');
+ const phone = document.getElementById('phone');
+ const event = document.getElementById('event');
+ const purpose = document.getElementById('purpose');
       function populateSummary() {
-        const firstname = document.getElementById('firstname').value;
-        const lastname = document.getElementById('lastname').value;
-        const ID = document.getElementById('ID').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        console.log(firstname);
+
         const summary = document.getElementById('summary');
         summary.innerHTML = `
-        <h1>tesadadawdawd</h1>
-        <p>${firstname}</p>
-        <p>${lastname}</p>
-        <p>${ID}</p>
-        <p>${email}</p>
-        <p>${phone}</p>
+        <p>${firstname.value}</p>
+        <p>${lastname.value}</p>
+        <p>${ID.value}</p>
+        <p>${email.value}</p>
+        <p>${phone.value}</p>
+        <p>${event.value}</p>
+        <p>${purpose.value}</p>
+        <p>${selectedDate}</p>
+        <p>${selectedTimeslot}</p>
         `;
       }
-      populateSummary();
+
+document.addEventListener("DOMContentLoaded", function() {
+  const submitBtn = document.getElementById('submit');
+  submitBtn.addEventListener('click', function() {
+    console.log("clicked");
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'php_files/addAppointment.php', true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.onload = function () {
+      if (xhr.status === 200 && xhr.responseText === "success") {
+        console.log("Data stored and slot updated successfully.");
+
+
+      } else {
+        console.error("Error processing the data.", xhr.responseText);
+      }
+    };
+    xhr.onerror = function () {
+      console.error("Network error occurred.");
+    };
+    xhr.send(`firstname=${firstname.value}&lastname=${lastname.value}&eu_id=${ID.value}&email=${email.value}&phone=${phone.value}&event=${event.value}&purpose=${purpose.value}&date=${selectedDate}&timeslot=${selectedTimeslot}`);
+  });
+})

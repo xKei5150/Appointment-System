@@ -28,7 +28,7 @@
 </header>
 	
 
-    <form id="myForm" onsubmit="return false" method="post" autocomplete = "off">
+    <form id="myForm" onsubmit="return false" autocomplete = "off">
       <h1 align = center>Reservation</h1>
 
       <div style="text-align:center;">
@@ -98,11 +98,11 @@
         <p>Purpose of Reservation</p>
         <div class="mb-3">
          <label for="exampleFormControlInput1" class="form-label">Type of event</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Please enter here">
+            <input  type="text" class="form-control" id="event" placeholder="Please enter here">
         </div>
         <div class="mb-3">
           <label for="exampleFormControlTextarea1" class="form-label">Purpose </label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <textarea class="form-control" id="purpose" rows="3"></textarea>
         </div>
         <div class="index-btn-wrapper">
           <div class="index-btn" onclick="run(3, 2);">Previous</div>
@@ -124,7 +124,7 @@
       <div class="tab" id = "tab-5">
         <div class="index-btn-wrapper">
           <div class="index-btn" onclick="run(5, 4);">Previous</div>
-          <button class = "index-btn" type="submit" name="submit" style = "background: blue;">Submit</button>
+          <button class = "index-btn" id="submit" style = "background: blue;">Submit</button>
         </div>
       </div>
     </form>
@@ -134,7 +134,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <!-- Pikaday -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/pikaday.min.js"></script>
+ <script src="gymsched.js"></script>
     <script src="reserve.js" ></script>
-    <script src="gymsched.js"></script>
+
   </body>
 </html>           

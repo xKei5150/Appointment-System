@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
         timeslotsDiv.className = "time";
         timeslotsDiv.innerHTML = "";
 
-    
 
         timeslots.forEach(timeslot => {
             const rowDiv = document.createElement('div');
@@ -54,43 +53,49 @@ document.addEventListener('DOMContentLoaded', function() {
             timeSpan.className = "tSpan";
             rowDiv.appendChild(timeSpan);
 
-            const slotsSpan = document.createElement('span');
-            slotsSpan.textContent = `(${timeslot.slots} slots available)  `;
-            rowDiv.appendChild(slotsSpan);
+            const radioWrapper = document.createElement('div');
+            radioWrapper.className = "custom-control custom-radio";
 
-            const selectButton = document.createElement('button');
-            selectButton.className = "btn btn-primary btn-sm";
-            selectButton.textContent = "Select";
-            selectButton.onclick = function() {
+            const selectRadioButton = document.createElement('input');
+            selectRadioButton.type = "radio";
+            selectRadioButton.className = "custom-control-input";
+            selectRadioButton.id = `radio-${Math.random().toString(36).substr(2, 9)}`; // Generate a random ID
+            selectRadioButton.name = "timeSlotSelection"; // Give the same name to make them mutually exclusive
+
+            selectRadioButton.onchange = function() {
                 // Reset previous selected timeslot
                 if (selectedButton) {
-                    selectedButton.disabled = false;
-                    selectedButton.textContent = "Select";
+                    selectedButton.checked = false;
                     selectedRow.classList.remove('bg-success');
                 }
 
                 // Set current selected timeslot
-                selectButton.disabled = true;
-                selectButton.textContent = "Selected";
+                selectRadioButton.checked = true;
                 rowDiv.classList.add('bg-success');
 
                 // Store current selected button and row
-                selectedButton = selectButton;
+                selectedButton = selectRadioButton;
                 selectedRow = rowDiv;
                 selectedDate = document.getElementById('datepicker').value;
                 selectedTimeslot = timeSpan.textContent;
             };
 
-            if (timeslot.slots <= 0) {
-                selectButton.disabled = true;
-                selectButton.textContent = "Unavailable";
+            const radioLabel = document.createElement('label');
+            radioLabel.className = "custom-control-label";
+            radioLabel.htmlFor = selectRadioButton.id;
+
+            radioWrapper.appendChild(selectRadioButton);
+            radioWrapper.appendChild(radioLabel);
+
+            if (timeslot.availability == 0) {
+                selectRadioButton.disabled = true;
                 rowDiv.classList.add('bg-light');
             }
 
-            rowDiv.appendChild(selectButton);
+            rowDiv.appendChild(radioWrapper);
             timeslotsDiv.appendChild(rowDiv);
         });
     }
-
-
 });
+
+
