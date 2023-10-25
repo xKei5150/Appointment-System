@@ -103,6 +103,7 @@ nav.close .logo_name{
     pointer-events: none;
 }
 nav .menu-items{
+    margin-left: -30px;
     margin-top: 40px;
     height: calc(100% - 90px);
     display: flex;

@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 timeslotList.innerHTML += `<div>${appointment.timeslot}</div>`;
 
                 const deleteButton = document.createElement("button");
-                deleteButton.innerText = "Delete";
+                deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
                 deleteButton.addEventListener("click", function() {
                     deleteAppointment(appointment.id);
                 });

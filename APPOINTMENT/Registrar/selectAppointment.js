@@ -120,10 +120,14 @@ function updateSummary() {
     const summaryContent =
     
     `
-        <p>Name:    ${name}</p>
-        <p>Number:  ${cellnum}</p>
-        <p>Address: ${address}</p>
-        <p>Email:   ${email}</p>
+        <a>Name:</a>
+        <p> ${name}</p>
+        <a>Number: </a> 
+        <p>${cellnum}</p>
+        <a>Address:<a>
+        <p>${address}</p>
+        <a>Email: </a>
+        <p>${email}</p>
     `;
     console.log(summaryInfo);
     summaryInfo.innerHTML = summaryContent;
@@ -252,12 +256,29 @@ function populateTicketInfo(name, email, selectedDate, selectedTimeslots) {
 announce.style.display = 'none';
 
     ticketInfo.innerHTML = `
-    <p> ${name} </p>
-    <p> ${email} </p>
+    <nav>
+    <p>Name: ${name} </p>
+    <p>Email: ${email} </p>
+    </nav>
     
-    <h1> Register Office </h1>
-    <p> ${selectedDate} </p>
-    <p> ${selectedTimeslots} </p>
+    <div>
+    <li>
+    <ul> Office </ul>
+    <h1> Register Office  </h1>
+    </li>
+    </div>
+    <div>
+    <li>
+    <ul> Date </ul>
+    <h1> ${selectedDate}   </h1>
+    </li>
+    </div>
+    <div>
+    <li>
+    <ul> Time </ul> 
+    <h1> ${selectedTimeslots}  </h1>
+    </li>
+    </div>
     `;
     ticketInfo.appendChild(btn);
 

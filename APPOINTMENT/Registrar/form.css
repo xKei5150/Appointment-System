@@ -54,7 +54,17 @@ header {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 40px;
+    margin-left: 30px;
+    margin-right: -20px ;
+}
+
+.navigation svg
+{
+    
+	width: 50px;
+	height: 45px;
+    
+    
 }
 
 .navigation a::after {
@@ -345,7 +355,7 @@ header {
 
 .logo-image img{
 
-    margin-top: -50px;
+    margin-top: 10px;
     margin-left: 170px;
     position: relative;
     justify-content: center;
@@ -354,6 +364,7 @@ header {
     height: 50px;
     max-width: 40%;
     max-height: 40%;
+    
 }
 
 .logo-image h3{
@@ -365,6 +376,7 @@ header {
     text-align: center;
     font-family: cursive;
     font-weight: 400;
+    margin-bottom: -10px;
 
 }
 .summm
@@ -515,3 +527,83 @@ header .logo-image1 img{
     padding-left:20px;
     padding-right: 20px;
 }
+
+.summ a
+{
+color: #000;
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.summ p
+{
+color: #000;
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.summm nav{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+nav p{
+    display: flex;
+flex-wrap: wrap;
+justify-content:center;
+align-items: center;
+color: #000;
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.summm div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div li{
+    display: flex;
+    flex-direction: column;
+}
+
+div h1{
+    margin-right: 20px;
+    color: #000;
+    font-family: Inter;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+/* .summm ul 
+{
+display: inline;
+margin-left: 20px;
+color: #000;
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.summm h1
+{
+margin-inline: 20px;
+display: inline;
+color: #000;
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}*/

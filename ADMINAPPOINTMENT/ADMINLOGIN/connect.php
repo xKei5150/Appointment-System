@@ -1,6 +1,6 @@
 <?php	
 
-	$host="localhost:3307";
+	$host="localhost";
 	$username="root";
 	$password="";
 	$error1="Can't connect to MySQL";
