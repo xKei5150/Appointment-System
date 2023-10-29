@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     addAnnouncementButton.addEventListener("click", showModal);
-    document.querySelector(".close").addEventListener("click", closeModal);
+    document.querySelector('[data-bs-dismiss="modal"]').addEventListener("click", closeModal);
     announcementForm.addEventListener("submit", handleFormSubmission);
     announcementsContainer.addEventListener("click", function (e) {
         if (e.target && e.target.tagName === "BUTTON" && e.target.innerText === "Edit") {
