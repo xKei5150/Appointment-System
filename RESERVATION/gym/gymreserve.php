@@ -40,7 +40,7 @@
       </div>
 
       <div class="tab" id = "tab-1">
-        <p>Available Date / Time</p>
+        <h3>Available Date / Time</h3>
 
         <!-- <input name="date_time" id="datepicker" /> -->
         <div class="container-sm">
@@ -56,7 +56,7 @@
       </div>
 
       <div class="tab" id = "tab-2">
-        <p>Basic Information:</p>
+        <h3>Basic Information:</h3>
         <input type = "text" placeholder="First Name" name="firstname" id="firstname">
         <input type = "text" placeholder="Last Name" name="lastname" id="lastname">
         <input type = "text" placeholder="ID" name="ID" id="ID">
@@ -69,7 +69,7 @@
       </div>
 
       <div class="tab" id = "tab-3">
-        <p>Purpose of Reservation</p>
+        <h3>Purpose of Reservation</h3>
         <div class="mb-3">
          <label for="exampleFormControlInput1" class="form-label">Type of event</label>
             <input  type="text" class="form-control" id="event" placeholder="Please enter here">
@@ -85,7 +85,7 @@
       </div>
 
       <div class="tab" id = "tab-4">
-        <p>Summary</p>
+        <h3>Summary</h3>
         <div id="summary">
 
         </div>
@@ -96,12 +96,18 @@
       </div>
 
       <div class="tab" id = "tab-5">
+
+      <h2> Please double check your summary reservation before submit.</h2>
+            <h2> Thank you!!!</h2>
+
         <div class="index-btn-wrapper">
           <div class="index-btn" onclick="run(5, 4);">Previous</div>
           <button class = "index-btn" id="submit" style = "background: blue;">Submit</button>
+          
         </div>
       </div>
     </form>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Moment.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>

@@ -9,7 +9,7 @@ body{
 		justify-content: center;
 		align-items: center;
 		min-height: 100vh;
-		background: white;
+		background: url("../gym/photo1697011175.jpeg");
 		background-size: cover;
 		background-position: center;
 }
@@ -181,4 +181,34 @@ input{
   padding-left: 10px;
   padding-right: 10px;
   background: #bb022d;
+}
+.tab h2
+{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: cursive;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.tab h3
+
+{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 24px;
+  margin-top: 15px;
+}
+
+.tab a
+{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 24px;
+  margin-top: 15px;
 }

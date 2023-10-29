@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const slotsSpan = document.createElement('span');
             slotsSpan.textContent = `(${timeslot.slots} slots available)  `;
+            slotsSpan.className = "pan";
             rowDiv.appendChild(slotsSpan);
 
             const selectButton = document.createElement('div');
@@ -62,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const selectsButton = document.createElement('input');
             selectsButton.type = "radio";
             selectsButton.className = "custom-control-input";
+            rowDiv.appendChild(selectsButton);
             selectsButton.id = `radio-${Math.random().toString(36).substr(2, 9)}`; // Generate a random ID
             selectsButton.name = "timeSlotSelection"; 
 

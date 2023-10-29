@@ -25,7 +25,7 @@
 					$_SESSION['code']=$num;
 				
 
-				header("location:../HOMEPAGEteachers/index.php");
+				header("location:../index.php");
 					
 				}
 				else

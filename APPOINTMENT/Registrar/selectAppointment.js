@@ -256,29 +256,18 @@ function populateTicketInfo(name, email, selectedDate, selectedTimeslots) {
 announce.style.display = 'none';
 
     ticketInfo.innerHTML = `
-    <nav>
+<nav>
     <p>Name: ${name} </p>
     <p>Email: ${email} </p>
     </nav>
-    
-    <div>
-    <li>
+
     <ul> Office </ul>
     <h1> Register Office  </h1>
-    </li>
-    </div>
-    <div>
-    <li>
-    <ul> Date </ul>
-    <h1> ${selectedDate}   </h1>
-    </li>
-    </div>
-    <div>
-    <li>
-    <ul> Time </ul> 
-    <h1> ${selectedTimeslots}  </h1>
-    </li>
-    </div>
+
+    <ul> Date / Time</ul>
+    <h1> ${selectedDate}  ${selectedTimeslots}   </h1>
+    
+   
     `;
     ticketInfo.appendChild(btn);
 

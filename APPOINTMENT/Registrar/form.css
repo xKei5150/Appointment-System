@@ -218,14 +218,19 @@ header {
 .time .line
 {
     margin-left: -270px;
-    margin-top: 20px;
+    margin-top: 30px;
 
 }
 
 .tSpan
 {
+    margin-top: 5px;
     margin-right: 10px;
     
+}
+.pan
+{
+    margin-top: 5px;
 }
 
 .require
@@ -546,64 +551,72 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;
 }
+
 .summm nav{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
+    margin-top: 150px;
 }
-nav p{
-    display: flex;
-flex-wrap: wrap;
+
+
+.summm p{
+   
 justify-content:center;
 align-items: center;
 color: #000;
 font-family: Inter;
-font-size: 14px;
+font-size: 20px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
 }
 
-.summm div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+.summm h1{
 
-div li{
-    display: flex;
-    flex-direction: column;
-}
-
-div h1{
-    margin-right: 20px;
+    
     color: #000;
     font-family: Inter;
-    font-size: 0.875rem;
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    margin-top: 10px;
+
+    
 }
-/* .summm ul 
+.summm ul
 {
-display: inline;
-margin-left: 20px;
+margin-left: -15pxs;
 color: #000;
 font-family: Inter;
-font-size: 14px;
+font-size: 18px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
 }
-.summm h1
+
+.summm .btn-primary
 {
-margin-inline: 20px;
-display: inline;
-color: #000;
-font-family: Inter;
-font-size: 14px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-}*/
+    width: 150px;
+    height: 40px;
+    padding-bottom: 10px;
+    background: #900002;
+    border-radius: 7px;
+    color: white;
+    margin-top: 20px;
+}
+
+.input-box .custom-control-input
+{
+    width: 10px;
+    height: 10px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.input-box .time .bg-danger
+{
+  margin-top: 20px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #bb022d;
+}

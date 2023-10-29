@@ -19,7 +19,7 @@
 	</nev> 
 		<nav class="navigation">
 
-		<a href="#" class="fa-brands fa-servicestack"> Services</a>
+	
 		<a href="about/ABOUT.php" class="uil uil-user">About Us</a>	
 		<a href="contact/contact.php" class="uil uil-phone">Contact</a>
 		</nav>
@@ -33,7 +33,7 @@
 		<button  type="submit" class="btn1"><i class="uil uil-users-alt"></i> Teachers Only </button>
 		</a>
 		<br><br>
-		<a href="../Finalsystem/ADMINAPPOINTMENT/ADMINLOGIN/adminloginindex.php">
+		<a href="../Finalsystem/ADMINLOGIN/adminloginindex.php">
 		<button type="submit" class="btn2"><i class="uil uil-user-square"></i> Admin of MOAR </button>
 		<br><br>
 		

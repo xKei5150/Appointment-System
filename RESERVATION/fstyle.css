@@ -36,7 +36,7 @@
 		color:#F6E4E5;
 		user-select: none;
 		margin-left: -40px;
-		margin-top: -20px;;
+		margin-top: -10px;;
 		
 		}
 		
@@ -44,8 +44,8 @@
 		font-size:20px;
 		color:#F6E4E5;
 		user-select: none;
-		margin-left: -550px;
-		margin-top: 15px;
+		margin-left: -510px;
+		margin-top: 25px;
 		
 		}
 		
@@ -96,7 +96,8 @@
 		color: white;
 		font: 'Poppins', sans-serif;
 	}
-	
+
+
 	.web-home{
 		align-items: center;
 		position: absolute;
@@ -152,15 +153,22 @@
 	.dropdown .toggle
 	{
 	background: transparent;
-	border: 2px solid white;
-	
+	border: 2px solid #7d001e;
+
+
+	}
+
+	.dropdown .toggle svg
+	{
+		width: 25px;
+		height: 25px;
 	}
 
 	.dropdown-menu
 	{
 		background:#7d001e;
 		border-radius: 5px;
-		border: 2px solid white;
+		border: 2px solid #7d001e;
 		text-align: center;
 		
 	}
