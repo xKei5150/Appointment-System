@@ -1,11 +1,10 @@
     document.addEventListener("DOMContentLoaded", function () {
-        // Elements
         const addAnnouncementButton = document.getElementById("addAnnouncementButton");
         const addAnnouncementModal = document.getElementById("addAnnouncementModal");
         const announcementForm = document.getElementById("saveChangesBtn");
-        const idList = document.getElementById("id-list");
-        const titleList = document.getElementById("title-list");
-        const actionList = document.getElementById("action-list");
+        // const idList = document.getElementById("id-list");
+        // const titleList = document.getElementById("title-list");
+        // const actionList = document.getElementById("action-list");
         const announcementsContainer = document.getElementById("announcementsContainer");
         const announcementModalHeader = document.getElementById("announcementModalHeader");
 
@@ -44,7 +43,7 @@
                         location.reload();
                         alert("An error occurred while " + (isUpdate ? "updating" : "adding") + " the announcement.");
                     }
-                    fetchAnnouncements(); // Refresh the announcements after adding or updating
+                    fetchAnnouncements();
                 }
             };
 
@@ -59,18 +58,63 @@
 
         addAnnouncementButton.addEventListener("click", showModal);
         document.querySelector('[data-bs-dismiss="modal"]').addEventListener("click", closeModal);
-        announcementForm.addEventListener("click", handleFormSubmission);
         announcementsContainer.addEventListener("click", function (e) {
             if (e.target && e.target.tagName === "BUTTON" && e.target.innerText === "Edit") {
                 handleEdit.call(e.target);
             }
         });
 
-        function createAndAppendElement(parent, element, text) {
-            const newElement = document.createElement(element);
-            newElement.textContent = text;
-            parent.appendChild(newElement);
-            return newElement;
+        announcementForm.addEventListener("submit", handleFormSubmission);
+
+        function createAndAppendRow(announcement) {
+            const tbody = document.getElementById('announcementsContainer');
+            const tr = document.createElement('tr');
+
+            // Checkbox cell
+            const checkboxCell = document.createElement('td');
+            const checkboxSpan = document.createElement('span');
+            checkboxSpan.className = 'custom-checkbox';
+            const checkboxInput = document.createElement('input');
+            checkboxInput.type = 'checkbox';
+            checkboxInput.name = 'option[]';
+            checkboxInput.value = announcement.id;
+            checkboxInput.id = `checkbox${announcement.id}`;
+            const checkboxLabel = document.createElement('label');
+            checkboxLabel.setAttribute('for', `checkbox${announcement.id}`);
+            checkboxSpan.appendChild(checkboxInput);
+            checkboxSpan.appendChild(checkboxLabel);
+            checkboxCell.appendChild(checkboxSpan);
+            tr.appendChild(checkboxCell);
+
+            const idCell = document.createElement('td');
+            idCell.textContent = announcement.id;
+            tr.appendChild(idCell);
+
+            const titleCell = document.createElement('td');
+            titleCell.textContent = announcement.title;
+            tr.appendChild(titleCell);
+
+            // Action cell
+            const actionCell = document.createElement('td');
+            const editButton = document.createElement('button');
+            editButton.innerHTML = '<i class="fa-regular fa-pen-to-square"></i> Edit';
+            editButton.classList.add('btn', 'btn-sm', 'btn-warning');
+            editButton.setAttribute('data-bs-toggle', 'modal');
+            editButton.setAttribute('data-bs-target', '#editModal');
+            editButton.dataset.id = announcement.id;
+            editButton.addEventListener("click", handleEdit);
+            actionCell.appendChild(editButton);
+
+            const deleteButton = document.createElement('button');
+            deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i> Delete';
+            deleteButton.classList.add('btn', 'btn-sm', 'btn-danger');
+            deleteButton.dataset.id = announcement.id;
+            deleteButton.addEventListener("click", handleDelete);
+            actionCell.appendChild(deleteButton);
+
+            tr.appendChild(actionCell);
+
+            tbody.appendChild(tr);
         }
 
         function fetchAnnouncements() {
@@ -80,35 +124,18 @@
             xhr.onload = function () {
                 if (xhr.status === 200) {
                     const announcements = JSON.parse(xhr.responseText);
-                    console.log('success');
-                    idList.innerHTML = "";
-                    titleList.innerHTML = "";
-                    actionList.innerHTML = "";
+                    const tbody = document.getElementById('announcementsContainer');
+                    tbody.innerHTML = ''; // Clear previous content
 
                     if (announcements.length === 0) {
-                        announcementsContainer.innerHTML = "No announcements found.";
+                        const tr = document.createElement('tr');
+                        const td = document.createElement('td');
+                        td.colSpan = 4; // span across all columns
+                        td.textContent = 'No announcements found.';
+                        tr.appendChild(td);
+                        tbody.appendChild(tr);
                     } else {
-                        announcements.forEach(function (announcement) {
-                            createAndAppendElement(idList, "div", announcement.id);
-                            createAndAppendElement(titleList, "div", announcement.title);
-
-                            const actionElement = createAndAppendElement(actionList, "div", "");
-
-                            const editButton = createAndAppendElement(actionElement, "button", "Edit");
-                            editButton.innerHTML = '<i class="fa-regular fa-pen-to-square"></i>';
-                            editButton.classList.add('btn', 'btn-sm', 'btn-warning');
-                            editButton.setAttribute('data-bs-toggle', 'modal');
-                            editButton.setAttribute('data-bs-target', '#editModal');
-                            const deleteButton = createAndAppendElement(actionElement, "button", "Delete");
-                            deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';  // Assuming you have an 'icon-delete' class for the delete icon
-                            deleteButton.classList.add('btn', 'btn-sm', 'btn-danger');
-
-                            editButton.dataset.id = announcement.id;
-                            deleteButton.dataset.id = announcement.id;
-
-                            editButton.addEventListener("click", handleEdit);
-                            deleteButton.addEventListener("click", handleDelete);
-                        });
+                        announcements.forEach(createAndAppendRow);
                     }
                 } else {
                     console.log("Failed to fetch announcements: " + xhr.status);
@@ -117,6 +144,7 @@
 
             xhr.send();
         }
+
 
         function handleEdit() {
             const announcementId = this.dataset.id;

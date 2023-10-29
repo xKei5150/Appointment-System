@@ -13,24 +13,37 @@ window.onload = function() {
 };
 
 function displayRequirements(requirements) {
-    const titleList = document.getElementById('title-list');
-    const requirementList = document.getElementById('requirement-list');
-    const actionList = document.getElementById('action-list');
+    const tbody = document.getElementById('requirements-tbody');
 
     requirements.forEach((requirement) => {
-        // Display title
-        let titleDiv = document.createElement('div');
-        titleDiv.textContent = requirement.title;
-        titleList.appendChild(titleDiv);
+        let tr = document.createElement('tr');
 
-        // Display number of requirements
-        let requirementDiv = document.createElement('div');
-        requirementDiv.textContent = requirement.count;
-        requirementList.appendChild(requirementDiv);
+        // Checkbox column
+        let thCheckbox = document.createElement('th');
+        let span = document.createElement('span');
+        span.className = "custom-checkbox";
+        let input = document.createElement('input');
+        input.type = "checkbox";
+        input.name = "option[]";
+        input.value = requirement.id;
+        span.appendChild(input);
+        let label = document.createElement('label');
+        label.htmlFor = input.id;
+        span.appendChild(label);
+        thCheckbox.appendChild(span);
+        tr.appendChild(thCheckbox);
 
-        // Display action buttons
-        let actionDiv = document.createElement('div');
+        let thRequirement = document.createElement('th');
+        thRequirement.textContent = requirement.count;
+        tr.appendChild(thRequirement);
 
+
+        let thTitle = document.createElement('th');
+        thTitle.textContent = requirement.title;
+        tr.appendChild(thTitle);
+
+
+        let thActions = document.createElement('th');
         let editBtn = document.createElement('button');
         editBtn.innerHTML = '<i class="fa-regular fa-pen-to-square"></i>';
         editBtn.classList.add('btn', 'btn-sm');
@@ -41,20 +54,22 @@ function displayRequirements(requirements) {
         });
 
         let deleteBtn = document.createElement('button');
-        deleteBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';  // Assuming you have an 'icon-delete' class for the delete icon
+        deleteBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';  // Assuming you have the relevant icon class
         deleteBtn.classList.add('btn', 'btn-sm');
         deleteBtn.setAttribute('data-bs-toggle', 'modal');
         deleteBtn.setAttribute('data-bs-target', '#deleteEmployeeModal');
         deleteBtn.addEventListener('click', function() {
             fetchAndPopulateModal(requirement.title);
-            
         });
 
-        actionDiv.appendChild(editBtn);
-        actionDiv.appendChild(deleteBtn);
-        actionList.appendChild(actionDiv);
+        thActions.appendChild(editBtn);
+        thActions.appendChild(deleteBtn);
+        tr.appendChild(thActions);
+
+        tbody.appendChild(tr);
     });
 }
+
 
 function fetchAndPopulateModal(title) {
     let xhr = new XMLHttpRequest();
@@ -106,7 +121,8 @@ function populateModal(title, requirements) {
         editRequirementsDiv.appendChild(inputGroup);
     });
 }
-//edit modal submission
+
+
 document.getElementById('saveChangesBtn').addEventListener('click', function() {
     const title = document.getElementById('editTitle').value;
     const requirements = document.querySelectorAll('#editRequirements .form-control');
@@ -123,7 +139,7 @@ document.getElementById('saveChangesBtn').addEventListener('click', function() {
     xhr.onload = function() {
         if (this.status === 200) {
             alert(this.responseText);
-            // Clear the form and close the modal
+
             document.getElementById('editForm').reset();
             $('#editModal').modal('hide');
             location.reload();
@@ -138,16 +154,24 @@ document.getElementById('saveChangesBtn').addEventListener('click', function() {
 
 
 
-document.getElementById('addRequirementBtn').addEventListener('click', function() {
-    const newRequirement = document.createElement('div');
-    newRequirement.classList.add('form-group');
+document.getElementById('addEditRequirementBtn').addEventListener('click', function() {
+    const inputGroup = document.createElement('div');
+    inputGroup.classList.add('input-group', 'mb-3');
 
-    const newInput = document.createElement('input');
-    newInput.type = 'text';
-    newInput.classList.add('form-control');
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.classList.add('form-control');
 
-    newRequirement.appendChild(newInput);
-    document.getElementById('requirements').appendChild(newRequirement);
+    const deleteButton = document.createElement('button');
+    deleteButton.classList.add('btn', 'btn-danger');
+    deleteButton.innerText = 'Delete';
+    deleteButton.addEventListener('click', function() {
+        document.getElementById('editRequirements').removeChild(inputGroup);
+    });
+
+    inputGroup.appendChild(input);
+    inputGroup.appendChild(deleteButton);
+    document.getElementById('editRequirements').appendChild(inputGroup);
 });
 
 document.getElementById('submitTabBtn').addEventListener('click', function() {
@@ -166,9 +190,9 @@ document.getElementById('submitTabBtn').addEventListener('click', function() {
     xhr.onload = function() {
         if (this.status == 200) {
             alert(this.responseText);
-            // Clear the form and close the modal
+
             document.getElementById('addTabForm').reset();
-            resetModal(); // Reset the modal after the form submission
+            resetModal();
         } else {
             alert('An error occurred while saving the data.');
         }
@@ -201,7 +225,12 @@ function resetModal() {
     requirementsDiv.appendChild(newRequirement);
     $('#addTabModal').modal('hide');
 }
-function PopulateModal(title) {
+
+document.getElementById('deleteBtn').addEventListener('click', function() {
+    const title = document.getElementById('editTitle').value;
+    deleteRequirement(title);
+});
+function deleteRequirement(title) {
     let xhr = new XMLHttpRequest();
     xhr.open('POST', 'php_files/deleteRequirement.php', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -215,4 +244,3 @@ function PopulateModal(title) {
     };
     xhr.send('title=' + encodeURIComponent(title));
 }
-

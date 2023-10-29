@@ -7,7 +7,8 @@
 	  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
         <title>crud dashboard</title>
 	    <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+<!--        <link rel="stylesheet" href="css/bootstrap.min.css">-->
+	  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 	    <!----css3---->
         <link rel="stylesheet" href="css/custom.css">
 		<link rel="stylesheet" href="editstyle.css">
@@ -191,39 +192,26 @@
 							 </div>
 					     </div>
 					   </div>
-					   
-					   <table class="table table-striped table-hover">
-					      <thead>
-						     <tr>
-							 <th><span class="custom-checkbox">
-							 <input type="checkbox" id="selectAll">
-							 <label for="selectAll"></label></th>
-							 <th> No. of Requirement</th>
-							 <th> Title</th>
-							 <th>Actions</th>
-							 </tr>
-						  </thead>
-						  
-						  <tbody>
 
-							
-							<tr>
-								<th><span class="custom-checkbox">
-								<input type="checkbox" id="checkbox1" name="option[]" value="1">
-								<label for="checkbox1"></label></th>
-									<th id="requirement-list"></th>
-									<th id="title-list"></th>
-									<th class="col-sm-6 p-0 flex justify-content-lg-end justify-content-center" id="action-list"></th>
-								</div>
+						   <table class="table table-striped table-hover">
+							   <thead>
+							   <tr>
+								   <th>
+                <span class="custom-checkbox">
+                    <input type="checkbox" id="selectAll">
+                    <label for="selectAll"></label>
+                </span>
+								   </th>
+								   <th>No. of Requirement</th>
+								   <th>Title</th>
+								   <th>Actions</th>
+							   </tr>
+							   </thead>
+							   <tbody id="requirements-tbody">
 
-	
-							</th>
-							</tr>
-							
-						  </tbody>
-						  
-					      
-					   </table>
+							   </tbody>
+						   </table>
+
 					   
 					   <div class="clearfix">
 					     <div class="hint-text">showing <b>5</b> out of <b>25</b></div>
@@ -237,14 +225,7 @@
 							<li class="page-item "><a href="#" class="page-link">Next</a></li>
 						 </ul>
 					   </div>
-					   
-					   
-					   
-					   
-	
-					   
-			   
-		   
+
 					   
 					   </div>
 					</div>
@@ -281,51 +262,45 @@
 											</div>
 										</div>
 									</div>
-									
-									<div class="modal" tabindex="-1" id="editModal">
-										<div class="modal-dialog">
-											<div class="modal-content">
-												<div class="modal-header">
-													<h5 class="modal-title">Edit Requirements</h5>
-								
-												</div>
-												<div class="modal-body">
-													<input type="text" id="editTitle" class="form-control mb-3" placeholder="Title">
-													<div id="editRequirements">
-									
-													</div>
-													<!-- Add Requirement button -->
-													<button id="addEditRequirementBtn" class="btn btn-primary mt-2">Add Requirement</button>
-												</div>
-												<div class="modal-footer">
-													<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-													<button type="button" id="saveChangesBtn" class="btn btn-primary">Save changes</button>
-												</div>
-											</div>
-										</div>
-									</div>
 
-									<div class="modal fade" tabindex="-1" id="deleteEmployeeModal" role="dialog">
-										<div class="modal-dialog" role="document">
-										  <div class="modal-content">
-											<div class="modal-header">
-											  <h5 class="modal-title">Delete Employees</h5>
-											  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											  </button>
-											</div>
-											<div class="modal-body">
-											  <p>Are you sure you want to delete this Records</p>
-											  <p class="text-warning"><small>this action Cannot be Undone,</small></p>
-											</div>
-											<div class="modal-footer">
-											  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-											  <button type="button" id="saveChangesBtn" class="btn btn-success">Delete</button>
-											</div>
-										  </div>
-										</div>
-									  </div>
-									
+					 <div class="modal" tabindex="-1" id="editModal">
+						 <div class="modal-dialog">
+							 <div class="modal-content">
+								 <div class="modal-header">
+									 <h5 class="modal-title">Edit Requirements</h5>
+								 </div>
+								 <div class="modal-body">
+									 <input type="text" id="editTitle" class="form-control mb-3" placeholder="Title">
+									 <div id="editRequirements"></div>
+									 <!-- Add Requirement button -->
+									 <button id="addEditRequirementBtn" class="btn btn-primary mt-2">Add Requirement</button>
+								 </div>
+								 <div class="modal-footer">
+									 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+									 <button type="button" id="saveChangesBtn" class="btn btn-primary">Save changes</button>
+								 </div>
+							 </div>
+						 </div>
+					 </div>
+
+					 <div class="modal fade" tabindex="-1" id="deleteEmployeeModal" role="dialog">
+						 <div class="modal-dialog" role="document">
+							 <div class="modal-content">
+								 <div class="modal-header">
+									 <h5 class="modal-title">Delete Requirement</h5>
+								 </div>
+								 <div class="modal-body">
+									 <p>Are you sure you want to delete this Records</p>
+									 <p class="text-warning"><small>this action Cannot be Undone,</small></p>
+								 </div>
+								 <div class="modal-footer">
+									 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+									 <button type="button" id="deleteBtn" class="btn btn-success">Delete</button>
+								 </div>
+							 </div>
+						 </div>
+					 </div>
+
 					   <!----edit-modal end--------->   
 					   
 					
