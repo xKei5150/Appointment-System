@@ -1,7 +1,7 @@
     document.addEventListener("DOMContentLoaded", function () {
         const addAnnouncementButton = document.getElementById("addAnnouncementButton");
         const addAnnouncementModal = document.getElementById("addAnnouncementModal");
-        const announcementForm = document.getElementById("saveChangesBtn");
+        const announcementForm = document.getElementById("announcementForm");
         // const idList = document.getElementById("id-list");
         // const titleList = document.getElementById("title-list");
         // const actionList = document.getElementById("action-list");
@@ -22,7 +22,7 @@
             e.preventDefault();
             const title = document.getElementById("title").value;
             const details = document.getElementById("details").value;
-            const submitButton = document.getElementById("saveChangesBtn");
+            const submitButton = document.getElementById("saveChangesAnn");
 
             let xhr = new XMLHttpRequest();
             const isUpdate = submitButton.innerText === "Update";
