@@ -17,9 +17,27 @@
 
 .fa-solid
 {
+    
     color:#900002;
 }
 .fa-regular
 {
+
     color:#900002;
+}
+.modal-body
+{
+    padding: 20px 20px 20px 20px ;
+}
+
+.time
+{
+    display: flex;
+    justify-content: space-between;
+    margin-left: -50px;
+}
+.col-mb-3
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

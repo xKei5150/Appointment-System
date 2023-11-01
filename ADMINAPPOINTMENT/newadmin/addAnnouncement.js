@@ -97,8 +97,8 @@
             // Action cell
             const actionCell = document.createElement('td');
             const editButton = document.createElement('button');
-            editButton.innerHTML = '<i class="fa-regular fa-pen-to-square"></i> Edit';
-            editButton.classList.add('btn', 'btn-sm', 'btn-warning');
+            editButton.innerHTML = '<i class="fa-regular fa-pen-to-square"></i>';
+            editButton.classList.add('btn', 'btn-sm');
             editButton.setAttribute('data-bs-toggle', 'modal');
             editButton.setAttribute('data-bs-target', '#editModal');
             editButton.dataset.id = announcement.id;
@@ -106,8 +106,8 @@
             actionCell.appendChild(editButton);
 
             const deleteButton = document.createElement('button');
-            deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i> Delete';
-            deleteButton.classList.add('btn', 'btn-sm', 'btn-danger');
+            deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
+            deleteButton.classList.add('btn', 'btn-sm');
             deleteButton.dataset.id = announcement.id;
             deleteButton.addEventListener("click", handleDelete);
             actionCell.appendChild(deleteButton);

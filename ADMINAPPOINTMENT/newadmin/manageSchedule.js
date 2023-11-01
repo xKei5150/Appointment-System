@@ -91,7 +91,7 @@ function displaySchedules(schedules) {
             slotDiv.className = 'mb-2 d-flex justify-content-between align-items-center';
             slotDiv.innerHTML = `
                 <span class="mr-2">${timeslot.time} - ${timeslot.slots} slots available</span>
-                <button class="btn btn-primary btn-sm edit-button">Edit</button>
+                <button class="btn btn-success btn-sm edit-button">Edit</button>
             `;
             timeslotsDiv.appendChild(slotDiv);
 
