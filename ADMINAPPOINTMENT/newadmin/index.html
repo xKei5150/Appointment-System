@@ -89,23 +89,10 @@
 						</div>
 					 </div>
 					 
-					 <div class="col-md-5 col-lg-3 order-3 order-md-2">
-					     <div class="xp-searchbar">
-						     <form>
-							    <div class="input-group">
-								  <input type="search" class="form-control"
-								  placeholder="Search">
-								  <div class="input-group-append">
-								     <button class="btn" type="submit" id="button-addon2">Go
-									 </button>
-								  </div>
-								</div>
-							 </form>
-						 </div>
-					 </div>
+					
 					 
 					 
-					 <div class="col-10 col-md-6 col-lg-8 order-1 order-md-3">
+					 <div class="col-15 col-md-10 col-lg-11 order-1 order-md-5">
 					     <div class="xp-profilebar text-right">
 						    <nav class="navbar p-0">
 							   <ul class="nav navbar-nav flex-row ml-auto">
@@ -133,7 +120,7 @@
 									 <span class="material-icons">person_outline</span>
 									 Profile
 									 </a></li>
-									 <li><a href="setting.html">
+									 <li><a href="setting.php">
 									 <span class="material-icons">settings</span>
 									 Settings
 									 </a></li>
@@ -244,14 +231,20 @@
 								   <div class="modal-dialog">
 									   <div class="modal-content">
 										   <div class="modal-header">
-											   <h5 class="modal-title">Edit Requirements</h5>
+											   <h5 class="modal-title">Edit Announcement</h5>
 										   </div>
-										   <div class="modal-body">
-											   <input type="text" id="editTitle" class="form-control mb-3" placeholder="Title">
-											   <div id="editRequirements"></div>
-											   <!-- Add Requirement button -->
-											   <button id="addEditRequirementBtn" class="btn btn-primary mt-2">Add Requirement</button>
-										   </div>
+										   <div class="modal-body"   >
+											<form id="announcementForm">
+											<label  for="title">Announcement Title</label>
+											<div class="form-floating">
+												<input type="text" class="form-control" id="title" name="title" placeholder="Enter Title">
+											   </div>
+											<label for="details">Description</label>
+											<div class="form-floating">
+												<textarea class="form-control" placeholder="Leave a Description here." id="details" name="details" style="height: 100px"></textarea>
+											</div>
+											
+										</div>
 										   <div class="modal-footer">
 											   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 											   <button type="button" id="saveChangesBtn" class="btn btn-danger">Save changes</button>

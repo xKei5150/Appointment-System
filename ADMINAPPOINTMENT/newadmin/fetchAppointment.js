@@ -5,13 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const emailList = document.getElementById("email-list");
     const dateList = document.getElementById("date-list");
     const timeslotList = document.getElementById("timeslot-list");
-
-
-
-
-
-
-    // const deleteList = document.getElementById("delete-list");
+   
+    const deleteList = document.getElementById("delete-list");
 
     // function deleteAppointment(appointmentId) {
     //     const confirmed = confirm("Are you sure you want to delete this appointment?");
@@ -50,11 +45,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // // Checkbox column
                 // let thCheckbox = document.createElement('th');
-                // let i = document.createElement('i');
+                // let span = document.createElement('i');
                 // i.className = "material-icons";
                 // thCheckbox.appendChild(i);
                 // tr.appendChild(thCheckbox);
 
+
+                const deleteButton = document.createElement("text");
+                deleteButton.innerHTML = '<i class="material-icons">date_range</i>';
+                deleteButton.addEventListener("click", function() {
+                    deleteAppointment(appointment.id);
+                });
+
+                const deleteButtonContainer = document.createElement("div");
+                deleteButtonContainer.appendChild(deleteButton);
+                deleteList.appendChild(deleteButtonContainer);
 
                 nameList.innerHTML += `<div>${appointment.name}</div>`;
                 addressList.innerHTML += `<div>${appointment.address}</div>`;
@@ -62,15 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 dateList.innerHTML += `<div>${appointment.date}</div>`;
                 timeslotList.innerHTML += `<div class="time">${appointment.timeslot}</div>`;
 
-                // const deleteButton = document.createElement("button");
-                // deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
-                // deleteButton.addEventListener("click", function() {
-                //     deleteAppointment(appointment.id);
-                // });
-
-                // const deleteButtonContainer = document.createElement("div");
-                // deleteButtonContainer.appendChild(deleteButton);
-                // deleteList.appendChild(deleteButtonContainer);
             });
         }
     };

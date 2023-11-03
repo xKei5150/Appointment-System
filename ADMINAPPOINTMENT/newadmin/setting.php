@@ -89,23 +89,8 @@
 						</div>
 					 </div>
 					 
-					 <div class="col-md-5 col-lg-3 order-3 order-md-2">
-					     <div class="xp-searchbar">
-						     <form>
-							    <div class="input-group">
-								  <input type="search" class="form-control"
-								  placeholder="Search">
-								  <div class="input-group-append">
-								     <button class="btn" type="submit" id="button-addon2">Go
-									 </button>
-								  </div>
-								</div>
-							 </form>
-						 </div>
-					 </div>
-					 
-					 
-					 <div class="col-10 col-md-6 col-lg-8 order-1 order-md-3">
+
+					 <div class="col-15 col-md-10 col-lg-11 order-1 order-md-5">
 					     <div class="xp-profilebar text-right">
 						    <nav class="navbar p-0">
 							   <ul class="nav navbar-nav flex-row ml-auto">
@@ -191,27 +176,38 @@
 							  
 						  </tr>
 						  </thead>
-								<form action="set.php" method="POST">
+								<form action="./php_files/account.php" method="POST">
 						  
 								  <div class="modal-body">
 						  
 									  <div class="form-group">
 										  <label> Username </label>
-										  <input type="text" name="username" class="form-control" placeholder="Enter Username">
+										  <input type="text" name="username" class="form-control" value="<?php echo $rows['name']; ?>" placeholder="Enter Username">
 									  </div>
 									  <div class="form-group">
 										  <label>Email</label>
-										  <input type="email" name="email" class="form-control checking_email" placeholder="Enter Email">
+										  <input type="email" name="email" class="form-control checking_email" value="<?php echo $rows['email']; ?>" placeholder="Enter Email">
 										  <small class="error_email" style="color: red;"></small>
 									  </div>
+
 									  <div class="form-group">
-										  <label>Password</label>
-										  <input type="password" name="password" class="form-control" placeholder="Enter Password">
+
+										  <input type="hidden" name="old_pass" class="form-control" value="<?php echo $rows['password']; ?>" placeholder="Enter Password">
 									  </div>
+									  <div class="form-group">
+										<label>Current Password</label>
+										<input type="password" name="update_pass" class="form-control" placeholder="enter previous password">
+									</div>
+									<div class="form-group">
+										<label>New Password</label>
+										<input type="password" name="new_pass" class="form-control" placeholder="enter new password">
+									</div>
 									  <div class="form-group">
 										  <label>Confirm Password</label>
-										  <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password">
+										  <input type="password" name="confirm_pass" class="form-control" placeholder="confirm new password">
 									  </div>
+
+
 						  
 						  
 								  </div>
