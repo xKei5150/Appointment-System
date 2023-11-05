@@ -1,3 +1,6 @@
+<?php  include("../ADMINRESERVATION/php_files/connection.php");  ?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -50,17 +53,17 @@
 				<i class="material-icons">aspect_ratio</i>Profiling</a>
 				<ul class="collapse list-unstyled menu" id="homeSubmenu1">
 					<li>
-						<a href="../newadminreservation/ManageSched.html">Manage Date/Slot</a>
+						<a href="../ADMINRESERVATION/ManageSched.html">Manage Date/Slot</a>
 					</li>
 					<li>
-						<a href="../newadminreservation/managereminders.html">Manage Requirement</a>
+						<a href="../ADMINRESERVATION/managereminders.html">Manage Requirement</a>
 					</li>
 	  
 				</ul>
 			</li>
 			
 		   <li class="">
-				<a href="adminreservation.html"><i class="material-icons">date_range</i><span>View reservation</span></a>
+				<a href="adminreservation.php"><i class="material-icons">date_range</i><span>View reservation</span></a>
 			</li>
 		
 		   
@@ -169,41 +172,70 @@
 		  
 		   <!------main-content-start-----------> 
 		     
-		   <div id="layoutSidenav_content">
-			<main>
-				<div class="container-fluid px-4">
-					<h1 class="mt-4">Schedule</h1>
-					<ol class="breadcrumb mb-4">
-						<li class="breadcrumb-item active">Recent Schedule</li>
-					</ol>
+		   <div class="main-content">
+			<div class="row">
+			   <div class="col-md-12">
+				  <div class="table-wrapper">
+					
+				  <div class="table-title">
+					<div class="row">
+						<div class="col-sm-6 p-0 flex justify-content-lg-start justify-content-center">
+						   <h2 class="ml-lg-2">Reservation Booked</h2>
+						</div>
+						
+						</div>
+					</div>
+				  </div>
+
+				  
+					  <table class="table table-striped table-hover">
+						  <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>EU ID</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Event</th>
+                                <th>Date</th>
+								<th>Status</th>
+                            </tr>
+                        </thead>
+
+						<?php 
+						$query = "SELECT * FROM  pending_list";
+						$result = mysqli_query($conn,$query);
+						while($row = mysqli_fetch_array($result)) { ?>
+						
+
+                        <tbody>
+                            <tr>
+                                <td scope="row"><?php echo $row['id']; ?></td>
+								<td><?php echo $row['firstname']; ?></td>
+								<td><?php echo $row['eu_id']; ?></td>
+								<td><?php echo $row['email']; ?></td>
+								<td><?php echo $row['phone']; ?></td>
+								<td><?php echo $row['event']; ?></td>
+								<td><?php echo $row['date']; ?></td>
+								<td><?php echo $row['status']; ?></td>
+                            </tr>
+                        </tbody>
+						
+						<?php } ?>
+						
+                        </table>
+				  </div>
+			   </div>
+
+
+								  <!----add-modal start--------->
 	
-					<div class="schedule">
-						<!-- Dates will be appended here dynamically by the JavaScript -->
-					</div>
-				</div>
-			</main>
-	
-		</div>
-		<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="editModalLabel">Edit Timeslot</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<label for="editSlots">Available Slots:</label>
-						<input type="number" id="editSlots" class="form-control" min="1" required>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary" onclick="submitEdit()">Save changes</button>
-					</div>
-				</div>
+				  <!----edit-modal end--------->   
+				  
+			   
+			   
+			
 			</div>
-		</div>
 
 	 
 	   <!------main-content-end-----------> 
@@ -220,7 +252,7 @@
 	   </div>
 	</footer>
 	
-</div>
+	
 	
 	
  </div>
@@ -232,16 +264,14 @@
 
 <!-------complete html----------->
 
-
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-<script src="js/scripts.js"></script>
-<script src="manageSchedule.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-<script src="assets/demo/chart-area-demo.js"></script>
-<script src="assets/demo/chart-bar-demo.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
-<script src="js/datatables-simple-demo.js"></script>
+<script src="fetchAppointment.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="js/datatables-simple-demo.js"></script>
+    
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script src="js/jquery-3.3.1.slim.min.js"></script>
    <script src="js/popper.min.js"></script>

@@ -16,7 +16,7 @@ if (isset($_POST['firstname'])) {
 
     try {
         // Store data
-        $stmt = $conn->prepare("INSERT INTO tblappointment (firstname, lastname, eu_id, phone, email, event, purpose, date, timeslot) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO tblappointment (firstname, lastname, eu_id, phone, email, event, purpose, date, timeslot , status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ? , 'pending')");
         $stmt->execute([$firstname, $lastname, $eu_id, $phone, $email, $event, $purpose, $date, $timeslot]);
 
         // Reduce slot

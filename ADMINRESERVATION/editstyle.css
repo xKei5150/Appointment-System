@@ -1,0 +1,25 @@
+.appr .btn
+{
+display: flex;
+justify-content: space-between ;
+justify-content: space-around;
+justify-content: center;
+margin-top: 10px;
+width: 100%;
+margin-bottom: 5px;
+}
+.appr .btn-outline-info
+{
+    padding-left: 13px;
+}
+
+.reserve
+{
+    margin-top: 200px;
+}
+
+.req
+{
+    color: #900002;
+}
+
