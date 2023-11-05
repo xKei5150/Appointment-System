@@ -249,7 +249,7 @@ function populateTicketInfo(name, email, selectedDate, selectedTimeslots) {
     const announce = document.getElementById('announce');
     let btn = document.createElement('button');
     btn.classList.add('btn', 'btn-primary');
-    btn.innerText = "Done";
+    btn.innerText = "Ok ,Close";
     btn.addEventListener('click', function () {
         location.reload();
     });
@@ -272,3 +272,4 @@ announce.style.display = 'none';
     ticketInfo.appendChild(btn);
 
 }
+

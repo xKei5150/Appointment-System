@@ -3,10 +3,13 @@
 	$host="localhost";
 	$username="root";
 	$password="";
-	$error1="Can't connect to MySQL";
-	$error2="Can't connect to Database";
+	$db="dbappointment";
 	
-	$con=mysqli_connect($host,$username,$password) or die ($error1);
-	mysqli_select_db($con,'dbappointment') or die ($error2);
-
+	
+	$con=mysqli_connect($host,$username,$password, $db);
+	
+	if($con===false)
+{
+	die("connection error");
+}
 ?>

@@ -102,10 +102,26 @@
 
         <div class="index-btn-wrapper">
           <div class="index-btn" onclick="run(5, 4);">Previous</div>
-          <button class = "index-btn" id="submit" style = "background: blue;">Submit</button>
+          <button class = "index1-btn" id="submit" style = "background: blue;">Submit</button>
           
         </div>
       </div>
+
+      <!-- <div class="modal-box">
+        <i class="fa-regular fa-circle-check"></i>
+        <h2>Completed</h2>
+        <h3>Your reservation booked sucessfully.</h3>
+        <h3>Please wait the approval that sent to your Email</h3>
+        <h4>Thank you!!</h4>
+        
+
+
+        <div class="buttons">
+          <button class="close-btn">Ok, Close</button>
+          
+        </div>
+      </div> -->
+  
     </form>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
