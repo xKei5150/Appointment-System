@@ -43,10 +43,10 @@
 							<a href="../RESERVATION/gym/gymreserve.php">
 							<button type="submit" name="gym">GYM </button> 
 							</a>
-							<a href="../RESERVATION/functionhall/fhallreserve.php">
+							<a href="../RESERVATION/functionhall/gymreserve.php">
 							<button type="submit" name="fhall"> Function Hall </button>
 							</a>
-							<a href="../RESERVATION/emrc/emrcreserve.php">
+							<a href="../RESERVATION/emrc/gymreserve.php">
 							<button type="submit" name="emrc"> EMRC </button>
 							</a>
 				</div>

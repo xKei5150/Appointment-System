@@ -10,7 +10,7 @@
 </head>
 <body>
 	<header>
-		<h2 class="logo">Registrar Login</h2> 
+		<h2 class="logo">MOARS Login</h2> 
 		<nav class="navigation">
 		<a href="../indexmain.php"  >Home</a>
 		<button class="btnLogin-popup">Login</button>

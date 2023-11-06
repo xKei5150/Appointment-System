@@ -34,7 +34,7 @@
 		</a>
 		<br><br>
 		<a href="../Finalsystem/ADMINLOGIN/adminloginindex.php">
-		<button type="submit" class="btn2"><i class="uil uil-user-square"></i> Admin of MOAR </button>
+		<button type="submit" class="btn2"><i class="uil uil-user-square"></i> Admin of MOARS </button>
 		<br><br>
 		
 		
