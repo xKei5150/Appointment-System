@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2023 at 08:02 AM
+-- Generation Time: Nov 06, 2023 at 02:30 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -29,19 +29,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tbladminaccounts` (
   `email` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL
+  `password` varchar(100) NOT NULL,
+  `id` int(25) NOT NULL,
+  `name` varchar(25) NOT NULL,
+  `image` varchar(100) NOT NULL,
+  `usertype` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbladminaccounts`
 --
 
-INSERT INTO `tbladminaccounts` (`email`, `password`) VALUES
-('A20-0366', '54321'),
-('dictmacatangay@gmail.com', '222222'),
-('luhhhhh', '222222'),
-('luhhhhh@gmail.com', '2222222'),
-('angelo@gmail.com', '12345678');
+INSERT INTO `tbladminaccounts` (`email`, `password`, `id`, `name`, `image`, `usertype`) VALUES
+('dictmacatangay@gmail.com', '1234567', 222222, 'angelo', '', 'registrar'),
+('angelo@gmail.com', '12345', 232323, 'benedict', '', 'gym');
 
 -- --------------------------------------------------------
 
