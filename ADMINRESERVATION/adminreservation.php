@@ -1,6 +1,3 @@
-<?php  include("../ADMINRESERVATION/php_files/connection.php");  ?>
-
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -188,42 +185,23 @@
 				  </div>
 
 				  
-					  <table class="table table-striped table-hover">
-						  <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>EU ID</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Event</th>
-                                <th>Date</th>
-								<th>Status</th>
-                            </tr>
-                        </thead>
+<table id="approvedListTable" class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>EU ID</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Event</th>
+      <th>Date</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
 
-						<?php 
-						$query = "SELECT * FROM  pending_list";
-						$result = mysqli_query($conn,$query);
-						while($row = mysqli_fetch_array($result)) { ?>
-						
-
-                        <tbody>
-                            <tr>
-                                <td scope="row"><?php echo $row['id']; ?></td>
-								<td><?php echo $row['firstname']; ?></td>
-								<td><?php echo $row['eu_id']; ?></td>
-								<td><?php echo $row['email']; ?></td>
-								<td><?php echo $row['phone']; ?></td>
-								<td><?php echo $row['event']; ?></td>
-								<td><?php echo $row['date']; ?></td>
-								<td><?php echo $row['status']; ?></td>
-                            </tr>
-                        </tbody>
-						
-						<?php } ?>
-						
-                        </table>
 				  </div>
 			   </div>
 
@@ -264,7 +242,7 @@
 
 <!-------complete html----------->
 
-<script src="fetchAppointment.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
@@ -276,8 +254,7 @@
 <script src="js/jquery-3.3.1.slim.min.js"></script>
    <script src="js/popper.min.js"></script>
    <script src="js/bootstrap.min.js"></script>
-   <script src="js/jquery-3.3.1.min.js"></script> 
-
+<script src="fetchAppointment.js"></script>
 
 
   

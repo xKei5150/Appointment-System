@@ -194,6 +194,9 @@
 
 										  <input type="hidden" name="old_pass" class="form-control" value="<?php echo $rows['password']; ?>" placeholder="Enter Password">
 									  </div>
+
+
+
 									  <div class="form-group">
 										<label>Current Password</label>
 										<input type="password" name="update_pass" class="form-control" placeholder="enter previous password">

@@ -6,7 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
         xhr.onload = function() {
             if (this.status === 200) {
                 const appointments = JSON.parse(this.responseText);
+
                 populateTable(appointments);
+
             } else {
                 console.error('Failed to fetch data.');
             }
@@ -17,15 +19,37 @@ document.addEventListener("DOMContentLoaded", function() {
         xhr.send();
     }
 
+
+    function fetchApprovedAppointments() {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'php_files/fetchAppointment.php', true);
+        xhr.onload = function() {
+            if (this.status === 200) {
+                const appointments = JSON.parse(this.responseText);
+
+                populateApprovedTable(appointments);
+
+            } else {
+                console.error('Failed to fetch data.');
+            }
+        };
+        xhr.onerror = function() {
+            console.error('Request error...');
+        };
+        xhr.send();
+    }
+
+
     function populateTable(appointments) {
         const tbody = document.getElementById("datatablesSimple");
         tbody.innerHTML = "";  // Clear any previous data
 
         appointments.forEach(appointment => {
-            let tr = document.createElement('tr');
+            // Only process appointments with a "pending" status
+            if (appointment.status.toLowerCase() === 'pending') {
+                let tr = document.createElement('tr');
 
-            tr.innerHTML = `
-           
+                tr.innerHTML = `
                 <td>${appointment.id}</td>
                 <td>${appointment.firstname} ${appointment.lastname}</td>
                 <td>${appointment.eu_id}</td>
@@ -33,46 +57,60 @@ document.addEventListener("DOMContentLoaded", function() {
                 <td>${appointment.phone}</td>
                 <td>${appointment.event}</td>
                 <td>${appointment.date}</td>
-
             `;
 
+                let actions = document.createElement('td');  // Correct element is 'td', not 'tr'
+                let viewBtn = document.createElement('button');
+                viewBtn.innerText = 'View';
+                viewBtn.classList.add('btn', 'btn-sm', 'btn-outline-info');
+                viewBtn.setAttribute('data-bs-toggle', 'modal');
+                viewBtn.setAttribute('data-bs-target', '#viewreserveModal');
+                viewBtn.addEventListener("click", handleview);
 
-            let actions = document.createElement('tr');
-            let viewBtn= document.createElement('button');
-            viewBtn.innerHTML = '<iclass="wrapper d-flex justify-content-between>View</i>';
-            viewBtn.classList.add('btn', 'btn-sm' ,'btn-outline-info');
-            viewBtn.setAttribute('data-bs-toggle', 'modal');
-            viewBtn.setAttribute('data-bs-target', '#viewreserveModal');
-            viewBtn.addEventListener("click", handleview);
+                let deleteBtn = document.createElement('button');
+                deleteBtn.innerText = 'Delete';  // Correct text setting
+                deleteBtn.classList.add('btn', 'btn-sm', 'btn-outline-danger');
+                deleteBtn.dataset.id = appointment.id;
+                deleteBtn.addEventListener("click", handledelete);
 
+                let approveBtn = document.createElement('button');
+                approveBtn.innerText = 'Approve';  // Correct text setting
+                approveBtn.classList.add('btn', 'btn-sm', 'btn-outline-success');
+                approveBtn.dataset.id = appointment.id;
+                approveBtn.addEventListener("click", handlereserve);
 
-    
-            let deleteBtn = document.createElement('button');
-            deleteBtn.innerHTML = '<iclass="wrapper d-flex justify-content-between>Delete</i>';  // Assuming you have the relevant icon class
-            deleteBtn.classList.add('btn', 'btn-sm','btn-outline-danger');
-            // deleteBtn.setAttribute('data-bs-toggle', 'modal');
-            // deleteBtn.setAttribute('data-bs-target', '#deleteEmployeeModal');
-            deleteBtn.dataset.id = appointment.id;
-            deleteBtn.addEventListener("click", handledelete);
+                actions.appendChild(viewBtn);
+                actions.appendChild(deleteBtn);
+                actions.appendChild(approveBtn);
+                tr.appendChild(actions);
 
-            let approveBtn = document.createElement('button');
-            approveBtn.innerHTML = '<iclass="wrapper d-flex justify-content-between>Approve</i>';  // Assuming you have the relevant icon class
-            approveBtn.classList.add('btn', 'btn-sm','btn-outline-success');
-            approveBtn.dataset.id = appointment.id;
-            approveBtn.addEventListener("click", handlereserve);
-            
-    
-            actions.appendChild(viewBtn);
-            actions.appendChild(deleteBtn);
-            actions.appendChild(approveBtn);
-            tr.appendChild(actions);
-    
-            tbody.appendChild(tr);
-            
+                tbody.appendChild(tr);
+            }
         });
-
-        
     }
+
+    function populateApprovedTable(appointments) {
+        const tableBody = document.getElementById('approvedListTable').querySelector('tbody');
+        tableBody.innerHTML = '';  // Clear existing table body
+
+        appointments.forEach(appointment => {
+            // Check if the status is approved
+            if (appointment.status.toLowerCase() === 'approved') {
+                const row = tableBody.insertRow();
+                row.innerHTML = `
+        <td>${appointment.id}</td>
+        <td>${appointment.firstname} ${appointment.lastname}</td>
+        <td>${appointment.eu_id}</td>
+        <td>${appointment.email}</td>
+        <td>${appointment.phone}</td>
+        <td>${appointment.event}</td>
+        <td>${appointment.date}</td>
+        <td>${appointment.status}</td>
+      `;
+            }
+        });
+    }
+
 
     function handledelete() {
         const reserveId = this.dataset.id;
@@ -129,15 +167,15 @@ document.addEventListener("DOMContentLoaded", function() {
     
                 data.forEach(function (appointments) {
                 
-                    idList.innerHTML += `<div>${appointments.id}</div>`;
-                    nameList.innerHTML += `<div>${appointments.firstname} ${appointments.lastname}</div>`;
-                    addressList.innerHTML += `<div>${appointments.eu_id}</div>`;
-                    phoneList.innerHTML += `<div>${appointments.phone}</div>`;
-                    emailList.innerHTML += `<div>${appointments.email}</div>`;
-                    eventList.innerHTML += `<div>${appointments.event}</div>`;
-                    purposeList.innerHTML += `<div>${appointments.purpose}</div>`;
-                    dateList.innerHTML += `<div>${appointments.date}</div>`;
-                    timeslotList.innerHTML += `<div>${appointments.timeslot}</div>`;
+                    idList.innerHTML += `${appointments.id}`;
+                    nameList.innerHTML += `${appointments.firstname} ${appointments.lastname}`;
+                    addressList.innerHTML += `${appointments.eu_id}`;
+                    phoneList.innerHTML += `${appointments.phone}`;
+                    emailList.innerHTML += `${appointments.email}`;
+                    eventList.innerHTML += `${appointments.event}`;
+                    purposeList.innerHTML += `${appointments.purpose}`;
+                    dateList.innerHTML += `${appointments.date}`;
+                    timeslotList.innerHTML += `${appointments.timeslot}`;
     
                 });
             }
@@ -149,12 +187,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Fetch data when page loads
     fetchAppointments();
+    fetchApprovedAppointments();
 });
 
 
 
-
-
-
-//     fetchAppointment();
-// });

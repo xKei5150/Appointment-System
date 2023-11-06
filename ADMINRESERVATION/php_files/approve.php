@@ -4,9 +4,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $reserveId = $_POST["id"];
 
-    $sql = "UPDATE FROM tblappointment SET status = 'approved' WHERE id = :id";
+    // Corrected SQL statement
+    $sql = "UPDATE tblappointment SET status = 'approved' WHERE id = :id";
     $stmt = $conn->prepare($sql);
-    $stmt->execute([$reserveId]);
+    // Corrected parameter binding
+    $stmt->execute([':id' => $reserveId]);
 
     if ($stmt) {
         echo "Data updated successfully.";
