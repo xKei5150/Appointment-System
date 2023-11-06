@@ -104,6 +104,7 @@
           <div class="index-btn" onclick="run(5, 4);">Previous</div>
           <button class = "index1-btn" id="submit" style = "background: blue;">Submit</button>
           
+          
         </div>
       </div>
 
@@ -114,7 +115,6 @@
         <h3>Please wait the approval that sent to your Email</h3>
         <h4>Thank you!!</h4>
         
-
 
         <div class="buttons">
           <button class="close-btn">Ok, Close</button>

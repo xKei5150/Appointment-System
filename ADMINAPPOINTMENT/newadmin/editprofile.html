@@ -122,7 +122,7 @@
 									 <span class="material-icons">settings</span>
 									 Settings
 									 </a></li>
-									 <li><a href="#">
+									 <li><a href="../ADMINLOGOUT/adminlogout.php">
 									 <span class="material-icons">logout</span>
 									 Logout
 									 </a></li>
