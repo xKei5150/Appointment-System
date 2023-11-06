@@ -141,18 +141,18 @@
 									 <span class="material-icons">logout</span>
 									 Logout
 									 </a></li>
-									 
+
 								  </ul>
 							   </li>
-							   
-							   
+
+
 							   </ul>
 							</nav>
 						 </div>
 					 </div>
-					 
+
 				 </div>
-				 
+
 				 <div class="xp-breadcrumbbar text-center">
 				    <h4 class="page-title">Admin Dashboard</h4>
 					<ol class="breadcrumb">
@@ -160,31 +160,31 @@
 					  <li class="breadcrumb-item active" aria-curent="page">System</li>
 					</ol>
 				 </div>
-				 
-				 
+
+
 			 </div>
 		  </div>
-		  <!------top-navbar-end-----------> 
-		  
-		  
-		   <!------main-content-start-----------> 
-		     
+		  <!------top-navbar-end----------->
+
+
+		   <!------main-content-start----------->
+
 		   <div class="main-content">
 			<div class="row">
 			   <div class="col-md-12">
 				  <div class="table-wrapper">
-					
+
 				  <div class="table-title">
 					<div class="row">
 						<div class="col-sm-6 p-0 flex justify-content-lg-start justify-content-center">
 						   <h2 class="ml-lg-2">Reservation Booked</h2>
 						</div>
-						
+
 						</div>
 					</div>
 				  </div>
 
-				  
+
 <table id="approvedListTable" class="table table-striped table-hover">
   <thead>
     <tr>
