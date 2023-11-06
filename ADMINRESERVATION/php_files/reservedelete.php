@@ -1,5 +1,5 @@
 <?php
-require_once 'connection2.php';
+require_once 'connection.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["id"])) {
         $reserveId = $_POST["id"];
@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bindParam(":id",  $reserveId);
             $stmt->execute();
 
-            echo "Announcement deleted successfully";
+            echo "Reservation deleted successfully";
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
