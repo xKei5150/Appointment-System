@@ -16,11 +16,11 @@ if (isset($_POST['firstname'])) {
 
     try {
         // Store data
-        $stmt = $conn->prepare("INSERT INTO tblappointment (firstname, lastname, eu_id, phone, email, event, purpose, date, timeslot , status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ? , 'pending')");
+        $stmt = $conn->prepare("INSERT INTO tblappointment2 (firstname, lastname, eu_id, phone, email, event, purpose, date, timeslot , status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ? , 'pending')");
         $stmt->execute([$firstname, $lastname, $eu_id, $phone, $email, $event, $purpose, $date, $timeslot]);
 
         // Reduce slot
-        $stmt = $conn->prepare("UPDATE tblschedule SET availability = availability - 1 WHERE date = ? AND timeslot = ? AND availability > 0");
+        $stmt = $conn->prepare("UPDATE tblschedule2 SET availability = availability - 1 WHERE date = ? AND timeslot = ? AND availability > 0");
         $stmt->execute([$date, $timeslot]);
 
         // Commit transaction

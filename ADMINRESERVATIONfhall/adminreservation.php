@@ -35,7 +35,7 @@
 	 
 	 <nav id="sidebar">
 		<div class="sidebar-header">
-			<h3><img src="../newadmin/logo.png.png" class="img-fluid"/><span>Gymnasium</span></h3>
+			<h3><img src="..../ADMINRESERVATIONfhall/logo.png.png" class="img-fluid"/><span>Fuction Hall</span></h3>
 		</div>
 		<ul class="list-unstyled components">
 		<li  class="active">
@@ -154,7 +154,7 @@
 				 </div>
 
 				 <div class="xp-breadcrumbbar text-center">
-				    <h4 class="page-title">Admin Dashboard</h4>
+				    <h4 class="page-title">RECENT RESERVATION</h4>
 					<ol class="breadcrumb">
 					  <li class="breadcrumb-item"><a href="#">Reservation</a></li>
 					  <li class="breadcrumb-item active" aria-curent="page">System</li>

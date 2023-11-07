@@ -19,7 +19,7 @@
   <nev class="web-start">
 	
 	<h1> Manuel S. Enverga University Foundation Candelaria Inc.</h1>
-  <h2> Facility Reservation System </h2>
+  <h2> EMRC Facility Reservation System </h2>
 	
 	</nev>
 		<nav class="navigation">

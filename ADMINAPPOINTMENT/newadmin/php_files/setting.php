@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Update the admin's profile in the database
     $sql = "UPDATE tbladminaccounts
-            SET  email = ' $email', username = ' $username ', password = ' $pass 'WHERE id = '9876'";
+            SET  email = ' $email', username = ' $username ', password = ' $pass 'WHERE id = '9898'";
 
     if ($conn->query($sql) === TRUE) {
         echo "<script>alert('Account Updated Successfully'); window.location.href='../setting.html'; </script>";

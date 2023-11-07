@@ -11,11 +11,11 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
 	$num_rows =mysqli_query($con,$query);
 	$row = mysqli_fetch_array($num_rows);
 
-	if($row['usertype']=="registrar")
+	if($row['usertype']=="registrar1")
 	{
 		header("location: ../ADMINAPPOINTMENT/newadmin/index.html");
 	}		
-	elseif($row['usertype']=="gym")   
+	elseif($row['usertype']=="gymnasium")   
 	{
 		header("location: ../ADMINRESERVATION/index.html");
 		
@@ -25,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
 		header("location: ../ADMINAPPOINTMENT/deanoffice/index.html");
 		
 	}
+	
 	elseif($row['usertype']=="JHregistrar")   
 	{
 		header("location: ../ADMINAPPOINTMENT/JHregistrar/index1.html");
@@ -33,6 +34,11 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
 	elseif($row['usertype']=="emrc")   
 	{
 		header("location: ../ADMINRESERVATIONemrc/index.html");
+		
+	}
+	elseif($row['usertype']=="Function Hall")   
+	{
+		header("location: ../ADMINRESERVATIONfhall/index.html");
 		
 	}
 	else

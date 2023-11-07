@@ -17,7 +17,7 @@ if (isset($_POST['name'], $_POST['cellnum'], $_POST['address'], $_POST['email'],
         $stmt->execute([$name, $cellnum, $address, $email, $date, $timeslot]);
 
         // Reduce slot
-        $stmt = $conn->prepare("UPDATE tblschedule2 SET slots = slots - 1 WHERE date = ? AND timeslot = ? AND slots > 0");
+        $stmt = $conn->prepare("UPDATE tblschedule SET slots = slots - 1 WHERE date = ? AND timeslot = ? AND slots > 0");
         $stmt->execute([$date, $timeslot]);
 
         // Commit transaction

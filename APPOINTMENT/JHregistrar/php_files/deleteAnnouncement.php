@@ -1,21 +1,21 @@
 <?php
+require_once 'connection.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["id"])) {
-        $appointmentId = $_POST["id"];
-
-        require_once 'connection.php';
+        $announcementId = $_POST["id"];
 
         try {
-            $sql = "DELETE FROM tblAppointment WHERE id = :id";
+            $sql = "DELETE FROM tblAnnouncement1 WHERE id = :id";
             $stmt = $conn->prepare($sql);
-            $stmt->bindParam(":id", $appointmentId);
+            $stmt->bindParam(":id", $announcementId);
             $stmt->execute();
-            echo "Appointment deleted successfully";
+
+            echo "Announcement deleted successfully";
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
-
-        $conn = null;
     }
 }
+
+$conn = null;
 ?>

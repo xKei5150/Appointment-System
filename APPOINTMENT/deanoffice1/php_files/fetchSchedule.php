@@ -7,7 +7,7 @@ $lastDayOfCurrentMonth = date('Y-m-t', strtotime($today));
 $daysLeft = date_diff(new DateTime($today), new DateTime($lastDayOfCurrentMonth))->days + 1;
 
 // Delete past date
-$stmt = $conn->prepare("DELETE FROM tblschedule WHERE date < :today");
+$stmt = $conn->prepare("DELETE FROM tblschedule1 WHERE date < :today");
 $stmt->execute(['today' => $today]);
 
 $startDate = $today;
@@ -19,7 +19,7 @@ if ($daysLeft <= 7) {
 }
 
 // Fetch existing schedules
-$stmt = $conn->prepare("SELECT date, timeslot, slots FROM tblschedule WHERE date BETWEEN :startDate AND :endDate ORDER BY id ASC, timeslot");
+$stmt = $conn->prepare("SELECT date, timeslot, slots FROM tblschedule1 WHERE date BETWEEN :startDate AND :endDate ORDER BY id ASC, timeslot");
 $stmt->execute(['startDate' => $startDate, 'endDate' => $endDate]);
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -33,7 +33,7 @@ if (empty($results)) {
         // Check if the day is not a weekend
         if ($currentDay->format('N') < 6) {
             foreach ($defaultTimeslots as $timeslot) {
-                $stmt = $conn->prepare("INSERT IGNORE INTO tblschedule (date, timeslot, slots) VALUES (:date, :timeslot, 10)");
+                $stmt = $conn->prepare("INSERT IGNORE INTO tblschedule2 (date, timeslot, slots) VALUES (:date, :timeslot, 10)");
                 $stmt->execute(['date' => $currentDay->format('Y-m-d'), 'timeslot' => $timeslot]);
             }
         }
@@ -41,7 +41,7 @@ if (empty($results)) {
     }
 
     // Refetch the schedules after generation
-    $stmt = $conn->prepare("SELECT date, timeslot, slots FROM tblschedule WHERE date BETWEEN :startDate AND :endDate ORDER BY id ASC, timeslot");
+    $stmt = $conn->prepare("SELECT date, timeslot, slots FROM tblschedule2 WHERE date BETWEEN :startDate AND :endDate ORDER BY id ASC, timeslot");
     $stmt->execute(['startDate' => $startDate, 'endDate' => $endDate]);
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }

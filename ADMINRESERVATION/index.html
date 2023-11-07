@@ -35,7 +35,7 @@
 	 
 	 <nav id="sidebar">
 		<div class="sidebar-header">
-			<h3><img src="../newadmin/logo.png.png" class="img-fluid"/><span>Gymnasium</span></h3>
+			<h3><img src="../ADMINRESERVATION/logo.png.png" class="img-fluid"/><span>Gymnasium</span></h3>
 		</div>
 		<ul class="list-unstyled components">
 		<li  class="active">

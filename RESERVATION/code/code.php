@@ -30,7 +30,7 @@
 				}
 				else
 				{
-					echo "<script type='text/javascript'> alert('Error'); </script>";
+					echo "<script>alert('Code Not Match'); window.location.href='../code/codeindex.php'; </script>";
 				}
 
 

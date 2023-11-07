@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $details = $_POST["details"];
     $announcementId = $_POST["id"];
 
-    $sql = "UPDATE tblAnnouncement SET title = ?, announcement = ? WHERE id = ?";
+    $sql = "UPDATE tblAnnouncement1 SET title = ?, announcement = ? WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->execute([$title, $details, $announcementId]);
 

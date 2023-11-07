@@ -35,7 +35,7 @@
 	 
 	 <nav id="sidebar">
 		<div class="sidebar-header">
-			<h3><img src="../newadmin/logo.png.png" class="img-fluid"/><span>Gymnasium</span></h3>
+			<h3><img src="../ADMINRESERVATIONemrc/logo.png.png" class="img-fluid"/><span>EMRC ADMIN</span></h3>
 		</div>
 		<ul class="list-unstyled components">
 		<li  class="active">
@@ -50,17 +50,17 @@
 				<i class="material-icons">aspect_ratio</i>Profiling</a>
 				<ul class="collapse list-unstyled menu" id="homeSubmenu1">
 					<li>
-						<a href="../ADMINRESERVATION/ManageSched.html">Manage Date/Slot</a>
+						<a href="../ADMINRESERVATIONemrc/ManageSched.html">Manage Date/Slot</a>
 					</li>
 					<li>
-						<a href="../ADMINRESERVATION/managereminders.html">Manage Requirement</a>
+						<a href="../ADMINRESERVATIONemrc/managereminders.html">Manage Requirement</a>
 					</li>
 	  
 				</ul>
 			</li>
 			
 		   <li class="">
-				<a href="adminreservation.php"><i class="material-icons">date_range</i><span>View reservation</span></a>
+				<a href="../ADMINRESERVATIONemrc/adminreservation.php"><i class="material-icons">date_range</i><span>View reservation</span></a>
 			</li>
 		
 		   
@@ -129,15 +129,15 @@
 								  <span class="xp-user-live"></span>
 								 </a>
 								  <ul class="dropdown-menu small-menu">
-								     <li><a href="#">
+								     <li><a href="../ADMINRESERVATIONemrc/editprofile2.html">
 									 <span class="material-icons">person_outline</span>
 									 Profile
 									 </a></li>
-									 <li><a href="#">
+									 <li><a href="../ADMINRESERVATIONemrc/setting.php">
 									 <span class="material-icons">settings</span>
 									 Settings
 									 </a></li>
-									 <li><a href="#">
+									 <li><a href="../ADMINRESERVATIONemrc/ADMINLOGOUT/adminlogout.php">
 									 <span class="material-icons">logout</span>
 									 Logout
 									 </a></li>
@@ -154,7 +154,7 @@
 				 </div>
 
 				 <div class="xp-breadcrumbbar text-center">
-				    <h4 class="page-title">Admin Dashboard</h4>
+				    <h4 class="page-title">RECENT RESERVATION</h4>
 					<ol class="breadcrumb">
 					  <li class="breadcrumb-item"><a href="#">Reservation</a></li>
 					  <li class="breadcrumb-item active" aria-curent="page">System</li>

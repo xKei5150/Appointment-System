@@ -35,7 +35,7 @@
 	 
 	 <nav id="sidebar">
 		<div class="sidebar-header">
-			<h3><img src="../newadmin/logo.png.png" class="img-fluid"/><span>Registrar</span></h3>
+			<h3><img src="..../ADMINRESERVATIONfhall/logo.png.png" class="img-fluid"/><span>Fuction Hall</span></h3>
 		</div>
 		<ul class="list-unstyled components">
 		<li  class="active">
@@ -139,9 +139,9 @@
 				 </div>
 				 
 				 <div class="xp-breadcrumbbar text-center">
-				    <h4 class="page-title">Admin Dashboard</h4>
+				    <h4 class="page-title">Manage Account</h4>
 					<ol class="breadcrumb">
-					  <li class="breadcrumb-item"><a href="#">Appointment</a></li>
+					  <li class="breadcrumb-item"><a href="#">Reservation</a></li>
 					  <li class="breadcrumb-item active" aria-curent="page">System</li>
 					</ol>
 				 </div>
@@ -176,7 +176,7 @@
 							  
 						  </tr>
 						  </thead>
-						  <form action="../ADMINRESERVATION/php_files/setting.php" method="POST">
+						  <form action="../ADMINRESERVATIONfhall/php_files/setting.php" method="POST">
 
 									
 							<div class="modal-body">

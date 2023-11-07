@@ -35,7 +35,7 @@
 	 
 	 <nav id="sidebar">
 		<div class="sidebar-header">
-			<h3><img src="../newadmin/logo.png.png" class="img-fluid"/><span>Registrar</span></h3>
+			<h3><img src="../ADMINRESERVATIONemrc/logo.png.png" class="img-fluid"/><span>Registrar</span></h3>
 		</div>
 		<ul class="list-unstyled components">
 		<li  class="active">
@@ -50,17 +50,17 @@
 				<i class="material-icons">aspect_ratio</i>Profiling</a>
 				<ul class="collapse list-unstyled menu" id="homeSubmenu1">
 					<li>
-						<a href="../ADMINRESERVATION/ManageSched.html">Manage Schedule</a>
+						<a href="../ADMINRESERVATIONemrc/ManageSched.html">Manage Schedule</a>
 					</li>
 					<li>
-						<a href="../ADMINRESERVATION/managereminders.html">Manage Reminders</a>
+						<a href="../ADMINRESERVATIONemrc/managereminders.html">Manage Reminders</a>
 					</li>
 	  
 				</ul>
 			</li>
 			
 		   <li class="">
-				<a href="viewappoint.html"><i class="material-icons">date_range</i><span>View Appointment</span></a>
+				<a href="../ADMINRESERVATIONemrc/adminreservation.php"><i class="material-icons">date_range</i><span>View Appointment</span></a>
 			</li>
 		
 		   
@@ -114,15 +114,15 @@
 								  <span class="xp-user-live"></span>
 								 </a>
 								  <ul class="dropdown-menu small-menu">
-								     <li><a href="../ADMINRESERVATION/editprofile.html">
+								     <li><a href="../ADMINRESERVATIONemrc/editprofile.html">
 									 <span class="material-icons">person_outline</span>
 									 Profile
 									 </a></li>
-									 <li><a href="../ADMINRESERVATION/setting.php">
+									 <li><a href="../ADMINRESERVATIONemrc/setting.php">
 									 <span class="material-icons">settings</span>
 									 Settings
 									 </a></li>
-									 <li><a href="../ADMINRESERVATION/ADMINLOGOUT/adminlogout.php">
+									 <li><a href="../ADMINRESERVATIONemrc/ADMINLOGOUT/adminlogout.php">
 									 <span class="material-icons">logout</span>
 									 Logout
 									 </a></li>
@@ -139,9 +139,9 @@
 				 </div>
 				 
 				 <div class="xp-breadcrumbbar text-center">
-				    <h4 class="page-title">Admin Dashboard</h4>
+				    <h4 class="page-title">MANAGE ACCOUNT</h4>
 					<ol class="breadcrumb">
-					  <li class="breadcrumb-item"><a href="#">Appointment</a></li>
+					  <li class="breadcrumb-item"><a href="#">AReservation</a></li>
 					  <li class="breadcrumb-item active" aria-curent="page">System</li>
 					</ol>
 				 </div>
@@ -176,7 +176,7 @@
 							  
 						  </tr>
 						  </thead>
-						  <form action="../ADMINRESERVATION/php_files/setting.php" method="POST">
+						  <form action="../ADMINRESERVATIONemrc/php_files/setting.php" method="POST">
 
 									
 							<div class="modal-body">

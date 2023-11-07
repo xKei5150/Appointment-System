@@ -1,7 +1,7 @@
 <?php
 include 'connection.php';
 
-$stmt = $conn->prepare("SELECT DISTINCT date FROM tblschedule");
+$stmt = $conn->prepare("SELECT DISTINCT date FROM tblschedule1");
 $stmt->execute();
 $dates = $stmt->fetchAll(PDO::FETCH_COLUMN);
 

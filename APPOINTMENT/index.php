@@ -34,7 +34,7 @@
 							<a href="../APPOINTMENT/JSprincipaloffice/selectAppointment.html">
 							<button type="submit" name="student"> Junior High Registrar Office </button>
 							</a>
-							<a href="../APPOINTMENT/DeanOffice/selectAppointment.html">
+							<a href="../APPOINTMENT/deanoffice1/selectAppointment.html">
 							<button type="submit" name=""> Dean Office </button>
 							</a>
 							<button type="submit" name="admin"> Elementary Prrincipal </button> 

@@ -16,11 +16,11 @@ $requirements = array_filter($requirements, function($value) {
 try {
     $conn->beginTransaction();
 
-    $stmt = $conn->prepare("DELETE FROM tblrequirement WHERE title = :title");
+    $stmt = $conn->prepare("DELETE FROM tblrequirement1 WHERE title = :title");
     $stmt->bindParam(':title', $title);
     $stmt->execute();
 
-    $stmt = $conn->prepare("INSERT INTO tblrequirement (title, requirement) VALUES (:title, :requirement)");
+    $stmt = $conn->prepare("INSERT INTO tblrequirement1 (title, requirement) VALUES (:title, :requirement)");
     foreach ($requirements as $requirement) {
         $stmt->bindParam(':title', $title);
         $stmt->bindParam(':requirement', $requirement);
