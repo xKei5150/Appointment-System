@@ -89,38 +89,14 @@
 						</div>
 					 </div>
 					 
-					 <div class="col-md-5 col-lg-3 order-3 order-md-2">
-					     <div class="xp-searchbar">
-						     <form>
-							    <div class="input-group">
-								  <input type="search" class="form-control"
-								  placeholder="Search">
-								  <div class="input-group-append">
-								     <button class="btn" type="submit" id="button-addon2">Go
-									 </button>
-								  </div>
-								</div>
-							 </form>
-						 </div>
-					 </div>
 					 
 					 
-					 <div class="col-10 col-md-6 col-lg-8 order-1 order-md-3">
-					     <div class="xp-profilebar text-right">
-						    <nav class="navbar p-0">
-							   <ul class="nav navbar-nav flex-row ml-auto">
-							   <li class="dropdown nav-item active">
-							     <a class="nav-link" href="#" data-toggle="dropdown">
-								  <span class="material-icons">notifications</span>
-								  <span class="notification">4</span>
-								 </a>
-								  <ul class="dropdown-menu">
-								     <li><a href="#">You Have 4 New Messages</a></li>
-									 <li><a href="#">You Have 4 New Messages</a></li>
-									 <li><a href="#">You Have 4 New Messages</a></li>
-									 <li><a href="#">You Have 4 New Messages</a></li>
-								  </ul>
-							   </li>
+					 
+					 <div class="col-15 col-md-10 col-lg-11 order-1 order-md-5">
+						<div class="xp-profilebar text-right">
+						   <nav class="navbar p-0">
+							  <ul class="nav navbar-nav flex-row ml-auto">
+							  
 							   
 							   
 							   <li class="dropdown nav-item">
@@ -179,6 +155,22 @@
 						<div class="col-sm-6 p-0 flex justify-content-lg-start justify-content-center">
 						   <h2 class="ml-lg-2">Reservation Booked</h2>
 						</div>
+
+						<div class=" col-sm-6 p-0 flex justify-content-lg-end justify-content-center">
+									<div class="xp-searchbar">
+										<form>
+										   <div class="input-group">
+											 <input type="search" class="form-control"
+											 placeholder="Search">
+
+
+											 <div class="input-group-append">
+												<button class="btn" type="submit" id="button-addon2">Go
+												</button>
+											 </div>
+										   </div>
+										</form>
+									</div>
 
 						</div>
 					</div>

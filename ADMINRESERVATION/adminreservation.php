@@ -89,37 +89,16 @@
 						</div>
 					 </div>
 					 
-					 <div class="col-md-5 col-lg-3 order-3 order-md-2">
-					     <div class="xp-searchbar">
-						     <form>
-							    <div class="input-group">
-								  <input type="search" class="form-control"
-								  placeholder="Search">
-								  <div class="input-group-append">
-								     <button class="btn" type="submit" id="button-addon2">Go
-									 </button>
-								  </div>
-								</div>
-							 </form>
-						 </div>
-					 </div>
 					 
-					 
-					 <div class="col-10 col-md-6 col-lg-8 order-1 order-md-3">
+					 <div class="col-15 col-md-10 col-lg-11 order-1 order-md-5">
 					     <div class="xp-profilebar text-right">
 						    <nav class="navbar p-0">
+
 							   <ul class="nav navbar-nav flex-row ml-auto">
-							   <li class="dropdown nav-item active">
+							   <li class="">
 							     <a class="nav-link" href="#" data-toggle="dropdown">
-								  <span class="material-icons">notifications</span>
-								  <span class="notification">4</span>
+								  <span class=""></span>
 								 </a>
-								  <ul class="dropdown-menu">
-								     <li><a href="#">You Have 4 New Messages</a></li>
-									 <li><a href="#">You Have 4 New Messages</a></li>
-									 <li><a href="#">You Have 4 New Messages</a></li>
-									 <li><a href="#">You Have 4 New Messages</a></li>
-								  </ul>
 							   </li>
 							   
 							   
@@ -129,15 +108,15 @@
 								  <span class="xp-user-live"></span>
 								 </a>
 								  <ul class="dropdown-menu small-menu">
-								     <li><a href="#">
+								     <li><a href="../ADMINRESERVATION/editprofile2.html">
 									 <span class="material-icons">person_outline</span>
 									 Profile
 									 </a></li>
-									 <li><a href="#">
+									 <li><a href="../ADMINRESERVATION/setting.php">
 									 <span class="material-icons">settings</span>
 									 Settings
 									 </a></li>
-									 <li><a href="#">
+									 <li><a href="../ADMINRESERVATION/ADMINLOGOUT/adminlogout.php">
 									 <span class="material-icons">logout</span>
 									 Logout
 									 </a></li>
@@ -154,7 +133,7 @@
 				 </div>
 
 				 <div class="xp-breadcrumbbar text-center">
-				    <h4 class="page-title">Admin Dashboard</h4>
+				    <h4 class="page-title">RECENT RESERVATION</h4>
 					<ol class="breadcrumb">
 					  <li class="breadcrumb-item"><a href="#">Reservation</a></li>
 					  <li class="breadcrumb-item active" aria-curent="page">System</li>
@@ -179,6 +158,22 @@
 						<div class="col-sm-6 p-0 flex justify-content-lg-start justify-content-center">
 						   <h2 class="ml-lg-2">Reservation Booked</h2>
 						</div>
+
+						<div class=" col-sm-6 p-0 flex justify-content-lg-end justify-content-center">
+									<div class="xp-searchbar">
+										<form>
+										   <div class="input-group">
+											 <input type="search" class="form-control"
+											 placeholder="Search">
+
+
+											 <div class="input-group-append">
+												<button class="btn" type="submit" id="button-addon2">Go
+												</button>
+											 </div>
+										   </div>
+										</form>
+									</div>
 
 						</div>
 					</div>

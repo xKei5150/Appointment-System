@@ -35,7 +35,7 @@
 	 
 	 <nav id="sidebar">
 		<div class="sidebar-header">
-			<h3><img src="../ADMINRESERVATION/logo.png.png" class="img-fluid"/><span>Registrar</span></h3>
+			<h3><img src="../ADMINRESERVATION/logo.png.png" class="img-fluid"/><span>GYMNASUIM</span></h3>
 		</div>
 		<ul class="list-unstyled components">
 		<li  class="active">
@@ -60,7 +60,7 @@
 			</li>
 			
 		   <li class="">
-				<a href="viewappoint.html"><i class="material-icons">date_range</i><span>View Appointment</span></a>
+				<a href="../ADMINRESERVATION/adminreservation.php"><i class="material-icons">date_range</i><span>View Appointment</span></a>
 			</li>
 		
 		   
@@ -91,21 +91,10 @@
 					 
 
 					 <div class="col-15 col-md-10 col-lg-11 order-1 order-md-5">
-					     <div class="xp-profilebar text-right">
-						    <nav class="navbar p-0">
-							   <ul class="nav navbar-nav flex-row ml-auto">
-							   <li class="dropdown nav-item active">
-							     <a class="nav-link" href="#" data-toggle="dropdown">
-								  <span class="material-icons">notifications</span>
-								  <span class="notification">4</span>
-								 </a>
-								  <ul class="dropdown-menu">
-								     <li><a href="#">You Have 4 New Messages</a></li>
-									 <li><a href="#">You Have 4 New Messages</a></li>
-									 <li><a href="#">You Have 4 New Messages</a></li>
-									 <li><a href="#">You Have 4 New Messages</a></li>
-								  </ul>
-							   </li>
+						<div class="xp-profilebar text-right">
+						   <nav class="navbar p-0">
+							  <ul class="nav navbar-nav flex-row ml-auto">
+							  
 							   
 							   
 							   <li class="dropdown nav-item">
@@ -114,7 +103,7 @@
 								  <span class="xp-user-live"></span>
 								 </a>
 								  <ul class="dropdown-menu small-menu">
-								     <li><a href="../ADMINRESERVATION/editprofile.html">
+								     <li><a href="../ADMINRESERVATION/editprofile2.html">
 									 <span class="material-icons">person_outline</span>
 									 Profile
 									 </a></li>
