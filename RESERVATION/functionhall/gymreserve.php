@@ -19,12 +19,11 @@
   <nev class="web-start">
 	
 	<h1> Manuel S. Enverga University Foundation Candelaria Inc.</h1>
-  <h2> Fucntion Hall Reservation System </h2>
+  <h2> Function Hall Reservation System </h2>
 	
 	</nev>
 		<nav class="navigation">
 		<a href="../index.php" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" id="Home"><path d="M1472 992v480q0 26-19 45t-45 19h-384v-384H768v384H384q-26 0-45-19t-19-45V992q0-1 .5-3t.5-3l575-474 575 474q1 2 1 6zm223-69-62 74q-8 9-21 11h-3q-13 0-21-7L896 424l-692 577q-12 8-24 7-13-2-21-11l-62-74q-8-10-7-23.5t11-21.5l719-599q32-26 76-26t76 26l244 204V288q0-14 9-23t23-9h192q14 0 23 9t9 23v408l219 182q10 8 11 21.5t-7 23.5z" fill="#ffffff" class="color000000 svgShape"></path></svg></a>
-
 	</nav>
 </header>
 	
@@ -33,7 +32,7 @@
       <h1 align = center>Reservation</h1>
 
       <div style="text-align:center;">
-      <span class="step" id = "step-0">0</span>
+        <span class="step" id = "step-0">0</span>
         <span class="step" id = "step-1">1</span>
         <span class="step" id = "step-2">2</span>
         <span class="step" id = "step-3">3</span>
@@ -95,12 +94,12 @@
             <input  type="text" class="form-control" id="event" placeholder="Please enter here">
         </div>
         <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label">Purpose </label>
-        <textarea class="form-control" id="purpose" rows="3"></textarea>
+          <label for="exampleFormControlTextarea1" class="form-label" >Purpose </label>
+        <textarea class="form-control" id="purpose" rows="3" ></textarea>
         </div>
         <div class="index-btn-wrapper">
-          <div class="index-btn" onclick="run(3, 2);">Previous</div>
-          <div class="index-btn" onclick="run(3, 4);">Next</div>
+          <div class="index-btn" onclick="run(3, 2); ">Previous</div>
+          <div class="index-btn" onclick="run(3, 4); ">Next</div>
         </div>
       </div>
 
@@ -122,27 +121,89 @@
 
         <div class="index-btn-wrapper">
           <div class="index-btn" onclick="run(5, 4);">Previous</div>
-          <button class = "index-btn" id="submit" style = "background: blue;">Submit</button>
+          <button class = "index-btn" id="submit" style = "background: blue;" data-bs-toggle="modal" data-bs-target="#exampleModal">Submit</button>
           
   
         </div>
       </div>
-
-      <!-- <div class="modal-box">
-        <i class="fa-regular fa-circle-check"></i>
-        <h2>Completed</h2>
-        <h3>Your reservation booked sucessfully.</h3>
-        <h3>Please wait the approval that sent to your Email</h3>
-        <h4>Thank you!!</h4>
-        
-
-        <div class="buttons">
-          <button class="close-btn">Ok, Close</button>
-          
-        </div>
-      </div> -->
   
     </form>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-bottom-0">
+        <h5 class="modal-title" id="exampleModalLabel">Completed</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center py-4">
+        <i class="fa-regular fa-circle-check fa-3x text-danger mb-3"></i>
+        <h2 class="mb-3">Your reservation is booked successfully.</h2>
+        <h3 class="mb-3">Please wait for the approval that has been sent to your email.</h3>
+        <h4>Thank you!</h4>
+      </div>
+      <div class="modal-footer justify-content-center border-top-0">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal" id="closeButton">Ok, Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.modal-content {
+  border-radius: 0.5rem;
+  overflow: hidden; /* Ensures the border radius applies for child elements */
+}
+
+.modal-header, .modal-footer {
+  border: none;
+}
+
+.modal-title {
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn-close {
+  background: none;
+  opacity: 0.7;
+}
+
+.btn-close:hover {
+  opacity: 1;
+}
+
+/* Animation */
+.modal.fade .modal-dialog {
+  transition: transform 0.3s ease-out;
+  transform: translateY(-100px);
+}
+
+.modal.show .modal-dialog {
+  transform: translateY(0);
+}
+
+/* Button styling */
+#closeButton {
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 123, 255, 0.5);
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+#closeButton:hover {
+  background-color: maroon;
+  transform: translateY(-2px);
+}
+
+/* FontAwesome icon */
+.fa-circle-check {
+  color: maroon;
+}
+</style>
+
+
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Moment.js -->

@@ -5,7 +5,7 @@ if (isset($_POST['title'])) {
     $title = $_POST['title'];
 
     try {
-        $sql = "DELETE FROM tblrequirement2 WHERE title = :title";
+        $sql = "DELETE FROM tblrequirement1 WHERE title = :title";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':title', $title);
         $stmt->execute();

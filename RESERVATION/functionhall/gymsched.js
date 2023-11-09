@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+
     let availableDates = [];
 
     // Fetch available dates from the server
@@ -22,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     xhrDates.send();
-
 
     fetchAnnouncementsAndDisplayCarousel();
     
@@ -70,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
         xhr.send();
     }
 
-
     function fetchTimeslotsForDate(date) {
         const xhrTimeslots = new XMLHttpRequest();
         xhrTimeslots.open('GET', 'php_files/fetchTimeslot.php?date=' + date, true);
@@ -85,61 +85,69 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     let selectedButton = null;
     let selectedRow = null;
-
     function displayTimeslots(timeslots) {
         const timeslotsDiv = document.getElementById('timeslots');
         timeslotsDiv.className = "time";
         timeslotsDiv.innerHTML = "";
+    
+    // 'Whole Day' availability is set to 1 only if all timeslots are available
+    let isWholeDayAvailable = timeslots.every(timeslot => timeslot.availability == 1);
+        console.log(isWholeDayAvailable);
+    // Add 'Whole Day' option at the start of the array with conditional availability
+    timeslots.unshift({ timeslot: 'Whole Day', availability: isWholeDayAvailable ? 1 : 0 });
+    
 
-
+    
         timeslots.forEach(timeslot => {
             const rowDiv = document.createElement('div');
             rowDiv.className = "d-flex justify-content-between align-items-center mb-2 line";
-
+    
             const timeSpan = document.createElement('span');
             timeSpan.textContent = timeslot.timeslot;
             timeSpan.className = "tSpan";
             rowDiv.appendChild(timeSpan);
-
+    
             const radioWrapper = document.createElement('div');
             radioWrapper.className = "custom-control custom-radio";
-
+    
             const selectRadioButton = document.createElement('input');
             selectRadioButton.type = "radio";
             selectRadioButton.className = "custom-control-input";
             selectRadioButton.id = `radio-${Math.random().toString(36).substr(2, 9)}`; // Generate a random ID
             selectRadioButton.name = "timeSlotSelection"; // Give the same name to make them mutually exclusive
-
+    
             selectRadioButton.onchange = function() {
                 // Reset previous selected timeslot
                 if (selectedButton) {
                     selectedButton.checked = false;
                     selectedRow.classList.remove('bg-danger');
                 }
-
+    
                 // Set current selected timeslot
-                selectRadioButton.checked = true;
+                this.checked = true;
                 rowDiv.classList.add('bg-danger');
-
+    
                 // Store current selected button and row
-                selectedButton = selectRadioButton;
+                selectedButton = this;
                 selectedRow = rowDiv;
                 selectedDate = document.getElementById('datepicker').value;
                 selectedTimeslot = timeSpan.textContent;
             };
-
+    
             const radioLabel = document.createElement('label');
             radioLabel.className = "custom-control-label";
             radioLabel.htmlFor = selectRadioButton.id;
 
+    
             radioWrapper.appendChild(selectRadioButton);
             radioWrapper.appendChild(radioLabel);
+    
 
             if (timeslot.availability == 0) {
                 selectRadioButton.disabled = true;
                 rowDiv.classList.add('bg-light');
             }
-
+    
             rowDiv.appendChild(radioWrapper);
             timeslotsDiv.appendChild(rowDiv);
         });

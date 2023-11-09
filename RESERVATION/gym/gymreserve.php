@@ -138,13 +138,13 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body text-center py-4">
-        <i class="fa-regular fa-circle-check fa-3x text-success mb-3"></i>
+        <i class="fa-regular fa-circle-check fa-3x text-danger mb-3"></i>
         <h2 class="mb-3">Your reservation is booked successfully.</h2>
         <h3 class="mb-3">Please wait for the approval that has been sent to your email.</h3>
         <h4>Thank you!</h4>
       </div>
       <div class="modal-footer justify-content-center border-top-0">
-        <button type="button" class="btn btn-success" data-bs-dismiss="modal" id="closeButton">Ok, Close</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="closeButton">Ok, Close</button>
       </div>
     </div>
   </div>
@@ -162,6 +162,7 @@
 
 .modal-title {
   font-weight: bold;
+  text-align: center;
 }
 
 .btn-close {
@@ -191,13 +192,13 @@
 }
 
 #closeButton:hover {
-  background-color: #218838;
+  background-color: maroon;
   transform: translateY(-2px);
 }
 
 /* FontAwesome icon */
 .fa-circle-check {
-  color: #28a745;
+  color: maroon;
 }
 </style>
 

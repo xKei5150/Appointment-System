@@ -13,7 +13,7 @@ if (isset($_POST['name'], $_POST['cellnum'], $_POST['address'], $_POST['email'],
 
     try {
         // Store data
-        $stmt = $conn->prepare("INSERT INTO tblappointment2 (name, cellnum, address, email, date, timeslot) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO tblappointment1 (name, cellnum, address, email, date, timeslot) VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->execute([$name, $cellnum, $address, $email, $date, $timeslot]);
 
         // Reduce slot

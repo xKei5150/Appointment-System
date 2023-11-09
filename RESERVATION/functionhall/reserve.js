@@ -74,3 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
     xhr.send(`firstname=${firstname.value}&lastname=${lastname.value}&eu_id=${ID.value}&email=${email.value}&phone=${phone.value}&event=${event.value}&purpose=${purpose.value}&date=${selectedDate}&timeslot=${selectedTimeslot}`);
   });
 })
+
+document.getElementById('closeButton').addEventListener('click', function() {
+  window.location.reload();
+})

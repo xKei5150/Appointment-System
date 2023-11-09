@@ -4,7 +4,7 @@ require_once 'connection.php';
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET["id"])) {
     $announcementId = $_GET["id"];
 
-    $sql = "SELECT title, announcement FROM tblAnnouncement2 WHERE id = ?";
+    $sql = "SELECT title, announcement FROM tblAnnouncement1 WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->execute([$announcementId]);
 

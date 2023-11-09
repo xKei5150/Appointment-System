@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
 	
 	elseif($row['usertype']=="jhregistrar")   
 	{
-		header("location: ../ADMINAPPOINTMENT/JHregistrar/index1.html");
+		header("location: ../ADMINAPPOINTMENT/jsregistrar/index.html");
 		
 	}
 	elseif($row['usertype']=="emrc")   

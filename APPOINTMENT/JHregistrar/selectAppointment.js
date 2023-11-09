@@ -35,11 +35,24 @@ function setupSectionNavigation() {
 
     nextButton.addEventListener('click', (e) => {
         e.preventDefault();
-        if (currentSectionIndex < sections.length - 1) {
-            currentSectionIndex++;
-            showCurrentSection();
+        // Call the validation function for the current section
+        if (validateCurrentSection()) {
+            if (currentSectionIndex < sections.length - 1) {
+                currentSectionIndex++;
+                showCurrentSection();
+            }
         }
     });
+
+    function validateCurrentSection() {
+        // Depending on the current section, call the appropriate validation function
+        if(currentSectionIndex === 3) { // Assuming index 2 is "Basic Information" section
+            return validateBasicInfo(); // You need to implement validation for other sections if required
+        }
+        // If there's no validation needed for the current section or it's valid, return true
+        return true;
+    }
+
     finishButton.addEventListener('click', function() {
         const name = document.querySelector('input[name="name"]').value;
         const cellnum = document.querySelector('input[name="cellnum"]').value;
@@ -132,6 +145,7 @@ function updateSummary() {
         <p>${selectedDate}</p>
         <a>Timeslot: </a>
         <p>${selectedTimeslot}</p>
+
     `;
     console.log(summaryInfo);
     summaryInfo.innerHTML = summaryContent;
@@ -266,7 +280,7 @@ announce.style.display = 'none';
     </nav>
 
     <ul> Office </ul>
-    <h1> Junior High School Registrar </h1>
+    <h1> Junior High Registrar Office  </h1>
 
     <ul> Date / Time</ul>
     <h1> ${selectedDate}  ${selectedTimeslots}   </h1>
@@ -275,5 +289,40 @@ announce.style.display = 'none';
     `;
     ticketInfo.appendChild(btn);
 
+}
+
+
+function validateBasicInfo() {
+    // Get all input values
+    const name = document.getElementById("name").value.trim();
+    const cellnum = document.getElementById("cellnum").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const email = document.getElementById("email").value.trim();
+
+    // Check if the inputs are valid
+    if(name === "") {
+        alert("Please enter your name.");
+        return false;
+    }
+    if(cellnum === "" || isNaN(cellnum)) {
+        alert("Please enter a valid phone number.");
+        return false;
+    }
+    if(address === "") {
+        alert("Please enter your address.");
+        return false;
+    }
+    if(email === "" || !validateEmail(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+    }
+
+    return true; // Only return true if all validations pass
+}
+
+// Utility function to validate email
+function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
 }
 

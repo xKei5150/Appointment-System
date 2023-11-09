@@ -4,7 +4,7 @@ require_once 'connection.php';
 $title = $_GET['title'] ?? '';
 
 try {
-    $sql = "SELECT * FROM tblrequirement2 WHERE title = :title";  // Adjust the table and column names
+    $sql = "SELECT * FROM tblrequirement1 WHERE title = :title";  // Adjust the table and column names
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':title', $title);
     $stmt->execute();

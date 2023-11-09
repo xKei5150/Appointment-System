@@ -7,7 +7,7 @@ $requirements = $_POST['requirements'];
 try {
     foreach ($requirements as $requirement) {
         if (!empty(trim($requirement))) {
-            $stmt = $conn->prepare("INSERT INTO tblrequirement2 (title, requirement) VALUES (?, ?)");
+            $stmt = $conn->prepare("INSERT INTO tblrequirement1 (title, requirement) VALUES (?, ?)");
             $stmt->execute([$title, $requirement]);
         }
     }

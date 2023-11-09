@@ -280,7 +280,7 @@ announce.style.display = 'none';
     </nav>
 
     <ul> Office </ul>
-    <h1> Register Office  </h1>
+    <h1> Registrar Office  </h1>
 
     <ul> Date / Time</ul>
     <h1> ${selectedDate}  ${selectedTimeslots}   </h1>

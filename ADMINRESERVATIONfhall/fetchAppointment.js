@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 viewBtn.innerText = 'View';
                 viewBtn.classList.add('btn', 'btn-sm', 'btn-outline-info');
                 viewBtn.setAttribute('data-bs-toggle', 'modal');
+                viewBtn.dataset.id = appointment.id;
                 viewBtn.setAttribute('data-bs-target', '#viewreserveModal');
                 viewBtn.addEventListener("click", handleview);
 
@@ -149,41 +150,49 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     function handleview() {
-        // Get references to the HTML elements where you want to display data
-        const idList = document.getElementById("id-list");
-        const nameList = document.getElementById("name-list");
-        const addressList = document.getElementById("address-list");
-        const emailList = document.getElementById("email-list");
-        const dateList = document.getElementById("date-list");
-        const phoneList = document.getElementById("phone-list");
-        const eventList = document.getElementById("event-list");
-        const purposeList = document.getElementById("purpose-list");
-        const timeslotList = document.getElementById("timeslot-list");
+        const appointmentId = this.dataset.id; // Fetch the id from the clicked button
     
+        // Clear the previous details
+        const idList = document.getElementById("id-list");
+        idList.innerHTML = '';
+        const nameList = document.getElementById("name-list");
+        nameList.innerHTML = '';
+        const addressList = document.getElementById("address-list");
+        addressList.innerHTML = '';
+        const emailList = document.getElementById("email-list");
+        emailList.innerHTML = '';
+        const dateList = document.getElementById("date-list");
+        dateList.innerHTML = '';
+        const phoneList = document.getElementById("phone-list");
+        phoneList.innerHTML = '';
+        const eventList = document.getElementById("event-list");
+        eventList.innerHTML = '';
+        const purposeList = document.getElementById("purpose-list");
+        purposeList.innerHTML = '';
+        const timeslotList = document.getElementById("timeslot-list");
+        timeslotList.innerHTML = '';
+    
+        // Modify the request to include the appointment ID
         const xhr = new XMLHttpRequest();
-        xhr.open("GET", "php_files/fetchAppointment.php", true);
+        xhr.open("GET", `php_files/fetchAnAppointment.php?id=${appointmentId}`, true); // Send the ID to the PHP script
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
-                const data = JSON.parse(xhr.responseText);
+                const appointment = JSON.parse(xhr.responseText);
     
-                data.forEach(function (appointments) {
-                
-                    idList.innerHTML += `${appointments.id}`;
-                    nameList.innerHTML += `${appointments.firstname} ${appointments.lastname}`;
-                    addressList.innerHTML += `${appointments.eu_id}`;
-                    phoneList.innerHTML += `${appointments.phone}`;
-                    emailList.innerHTML += `${appointments.email}`;
-                    eventList.innerHTML += `${appointments.event}`;
-                    purposeList.innerHTML += `${appointments.purpose}`;
-                    dateList.innerHTML += `${appointments.date}`;
-                    timeslotList.innerHTML += `${appointments.timeslot}`;
-    
-                });
+                // Assuming response is a single appointment object
+                idList.innerHTML += appointment.id;
+                nameList.innerHTML += `${appointment.firstname} ${appointment.lastname}`;
+                addressList.innerHTML += appointment.eu_id;
+                phoneList.innerHTML += appointment.phone;
+                emailList.innerHTML += appointment.email;
+                eventList.innerHTML += appointment.event;
+                purposeList.innerHTML += appointment.purpose;
+                dateList.innerHTML += appointment.date;
+                timeslotList.innerHTML += appointment.timeslot;
             }
         };
         xhr.send();
     }
-    
     
 
     // Fetch data when page loads

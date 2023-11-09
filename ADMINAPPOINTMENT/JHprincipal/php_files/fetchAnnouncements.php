@@ -1,7 +1,7 @@
 <?php
 require_once 'connection.php';
 try {
-    $sql = "SELECT * FROM tblannouncement2";
+    $sql = "SELECT * FROM tblannouncement1";
     $stmt = $conn->query($sql);
 
     if ($stmt->rowCount() > 0) {

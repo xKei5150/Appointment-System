@@ -31,13 +31,13 @@
 							<a href="../APPOINTMENT/Registrar/selectAppointment.html">
 							<button type="submit" name="student">Registrar Office </button>
 							</a>
-							<a href="../APPOINTMENT/JSprincipaloffice/selectAppointment.html">
+							<a href="../APPOINTMENT/JHregistrar/selectAppointment.html">
 							<button type="submit" name="student"> Junior High Registrar Office </button>
 							</a>
 							<a href="../APPOINTMENT/deanoffice1/selectAppointment.html">
 							<button type="submit" name=""> Dean Office </button>
 							</a>
-							<a href="../APPOINTMENT/JSprincipaloffice/selectAppointment.html">
+							<a href="../APPOINTMENT/JHprincipal/selectAppointment.html">
 							<button type="submit" name="admin">Junior High School Prrincipal </button> 
 							</a>
 				</div>

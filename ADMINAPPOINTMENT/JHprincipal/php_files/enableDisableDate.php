@@ -5,7 +5,7 @@ if(isset($_POST['date'], $_POST['slots'])) {
     $date = $_POST['date'];
     $slots = $_POST['slots'];
 
-    $stmt = $conn->prepare("UPDATE tblschedule2 SET slots = :slots WHERE date = :date");
+    $stmt = $conn->prepare("UPDATE tblschedule1 SET slots = :slots WHERE date = :date");
     $stmt->execute(['date' => $date, 'slots' => $slots]);
 
     echo "Slots updated successfully!";

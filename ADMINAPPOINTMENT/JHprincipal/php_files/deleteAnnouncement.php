@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $announcementId = $_POST["id"];
 
         try {
-            $sql = "DELETE FROM tblAnnouncement2 WHERE id = :id";
+            $sql = "DELETE FROM tblAnnouncement1 WHERE id = :id";
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(":id", $announcementId);
             $stmt->execute();

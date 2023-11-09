@@ -7,7 +7,7 @@ $lastDayOfCurrentMonth = date('Y-m-t', strtotime($today));
 $daysLeft = date_diff(new DateTime($today), new DateTime($lastDayOfCurrentMonth))->days + 1;
 
 // Delete past date
-$stmt = $conn->prepare("DELETE FROM tblschedule1 WHERE date < :today");
+$stmt = $conn->prepare("DELETE FROM tblschedule2 WHERE date < :today");
 $stmt->execute(['today' => $today]);
 
 $startDate = $today;
@@ -19,7 +19,7 @@ if ($daysLeft <= 7) {
 }
 
 // Fetch existing schedules
-$stmt = $conn->prepare("SELECT date, timeslot, slots FROM tblschedule1 WHERE date BETWEEN :startDate AND :endDate ORDER BY id ASC, timeslot");
+$stmt = $conn->prepare("SELECT date, timeslot, slots FROM tblschedule2 WHERE date BETWEEN :startDate AND :endDate ORDER BY id ASC, timeslot");
 $stmt->execute(['startDate' => $startDate, 'endDate' => $endDate]);
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
