@@ -2,7 +2,7 @@
 require_once 'connection.php';
 
 try {
-    $sql = "SELECT * FROM tblappointment ";
+    $sql = "SELECT * FROM tblappointment";
     $stmt = $conn->query($sql);
 
     if ($stmt->rowCount() > 0) {

@@ -12,27 +12,42 @@ if (isset($_POST['firstname'])) {
     $date = $_POST['date'];
     $timeslot = $_POST['timeslot'];
 
-    $conn->beginTransaction();
-
     try {
+        // Begin transaction
+        $conn->beginTransaction();
+
         // Store data
-        $stmt = $conn->prepare("INSERT INTO tblappointment (firstname, lastname, eu_id, phone, email, event, purpose, date, timeslot , status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ? , 'pending')");
+        $stmt = $conn->prepare("INSERT INTO tblappointment (firstname, lastname, eu_id, phone, email, event, purpose, date, timeslot, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending')");
         $stmt->execute([$firstname, $lastname, $eu_id, $phone, $email, $event, $purpose, $date, $timeslot]);
 
         // Reduce slot
-        $stmt = $conn->prepare("UPDATE tblschedule SET availability = availability - 1 WHERE date = ? AND timeslot = ? AND availability > 0");
-        $stmt->execute([$date, $timeslot]);
+        if ($timeslot == 'Whole Day') {
+            // An array of individual timeslots that comprise the 'Whole Day'
+            $individualTimeslots = ['Morning', 'Afternoon', 'Night'];
+
+            // Prepare the statement outside of the loop
+            $stmt = $conn->prepare("UPDATE tblschedule SET availability = 0 WHERE date = ? AND timeslot = ?");
+    
+            // Update each individual timeslot's availability
+            foreach ($individualTimeslots as $individualTimeslot) {
+                $stmt->execute([$date, $individualTimeslot]);
+            }
+        } else {
+            // Update the availability of a specific timeslot
+            $stmt = $conn->prepare("UPDATE tblschedule SET availability = 0 WHERE date = ? AND timeslot = ? AND availability > 0");
+            $stmt->execute([$date, $timeslot]);
+        }
 
         // Commit transaction
         $conn->commit();
         echo "success";
     } catch (Exception $e) {
+        // Roll back transaction
         $conn->rollBack();
         echo "error: " . $e->getMessage();
     }
 } else {
     echo "invalid";
     var_dump($_POST);
-    exit;
 }
 ?>

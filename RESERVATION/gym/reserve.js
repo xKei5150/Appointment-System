@@ -1,5 +1,5 @@
  $(".tab").css("display", "none");
-      $("#tab-1").css("display", "block");
+      $("#tab-0").css("display", "block");
       function run(hideTab, showTab){
         if(showTab=== 4) {
           populateSummary();
@@ -9,13 +9,12 @@
           var currentTab = 0;
           x = $('#tab-'+hideTab);
           y = $(x).find("input")
-          for (i = 0; i < y.length; i++){
+          for (i = 1; i < y.length; i++){
             if (y[i].value == ""){
               $(y[i]).css("background", "#fc8c8c");
               return false;
             }  
           }
-         
         }
 
         // Progress bar
@@ -73,4 +72,13 @@ document.addEventListener("DOMContentLoaded", function() {
     };
     xhr.send(`firstname=${firstname.value}&lastname=${lastname.value}&eu_id=${ID.value}&email=${email.value}&phone=${phone.value}&event=${event.value}&purpose=${purpose.value}&date=${selectedDate}&timeslot=${selectedTimeslot}`);
   });
+}
+
+
+
+)
+
+
+document.getElementById('closeButton').addEventListener('click', function() {
+  window.location.reload();
 })

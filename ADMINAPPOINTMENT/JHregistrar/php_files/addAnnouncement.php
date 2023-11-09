@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST["title"];
     $details = $_POST["details"];
 
-    $sql = "INSERT INTO tblAnnouncement (title, announcement) VALUES (?, ?)";
+    $sql = "INSERT INTO tblAnnouncement1 (title, announcement) VALUES (?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->execute([$title, $details]);
 

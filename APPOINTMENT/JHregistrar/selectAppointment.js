@@ -128,6 +128,10 @@ function updateSummary() {
         <p>${address}</p>
         <a>Email: </a>
         <p>${email}</p>
+        <a>Date: </a>
+        <p>${selectedDate}</p>
+        <a>Timeslot: </a>
+        <p>${selectedTimeslot}</p>
     `;
     console.log(summaryInfo);
     summaryInfo.innerHTML = summaryContent;
@@ -262,7 +266,7 @@ announce.style.display = 'none';
     </nav>
 
     <ul> Office </ul>
-    <h1> Register Office  </h1>
+    <h1> Junior High School Registrar </h1>
 
     <ul> Date / Time</ul>
     <h1> ${selectedDate}  ${selectedTimeslots}   </h1>

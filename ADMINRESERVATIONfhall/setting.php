@@ -98,7 +98,7 @@
 							   
 							   <li class="dropdown nav-item">
 							     <a class="nav-link" href="#" data-toggle="dropdown">
-								  <img src="img/user.jpg" style="width:40px; border-radius:50%;"/>
+								  <img src="../ADMINAPPOINTMENT/8b167af653c2399dd93b952a48740620.jpg" style="width:40px; border-radius:50%;"/>
 								  <span class="xp-user-live"></span>
 								 </a>
 								  <ul class="dropdown-menu small-menu">
@@ -254,7 +254,7 @@
 	<footer class="footer">
 	   <div class="container-fluid">
 		  <div class="footer-in">
-			 <p class="mb-0">&copy 2021 Vishweb Design . All Rights Reserved.</p>
+			 <p class="mb-0">Justine Pier M. Anonuevo, Angelo Benedict M. Acuzar</p>
 		  </div>
 	   </div>
 	</footer>

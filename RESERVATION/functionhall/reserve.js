@@ -1,5 +1,5 @@
  $(".tab").css("display", "none");
-      $("#tab-1").css("display", "block");
+      $("#tab-0").css("display", "block");
       function run(hideTab, showTab){
         if(showTab=== 4) {
           populateSummary();

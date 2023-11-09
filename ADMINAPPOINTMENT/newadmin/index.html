@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -100,7 +101,7 @@
 							   
 							   <li class="dropdown nav-item">
 							     <a class="nav-link" href="#" data-toggle="dropdown">
-								  <img src="img/user.jpg" style="width:40px; border-radius:50%;"/>
+								  <img src="../8b167af653c2399dd93b952a48740620.jpg" style="width:40px; border-radius:50%;"/>
 								  <span class="xp-user-live"></span>
 								 </a>
 								  <ul class="dropdown-menu small-menu">
@@ -215,31 +216,33 @@
 								 </div>
 
 
-								 <div class="modal" tabindex="-1" id="editModal">
-								   <div class="modal-dialog">
-									   <div class="modal-content">
-										   <div class="modal-header">
-											   <h5 class="modal-title">Edit Announcement</h5>
-										   </div>
-										   <div class="modal-body"   >
-											<form id="announcementForm">
-											<label  for="title">Announcement Title</label>
-											<div class="form-floating">
-												<input type="text" class="form-control" id="title" name="title" placeholder="Enter Title">
-											   </div>
-											<label for="details">Description</label>
-											<div class="form-floating">
-												<textarea class="form-control" placeholder="Leave a Description here." id="details" name="details" style="height: 100px"></textarea>
-											</div>
-											
+								 <div class="modal" tabindex="-1" id="addAnnouncement">
+									<div class="modal-dialog">
+									  <div class="modal-content">
+										<div class="modal-header">
+										  <h5 id="announcementHeader">ADD ANNOUNCEMENT</h5>
+										  <!--<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
 										</div>
-										   <div class="modal-footer">
-											   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-											   <button type="button" id="saveChangesBtn" class="btn btn-danger">Save changes</button>
-										   </div>
-									   </div>
-								   </div>
-							   </div>
+										  <div class="modal-body"   >
+											  <form id="announcement1Form">
+											  <label  for="title">Announcement Title</label>
+											  <div class="form-floating">
+												  <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title">
+												 </div>
+											  <label for="details">Description</label>
+											  <div class="form-floating">
+												  <textarea class="form-control" placeholder="Leave a Description here." id="details" name="details" style="height: 100px"></textarea>
+											  </div>
+											  
+										  </div>
+										  <div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+											<button type="submit" id="saveChangesAnn"  class="btn btn-danger">Update</button>
+										</div>
+										  </form>
+									  </div>
+								  </div>
+
 		  
 							   <div class="modal fade" tabindex="-1" id="deleteEmployeeModal" role="dialog">
 								   <div class="modal-dialog" role="document">
@@ -276,7 +279,7 @@
 	<footer class="footer">
 	   <div class="container-fluid">
 		  <div class="footer-in">
-			 <p class="mb-0">&copy 2021 Vishweb Design . All Rights Reserved.</p>
+			 <p class="mb-0">Justine Pier M. Anonuevo, Angelo Benedict M. Acuzar</p>
 		  </div>
 	   </div>
 	</footer>

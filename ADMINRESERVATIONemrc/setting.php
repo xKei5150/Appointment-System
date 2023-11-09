@@ -35,7 +35,7 @@
 	 
 	 <nav id="sidebar">
 		<div class="sidebar-header">
-			<h3><img src="../ADMINRESERVATIONemrc/logo.png.png" class="img-fluid"/><span>Registrar</span></h3>
+			<h3><img src="../ADMINRESERVATIONemrc/logo.png.png" class="img-fluid"/><span>EMRC ADMIN</span></h3>
 		</div>
 		<ul class="list-unstyled components">
 		<li  class="active">
@@ -97,11 +97,11 @@
 							   
 							   <li class="dropdown nav-item">
 							     <a class="nav-link" href="#" data-toggle="dropdown">
-								  <img src="img/user.jpg" style="width:40px; border-radius:50%;"/>
+								  <img src="../ADMINAPPOINTMENT/8b167af653c2399dd93b952a48740620.jpg" style="width:40px; border-radius:50%;"/>
 								  <span class="xp-user-live"></span>
 								 </a>
 								  <ul class="dropdown-menu small-menu">
-								     <li><a href="../ADMINRESERVATIONemrc/editprofile.html">
+								     <li><a href="../ADMINRESERVATIONemrc/editprofile2.html">
 									 <span class="material-icons">person_outline</span>
 									 Profile
 									 </a></li>
@@ -253,7 +253,7 @@
 	<footer class="footer">
 	   <div class="container-fluid">
 		  <div class="footer-in">
-			 <p class="mb-0">&copy 2021 Vishweb Design . All Rights Reserved.</p>
+			 <p class="mb-0">Justine Pier M. Anonuevo, Angelo Benedict M. Acuzar</p>
 		  </div>
 	   </div>
 	</footer>

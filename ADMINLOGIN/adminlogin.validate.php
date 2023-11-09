@@ -11,9 +11,20 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
 	$num_rows =mysqli_query($con,$query);
 	$row = mysqli_fetch_array($num_rows);
 
-	if($row['usertype']=="registrar1")
+	if($row['usertype']=="registrar")
 	{
 		header("location: ../ADMINAPPOINTMENT/newadmin/index.html");
+
+		
+		// if($num_rows)
+		// {
+		// 	$_SESSION['username'] = $user;
+		// 	header("location: ../ADMINRESERVATION/index.html");
+		// }else{
+		// 	$_SESSION['status'] = "Email / Password is Invalid";
+		// 	header("location: ../ADMINLOGIN/adminloginindex.php");
+		// }
+		
 	}		
 	elseif($row['usertype']=="gymnasium")   
 	{
@@ -26,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
 		
 	}
 	
-	elseif($row['usertype']=="JHregistrar")   
+	elseif($row['usertype']=="jhregistrar")   
 	{
 		header("location: ../ADMINAPPOINTMENT/JHregistrar/index1.html");
 		
@@ -36,14 +47,20 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
 		header("location: ../ADMINRESERVATIONemrc/index.html");
 		
 	}
-	elseif($row['usertype']=="Function Hall")   
+	elseif($row['usertype']=="fhall")   
 	{
 		header("location: ../ADMINRESERVATIONfhall/index.html");
 		
 	}
+
+	elseif($row['usertype']=="jhprincipal")   
+	{
+		header("location: ../ADMINAPPOINTMENT/JHprincipal/index.html");
+		
+	}
 	else
 	{
-		echo "<script type='text/javascript'> alert('Error'); </script>";
+		echo "<script>alert('user and password not match'); window.location.href=' ../ADMINLOGIN/adminloginindex.php'; </script>";
 	}
 }
 

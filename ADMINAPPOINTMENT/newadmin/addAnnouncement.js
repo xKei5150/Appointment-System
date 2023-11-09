@@ -99,10 +99,11 @@
             const editButton = document.createElement('button');
             editButton.innerHTML = '<i class="fa-regular fa-pen-to-square"></i>';
             editButton.classList.add('btn', 'btn-sm');
-            editButton.setAttribute('data-bs-toggle', 'modal');
-            editButton.setAttribute('data-bs-target', '#editModal');
+
             editButton.dataset.id = announcement.id;
-            editButton.addEventListener("click", handleEdit);
+            editButton.addEventListener("click", function() {
+                handleEdit.call(this);
+            });
             actionCell.appendChild(editButton);
 
             const deleteButton = document.createElement('button');
@@ -153,25 +154,22 @@
 
             xhr.onload = function () {
                 if (xhr.status === 200) {
-                    const announcements = JSON.parse(xhr.responseText);
-
-                    document.getElementById("title").value = announcements.title;
-                    document.getElementById("details").value = announcements.announcement;
-
-
-                    // Update the form submit button text
-                    document.querySelector("#announcementForm button[type=submit]").innerText = "Update";
-                    announcementModalHeader.innerText = "Edit Announcement";
-                    const submitButton = document.querySelector("#announcementForm button[type=submit]");
+                    const announcement = JSON.parse(xhr.responseText);
+                    document.getElementById("title").value = announcement.title;
+                    document.getElementById("details").value = announcement.announcement; // Make sure the property name matches your JSON
+        
+                    // Update the form for edit mode
+                    const submitButton = document.getElementById("saveChangesAnn");
                     submitButton.innerText = "Update";
-                    submitButton.dataset.id = announcementId;
-
-                    showModal();
+                    submitButton.dataset.id = announcementId; // Ensure this id is used in the form submission
+        
+                    // Trigger the modal as edit mode
+                    new bootstrap.Modal(document.getElementById('addAnnouncementModal')).show();
                 } else {
-                    console.log("Failed to fetch announcement details: " + xhr.status);
+                    // Handle errors properly here
+                    console.error("Failed to fetch announcement details: " + xhr.status);
                 }
             };
-
             xhr.send();
         }
 

@@ -23,6 +23,54 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     xhrDates.send();
 
+
+    fetchAnnouncementsAndDisplayCarousel();
+    
+    function fetchAnnouncementsAndDisplayCarousel() {
+        const carouselInner = document.getElementById("carouselInner");
+        const carouselIndicators = document.getElementById("carouselIndicators");
+    
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "php_files/fetchAnnouncements.php", true);
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                const announcements = JSON.parse(xhr.responseText);
+                if (announcements.length > 0) {
+                    announcements.forEach((announcement, index) => {
+                        const announcementItem = document.createElement("div");
+                        announcementItem.classList.add("carousel-item");
+                        if (index === 0) {
+                            announcementItem.classList.add("active");
+                        }
+                        const announcementTitle = document.createElement("div");
+                        announcementTitle.classList.add('announcement-title','titleannounce');
+                        announcementTitle.textContent = announcement.title;
+                        const announcementDisc = document.createElement("div");
+                        announcementDisc.classList.add('announcement-desc', 'fw-lightttt');
+                        announcementDisc.textContent = announcement.announcement;
+                        announcementItem.appendChild(announcementTitle);
+                        announcementItem.appendChild(announcementDisc);
+                        carouselInner.appendChild(announcementItem);
+    
+                        const indicator = document.createElement("li");
+                        indicator.setAttribute("data-bs-target", "#announcementSlider");
+                        indicator.setAttribute("data-bs-slide-to", index);
+                        if (index === 0) {
+                            indicator.classList.add("active");
+                        }
+                        carouselIndicators.appendChild(indicator);
+                    });
+                } else {
+                    carouselInner.innerHTML = "No announcements found.";
+                }
+            } else {
+                console.log("Failed to fetch announcements: " + xhr.status);
+            }
+        };
+        xhr.send();
+    }
+
+
     function fetchTimeslotsForDate(date) {
         const xhrTimeslots = new XMLHttpRequest();
         xhrTimeslots.open('GET', 'php_files/fetchTimeslot.php?date=' + date, true);

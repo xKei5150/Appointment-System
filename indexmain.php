@@ -12,7 +12,7 @@
 	<nev class="web-start">
 
 	<div class="logo-image">
-            <img src="logo.png.png" alt="">
+            <img src="./cbf6c8ee-f1fa-4f5c-8006-2955f3dbc22f-removebg-preview.png" alt="">
         </div>
 	<h1> Manuel S. Enverga University Foundation</h1>
 	<h2>Candelaria Inc. </h2>
@@ -29,7 +29,7 @@
 		<a href="../Finalsystem/APPOINTMENT/index.php">
 		<button type="submit" class="btn"><i class="uil uil-user-check"></i> Student / Visitors </button>
 		</a>
-		<a href="../Finalsystem/RESERVATION/code/codeindex.php">
+		<a href="../Finalsystem/code/codeindex.php">
 		<button  type="submit" class="btn1"><i class="uil uil-users-alt"></i> Teachers Only </button>
 		</a>
 		<br><br>

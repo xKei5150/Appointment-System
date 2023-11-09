@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $reserveId = $_POST["id"];
 
         try {
-            $sql = "DELETE FROM tblappointment  WHERE id = :id";
+            $sql = "DELETE FROM tblappointment2  WHERE id = :id";
             $stmt = $conn->prepare($sql);
             $stmt->execute([':id' => $reserveId]);
 

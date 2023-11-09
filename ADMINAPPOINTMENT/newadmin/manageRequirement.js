@@ -90,6 +90,8 @@ function fetchAndPopulateModal(title) {
     xhr.send();
 }
 
+
+
 function populateModal(title, requirements) {
     // Set the title
     document.getElementById('editTitle').value = title;
@@ -138,16 +140,30 @@ document.getElementById('saveChangesBtn').addEventListener('click', function() {
     xhr.open('POST', 'php_files/editRequirement.php', true);
     xhr.onload = function() {
         if (this.status === 200) {
+            location.reload();
             alert(this.responseText);
 
             document.getElementById('editForm').reset();
             $('#editModal').modal('hide');
             location.reload();
         } else {
+            location.reload();
             alert('An error occurred while saving the data.');
         }
     };
     xhr.send(formData);
+});
+
+document.getElementById('addRequirementBtn').addEventListener('click', function() {
+    const newRequirement = document.createElement('div');
+    newRequirement.classList.add('form-group');
+
+    const newInput = document.createElement('input');
+    newInput.type = 'text';
+    newInput.classList.add('form-control');
+
+    newRequirement.appendChild(newInput);
+    document.getElementById('requirements').appendChild(newRequirement);
 });
 
 
@@ -189,11 +205,13 @@ document.getElementById('submitTabBtn').addEventListener('click', function() {
     xhr.open('POST', 'php_files/addRequirement.php', true);
     xhr.onload = function() {
         if (this.status == 200) {
+            location.reload();
             alert(this.responseText);
 
             document.getElementById('addTabForm').reset();
             resetModal();
         } else {
+            location.reload();
             alert('An error occurred while saving the data.');
         }
     };
@@ -236,9 +254,11 @@ function deleteRequirement(title) {
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onload = function() {
         if (this.status === 200 && this.responseText === "success") {
+            location.reload();
             alert('Requirement deleted successfully.');
             // Refresh the requirements list or do other UI updates here
         } else {
+            location.reload();
             alert('Error deleting requirement.');
         }
     };

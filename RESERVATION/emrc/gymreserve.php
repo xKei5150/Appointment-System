@@ -19,12 +19,12 @@
   <nev class="web-start">
 	
 	<h1> Manuel S. Enverga University Foundation Candelaria Inc.</h1>
-  <h2> EMRC Facility Reservation System </h2>
+  <h2> EMRC Reservation System </h2>
 	
 	</nev>
 		<nav class="navigation">
-		<a href="../index.php" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="Back"><path d="M22,15H12.41l2.3-2.29a1,1,0,0,0-1.42-1.42l-4,4a1,1,0,0,0-.21.33,1,1,0,0,0,0,.76,1,1,0,0,0,.21.33l4,4a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L12.41,17H22a1,1,0,0,0,0-2Z" fill="#ffffff" class="color000000 svgShape"></path></svg></a>
-		<button class="btnappoint-popup" id="button">Reserve Facility</button>
+		<a href="../index.php" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" id="Home"><path d="M1472 992v480q0 26-19 45t-45 19h-384v-384H768v384H384q-26 0-45-19t-19-45V992q0-1 .5-3t.5-3l575-474 575 474q1 2 1 6zm223-69-62 74q-8 9-21 11h-3q-13 0-21-7L896 424l-692 577q-12 8-24 7-13-2-21-11l-62-74q-8-10-7-23.5t11-21.5l719-599q32-26 76-26t76 26l244 204V288q0-14 9-23t23-9h192q14 0 23 9t9 23v408l219 182q10 8 11 21.5t-7 23.5z" fill="#ffffff" class="color000000 svgShape"></path></svg></a>
+
 	</nav>
 </header>
 	
@@ -33,10 +33,29 @@
       <h1 align = center>Reservation</h1>
 
       <div style="text-align:center;">
+      <span class="step" id = "step-0">0</span>
         <span class="step" id = "step-1">1</span>
         <span class="step" id = "step-2">2</span>
         <span class="step" id = "step-3">3</span>
         <span class="step" id = "step-4">4</span>
+      </div>
+
+      <div class="tab" id = "tab-0">
+
+      <h3>REMINDERS:</h3>
+
+      <div class="announce " id="announce">
+        <div class="circle">
+        <div id="announcementSlider" class="carousel slide" data-bs-ride="carousel" >
+            <ol class="carousel-indicators" id="carouselIndicators"></ol>
+            <div class="carousel-inner" id="carouselInner">
+            </div>
+        </div>
+     </div>
+</div>
+        <div class="index-btn-wrapper">
+          <div class="index-btn" onclick="run(0, 1);">Next</div>
+        </div>
       </div>
 
       <div class="tab" id = "tab-1">
@@ -51,6 +70,7 @@
 
       
         <div class="index-btn-wrapper">
+        <div class="index-btn" onclick="run(1, 0);" class="fa-solid fa-backward-step">Previous</div>
           <div class="index-btn" onclick="run(1, 2);">Next</div>
         </div>
       </div>

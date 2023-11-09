@@ -1,7 +1,7 @@
 <?php
 require_once 'connection.php';
 try {
-    $sql = "SELECT * FROM tblrequirement ";
+    $sql = "SELECT * FROM tblrequirement1 ";
     $stmt = $conn->query($sql);
 
     if ($stmt->rowCount() > 0) {

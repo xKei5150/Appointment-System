@@ -128,6 +128,10 @@ function updateSummary() {
         <p>${address}</p>
         <a>Email: </a>
         <p>${email}</p>
+        <a>Date: </a>
+        <p>${selectedDate}</p>
+        <a>Timeslot: </a>
+        <p>${selectedTimeslot}</p>
     `;
     console.log(summaryInfo);
     summaryInfo.innerHTML = summaryContent;

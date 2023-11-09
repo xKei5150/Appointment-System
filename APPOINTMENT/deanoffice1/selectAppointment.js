@@ -1,29 +1,40 @@
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById('requirementDiv').style.display = 'none';
-    document.getElementById('prevButton').style.display = 'none';
-    document.getElementById('nextButton').style.display = 'none';
-
     setupSectionNavigation();
     fetchAnnouncementsAndDisplayCarousel();
     fetchRequirements();
+
+    // Hide all sections initially
+    hideAllSections();
+    // Then show the first section
+    showCurrentSection();
 });
 
-// Global Variables
 const sections = document.querySelectorAll('.form');
-let currentSectionIndex = -1;
+let currentSectionIndex = 0; // Start with the first section
+
+function hideAllSections() {
+    sections.forEach((section) => {
+        section.style.display = 'none';
+    });
+}
 
 function setupSectionNavigation() {
     const prevButton = document.getElementById('prevButton');
     const nextButton = document.getElementById('nextButton');
     const finishButton = document.getElementById('finishButton');
-    const button = document.getElementById('button');
+    prevButton.style.display = 'none';
+    finishButton.style.display = 'none';
+    nextButton.style.display = 'none';
 
-    
-    
-    button.addEventListener('click', () => {
-        currentSectionIndex = 0;
-        showCurrentSection();
-    });
+
+    // Assuming there is a button to start the form which is not detailed in the code provided
+    const startButton = document.getElementById('button');
+    if (startButton) {
+        startButton.addEventListener('click', () => {
+            currentSectionIndex = 0;
+            showCurrentSection();
+        });
+    }
 
     prevButton.addEventListener('click', (e) => {
         e.preventDefault();
@@ -40,6 +51,7 @@ function setupSectionNavigation() {
             showCurrentSection();
         }
     });
+
     finishButton.addEventListener('click', function() {
         const name = document.querySelector('input[name="name"]').value;
         const cellnum = document.querySelector('input[name="cellnum"]').value;
@@ -70,40 +82,42 @@ function setupSectionNavigation() {
     });
     
     
-    showCurrentSection();
+    hideAllSections();
     
 }
 
 function showCurrentSection() {
+    // Hide all sections first
+    hideAllSections();
+
+    // Then show the current section
+    if (currentSectionIndex >= 0 && currentSectionIndex < sections.length) {
+        sections[currentSectionIndex].style.display = 'block';
+    }
+
+    // Update button visibility
+    updateButtonVisibility();
+}
+
+function updateButtonVisibility() {
     const prevButton = document.getElementById('prevButton');
     const nextButton = document.getElementById('nextButton');
     const finishButton = document.getElementById('finishButton');
 
-    sections.forEach((section, index) => {
-        if (index === currentSectionIndex) {
-            section.style.display = 'block';
-        } else {
-            section.style.display = 'none';
-        }
-    });
+    // Hide all navigation buttons initially
+    prevButton.style.display = 'none';
+    nextButton.style.display = 'none';
+    finishButton.style.display = 'none';
 
-    if (currentSectionIndex === 0) {
-        prevButton.style.display = 'none';
-        nextButton.style.display = 'none';
-        finishButton.style.display = 'none';
-    } else if (currentSectionIndex === sections.length - 2) {
+    // Show navigation buttons based on the current section
+    if (currentSectionIndex > 0) {
         prevButton.style.display = 'block';
-        nextButton.style.display = 'none';
-        finishButton.style.display = 'block';
-        updateSummary();
-    } else if (currentSectionIndex > 0 && currentSectionIndex < sections.length - 2) {
-        prevButton.style.display = 'block';
+    }
+    if (currentSectionIndex < sections.length - 1) {
         nextButton.style.display = 'block';
-        finishButton.style.display = 'none';
-     } else {
-        prevButton.style.display = 'none';
-        nextButton.style.display = 'none';
-        finishButton.style.display = 'none';
+    }
+    if (currentSectionIndex === sections.length - 1) {
+        finishButton.style.display = 'block';
     }
 }
 
@@ -128,6 +142,10 @@ function updateSummary() {
         <p>${address}</p>
         <a>Email: </a>
         <p>${email}</p>
+        <a>Date: </a>
+        <p>${selectedDate}</p>
+        <a>Timeslot: </a>
+        <p>${selectedTimeslot}</p>
     `;
     console.log(summaryInfo);
     summaryInfo.innerHTML = summaryContent;
@@ -177,39 +195,39 @@ function fetchAnnouncementsAndDisplayCarousel() {
     xhr.send();
 }
 
-function fetchRequirements() {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'php_files/fetchRequirements.php', true);
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            const requirements = JSON.parse(xhr.responseText);
-            displayTitlesAsButtons(requirements);
-        } else {
-            console.error('Failed to fetch requirements.');
-        }
-    };
-    xhr.send();
-}
+// function fetchRequirements() {
+//     const xhr = new XMLHttpRequest();
+//     xhr.open('GET', 'php_files/fetchRequirements.php', true);
+//     xhr.onload = function() {
+//         if (xhr.status === 200) {
+//             const requirements = JSON.parse(xhr.responseText);
+//             displayTitlesAsButtons(requirements);
+//         } else {
+//             console.error('Failed to fetch requirements.');
+//         }
+//     };
+//     xhr.send();
+// }
 
-function displayTitlesAsButtons(requirements) {
-    const requirementDiv = document.getElementById('requirement');
-    requirementDiv.className= "requirebtn";
+// function displayTitlesAsButtons(requirements) {
+//     const requirementDiv = document.getElementById('requirement');
+//     requirementDiv.className= "requirebtn";
 
 
-    requirements.forEach((requirement) => {
-        let btn = document.createElement('button');
-        btn.textContent = requirement.title;
-        btn.classList.add('btn', 'btn-primary', 'm-2' , 'menubtn' );
+//     requirements.forEach((requirement) => {
+//         let btn = document.createElement('button');
+//         btn.textContent = requirement.title;
+//         btn.classList.add('btn', 'btn-primary', 'm-2' , 'menubtn' );
 
-        btn.addEventListener('click', function() {
-            currentSectionIndex++; // Move to the next section
-            displayRequirementList(requirement);
-            showCurrentSection();
-        });
+//         btn.addEventListener('click', function() {
+//             currentSectionIndex++; // Move to the next section
+//             displayRequirementList(requirement);
+//             showCurrentSection();
+//         });
 
-        requirementDiv.appendChild(btn);
-    });
-}
+//         requirementDiv.appendChild(btn);
+//     });
+// }
 
 
 function displayRequirementList(requirement) {
@@ -262,14 +280,15 @@ announce.style.display = 'none';
     </nav>
 
     <ul> Office </ul>
-    <h1> Register Office  </h1>
+    <h1> Dean office  </h1>
 
     <ul> Date / Time</ul>
     <h1> ${selectedDate}  ${selectedTimeslots}   </h1>
-    
+
    
     `;
     ticketInfo.appendChild(btn);
 
 }
+
 
