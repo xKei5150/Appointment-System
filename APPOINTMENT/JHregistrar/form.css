@@ -119,24 +119,21 @@ header {
     /* margin-left: -650px;
     margin-top: 90px; */
     background : #F3F3F3;
-    border: 4px solid #900002;
+    border: 4px solid #7d001e;
     border-radius: 5px;
     backdrop-filter: blur(25px);
     box-shadow:0 0 3px 3px;
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .wrapper .announce
 {
-    width: 550px;
-    height: 650px;
-    /* margin-left: -650px;
-    margin-top: 90px; */
+    width: 553px;
+    height: 490px;
     background : #F3F3F3;
-    border: 4px solid #900002;
+    border: 4px solid #7d001e;
     border-radius: 5px;
     backdrop-filter: blur(25px);
     background: url("../Registrar/msg1460567988-1444\ \(1\).jpg");
@@ -146,7 +143,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 15%;
 
     
 }
@@ -176,10 +173,10 @@ header {
 .input-box
 {
     width: 400px;
-    height: 450px;
+    height: 400px;
     position: relative;
     background : #F3F3F3;
-    border: 4px solid #900002;
+    border: 4px solid #7d001e;
     border-radius: 20px;
     backdrop-filter: blur(25px);
     box-shadow:0 0 3px 3px;
@@ -187,6 +184,7 @@ header {
     justify-content: center;
     align-items: center;
     margin-left: 200px;
+    padding-top: 15px;
 }
 
 .input-box .icon{
@@ -199,7 +197,7 @@ header {
     justify-content: left;
     margin-top: -350px;
     margin-left: 5px;
-    border: 2px solid #900002;
+    border: 2px solid#7d001e;
     width: 250px;
     height: 30px;
     border-radius: 2px;
@@ -235,11 +233,12 @@ header {
 
 .require
 {
-    width: 400px;
-    height: 450px;
+    width: 70%;
+    height: 90%;
+    padding-top: 10px;
     position: relative;
     background : #F3F3F3;
-    border: 4px solid #900002;
+    border: 4px solid #7d001e;
     border-radius: 20px;
     backdrop-filter: blur(25px);
     box-shadow:0 0 3px 3px;
@@ -253,11 +252,11 @@ header {
 
 .info
 {
-    width: 400px;
-    height: 450px;
+    width: 380px;
+    height: 100%;
     position: relative;
     background : #F3F3F3;
-    border: 4px solid #900002;
+    border: 4px solid #7d001e;
     border-radius: 20px;
     backdrop-filter: blur(25px);
     box-shadow:0 0 3px 3px;
@@ -265,11 +264,16 @@ header {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     margin-left: 200px;
 
 }
 
 .info .input-b label{
+
     font-size: 16px;
     font: bold;
     font-weight: 500;
@@ -287,15 +291,16 @@ header {
 
 .info .input-b input
 {
-    height: 42px;
+    height: 35px;
     width: 330px;
-    margin: 1px 0;
-    border: 1px solid #900002;
+    border: 1px solid #7d001e;
     border-radius: 3px;
     background: #e9e7e7;
     align-items: center;
-    margin-left: 30px;
-    padding-left: 20px;
+    margin-left: 17px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+
     
 }
 
@@ -308,7 +313,6 @@ header {
 .form h2
 {
     position: relative;
-    margin-top: 20px;
     text-align:center;
     font-size: 24px;
     font-weight: 500px;
@@ -327,7 +331,7 @@ header {
     height: 4px;
     width: 40px;
     border-radius: 8px;
-    background-color: #900002;
+    background-color: #7d001e;
     
 }
 
@@ -338,7 +342,7 @@ header {
     height: 450px;
     position: relative;
     background : #F3F3F3;
-    border: 4px solid #900002;
+    border: 4px solid #7d001e;
     border-radius: 20px;
     backdrop-filter: blur(25px);
     box-shadow:0 0 3px 3px;
@@ -387,7 +391,7 @@ header {
 .summm
 {
     width: 570px;
-    height: 550px;
+    height: 500px;
     position: relative;
     background : #F3F3F3;
     backdrop-filter: blur(25px);
@@ -398,6 +402,8 @@ header {
     flex-wrap: wrap;
     margin-left: 150px;
     text-align: center;
+    margin-top: 10%;
+    border: 4px solid #7d001e;
 
 }
 
@@ -414,7 +420,7 @@ header {
     left: 0;
     width: 100%;
     padding: 20px 30px;
-    background:#900002 ;
+    background:#7d001e ;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -456,8 +462,13 @@ header .logo-image1 img{
 
 }
 
+.form
+{
+    margin-top: 20%;
+}
+
 .bots #nextButton{
-    background: #900002;
+    background: #7d001e;
     border: 1px solid white;
     border-radius: 8px;
     position: absolute;
@@ -470,7 +481,7 @@ header .logo-image1 img{
 
 }
 .bots #prevButton{
-    background: #900002;
+    background: #7d001e;
     border: 1px solid white;
     border-radius: 8px;
     position: absolute;
@@ -487,7 +498,7 @@ header .logo-image1 img{
 
 .bots #finishButton
 {
-    background: #900002;
+    background: #7d001e;
     border: 1px solid white;
     border-radius: 8px;
     position: absolute;
@@ -503,15 +514,16 @@ header .logo-image1 img{
 .announce .titleannounce
 {
     justify-content: left;
-    margin-bottom: 150px;
+    margin-bottom: 3%;
     margin-right: 100px;
-    border-radius: 5px;
+    margin-top: 25%;
+    border-radius: 3px;
     font-size: 20px;
     font-weight: 500;
     font: bold;
     color: white;
-    background: #900002;
-    width: 450px;
+    background: #7d001e;
+    width: 90%;
     text-align: left;
     padding-left: 15px;
 }
@@ -519,14 +531,14 @@ header .logo-image1 img{
 .announce .fw-lightttt
 {
     justify-content: center;
-    border: 3px solid #900002 ;
-    color: #900002;
+    border: 3px solid#7d001e ;
+    color: #7d001e;
+    margin-bottom: 5%;
     width: 500px;
     height: 300px;
-    margin-top: -100px;
     text-align: center;
     padding-top: 20px;
-    margin-left: 50px;
+    margin-left: 53px;
     border-radius: 5px;
     font-size: 23px;
     padding-left:20px;
@@ -598,7 +610,7 @@ line-height: normal;
     width: 150px;
     height: 40px;
     padding-bottom: 10px;
-    background: #900002;
+    background: #7d001e;
     border-radius: 7px;
     color: white;
     margin-top: 20px;
