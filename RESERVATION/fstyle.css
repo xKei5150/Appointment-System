@@ -28,6 +28,7 @@
 		justify-content: space-between; 
 		align-items: center;
 		z-index: 99;
+		margin-bottom: 20%;
 	
 	}
 
@@ -101,17 +102,17 @@
 	.web-home{
 		align-items: center;
 		position: absolute;
-		margin-top: -100px;
+		margin-top: 5%;
 	}
 	
 	.web-home h1 {
 		
 		font-weight: 600px;
-		font-size: 25px;
+		font-size: 30px;
 		text-align: center;
 		font-family:'Times New Roman', Times, serif;
-		margin-top: -20%;
-		margin-left: -57%;
+		margin-top: -15%;
+		margin-left: -47%;
 		position: absolute;
 		color: #7d001e;
 		width: 730px;

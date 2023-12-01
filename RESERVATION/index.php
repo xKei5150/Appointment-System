@@ -16,7 +16,7 @@
 	<nev class="web-start">
 	
 	<div class="logo-image">
-            <img src="../RESERVATION/logo.png.png" alt="">
+            <img src="../cbf6c8ee-f1fa-4f5c-8006-2955f3dbc22f-removebg-preview.png" alt="">
         </div>
             
 	<h1> Manuel S. Enverga University Foundation Candelaria Inc.</h1>
@@ -37,11 +37,11 @@
 
 			
 				<div class="web-home">
-						<h1> Select Facilities </h1>
+						<h1> Available Facilities od Mseuf-ci</h1>
 					
 							
 							<a href="../RESERVATION/gym/gymreserve.php">
-							<button type="submit" name="gym">GYM </button> 
+							<button type="submit" name="gym">Gymnasium </button> 
 							</a>
 							<a href="../RESERVATION/functionhall/gymreserve.php">
 							<button type="submit" name="fhall"> Function Hall </button>
