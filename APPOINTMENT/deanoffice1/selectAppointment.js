@@ -110,14 +110,15 @@ function updateButtonVisibility() {
     finishButton.style.display = 'none';
 
     // Show navigation buttons based on the current section
-    if (currentSectionIndex > 0) {
+    if (currentSectionIndex > 0 && currentSectionIndex < sections.length - 1) {
         prevButton.style.display = 'block';
     }
-    if (currentSectionIndex < sections.length - 1) {
+    if (currentSectionIndex < sections.length - 2) {
         nextButton.style.display = 'block';
     }
-    if (currentSectionIndex === sections.length - 1) {
+    if (currentSectionIndex === sections.length - 2) {
         finishButton.style.display = 'block';
+        updateSummary();
     }
 }
 

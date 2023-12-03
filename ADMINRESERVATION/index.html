@@ -186,54 +186,31 @@
 
 								  <!----add-modal start--------->
 
+			   <div class="modal" tabindex="-1" id="viewreserveModal">
+				   <div class="modal-dialog modal-lg">
+					   <div class="modal-content">
+						   <div class="modal-header">
+							   <h5 class="modal-title">Reservation Info</h5>
+							   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						   </div>
+						   <div class="modal-body">
+							   <p><strong>ID:</strong> <span id="id-list"></span></p>
+							   <p><strong>Name:</strong> <span id="name-list"></span></p>
+							   <p><strong>Address:</strong> <span id="address-list"></span></p>
+							   <p><strong>Phone Number:</strong> <span id="phone-list"></span></p>
+							   <p><strong>Email:</strong> <span id="email-list"></span></p>
+							   <p><strong>Event:</strong> <span id="event-list"></span></p>
+							   <p><strong>Purpose:</strong> <span id="purpose-list"></span></p>
+							   <p><strong>Date:</strong> <span id="date-list"></span></p>
+							   <p><strong>Time:</strong> <span id="timeslot-list"></span></p>
 
-								  <div class="modal" tabindex="-1" id="viewreserveModal">
-									<div class="modal-dialog modal-lg">
-									  <div class="modal-content">
-										<div class="modal-header">
-										  <h5 class="modal-title">Reservation Info</h5>
-										  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-										</div>
-										  <div class="modal-body">
-											  <div class="table-responsive">
-												  <table class="table table-striped">
-												<thead>
-												<tr>
-												<th>ID:</th>
-												<th>NAME:</th>
-												<th>ADDRESS:</th>
-												<th>NUMBER:</th>
-												<th>EMAIL:</th>
-												<th>EVENT:</th>
-												<th>PURPOSE:</th>
-												<th>DATE:</th>
-												<th>TIME:</th>
-												</tr>
-												</thead>
-
-												<tbody>
-												<tr>
-													<td id="id-list"></td>
-													<td id="name-list"></td>
-													<td id="address-list"></td>
-													<td id="phone-list"></td>
-													<td id="email-list"></td>
-													<td id="event-list"></td>
-													<td id="purpose-list"></td>
-													<td id="date-list"></td>
-													<td id="timeslot-list"></td>
-												</tr>
-												</tbody>
-
-											</table>
-										</div>
-										<div class="modal-footer">
-										  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-										</div>
-									  </div>
-									</div>
-								  </div>
-								  </div>
+						   </div>
+						   <div class="modal-footer">
+							   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						   </div>
+					   </div>
+				   </div>
+			   </div>
 
 								  <div class="modal fade" tabindex="-1" id="deleteEmployeeModal" role="dialog">
 									<div class="modal-dialog" role="document">
