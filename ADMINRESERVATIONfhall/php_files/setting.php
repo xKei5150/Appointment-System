@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Database connection details
-    $servername = "localhost";
+    $servername = "localhost:3307";
     $username = "root";
     $password = "";
     $database = "dbappointment";

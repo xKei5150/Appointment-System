@@ -79,7 +79,7 @@
         <input type = "text" placeholder="First Name" name="firstname" id="firstname">
         <input type = "text" placeholder="Last Name" name="lastname" id="lastname">
         <input type = "text" placeholder="ID" name="ID" id="ID">
-        <input type = "text" placeholder="Email" name="email" id="email">
+        <input type = "email" placeholder="Email" name="email" id="email">
         <input type = "text" placeholder="Phone" name="phone" id="phone">
         <div class="index-btn-wrapper">
           <div class="index-btn" onclick="run(2, 1);" class="fa-solid fa-backward-step">Previous</div>

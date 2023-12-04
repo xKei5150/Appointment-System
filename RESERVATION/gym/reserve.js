@@ -1,21 +1,26 @@
  $(".tab").css("display", "none");
       $("#tab-0").css("display", "block");
-      function run(hideTab, showTab){
-        if(showTab=== 4) {
-          populateSummary();
-        }
-        if(hideTab < showTab){ // If not press previous button
-          // Validation if press next button
-          var currentTab = 0;
-          x = $('#tab-'+hideTab);
-          y = $(x).find("input")
-          for (i = 1; i < y.length; i++){
-            if (y[i].value == ""){
-              $(y[i]).css("background", "#fc8c8c");
-              return false;
-            }  
-          }
-        }
+ function run(hideTab, showTab){
+     if(showTab === 4) {
+         populateSummary();
+     }
+     if(hideTab < showTab){ // If moving forward in the form
+         var x = $('#tab-'+hideTab);
+         var y = $(x).find("input");
+
+         for (var i = 0; i < y.length; i++){
+             if (y[i].value == ""){
+                 $(y[i]).css("background", "#fc8c8c");
+                 return false;
+             } else if (y[i].type === "email" && !isValidEmail(y[i].value)) {
+                 $(y[i]).css("background", "#fc8c8c");
+                 alert("Please enter a valid email address.");
+                 return false;
+             } else {
+                 $(y[i]).css("background", "#fff");
+             }
+         }
+     }
 
         // Progress bar
         for (i = 1; i < showTab; i++){
@@ -27,6 +32,11 @@
         $("#tab-"+showTab).css("display", "block");
         $("input").css("background", "#fff");
       }
+
+ function isValidEmail(email) {
+     var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+     return emailRegex.test(email);
+ }
 
  const firstname = document.getElementById('firstname');
  const lastname = document.getElementById('lastname');

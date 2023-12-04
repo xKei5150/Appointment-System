@@ -22,7 +22,7 @@
     <?php
     // Function to create a database connection
     function connectDB() {
-        $servername = "localhost";
+        $servername = "localhost:3307";
         $username = "your_username";
         $password = "your_password";
         $dbname = "your_database_name";

@@ -126,8 +126,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             };
             deleteXhr.send(`id=${reserveId}`);
-            location.reload();
+
         }
+        location.reload();
     }
 
 
@@ -146,6 +147,8 @@ document.addEventListener("DOMContentLoaded", function() {
             };
             reserveXhr.send(`id=${reserveId}`);
         }
+        location.reload();
+
     }
 
 
