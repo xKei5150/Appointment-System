@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             };
             deleteXhr.send(`id=${reserveId}`);
-            location.reload();
+            location.reload(true);
         }
     }
 

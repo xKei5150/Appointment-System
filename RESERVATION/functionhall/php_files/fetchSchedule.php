@@ -31,7 +31,7 @@ if (empty($results)) {
 
     while ($currentDay <= $endDay) {
         // Check if the day is not a weekend
-        if ($currentDay->format('N') < 6) {
+        if ($currentDay->format('N') < 7) {
             foreach ($defaultTimeslots as $timeslot) {
                 $stmt = $conn->prepare("INSERT IGNORE INTO tblschedule2 (date, timeslot, availability) VALUES (:date, :timeslot, 1)");
                 $stmt->execute(['date' => $currentDay->format('Y-m-d'), 'timeslot' => $timeslot]);

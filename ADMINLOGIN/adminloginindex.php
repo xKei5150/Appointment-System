@@ -1,3 +1,36 @@
+
+<?php
+session_start();
+
+// Check if the 'usertype' session variable is set
+if (isset($_SESSION['usertype'])) {
+    switch ($_SESSION['usertype']) {
+        case "registrar":
+            header("Location: ../ADMINAPPOINTMENT/newadmin/index.php");
+            exit;
+        case "gymnasium":
+            header("Location: ../ADMINRESERVATION/index.php");
+            exit;
+        case "deanoffice":
+            header("Location: ../ADMINAPPOINTMENT/deanoffice/index.php");
+            exit;
+	case "jhregistrar":
+		header("location: ../ADMINAPPOINTMENT/jsregistrar/index.php");
+		exit;
+	case "emrc":
+		header("location: ../ADMINRESERVATIONemrc/index.php");
+		exit;
+	case "fhall":
+		header("location: ../ADMINRESERVATIONfhall/index.php");
+		exit;
+	case "jhprincipal":
+		header("location: ../ADMINAPPOINTMENT/JHprincipal/index.php");
+		exit;
+	default:
+	}	
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">	
 <head>

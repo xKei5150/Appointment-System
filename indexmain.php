@@ -13,9 +13,13 @@
 
 	<div class="logo-image">
             <img src="./cbf6c8ee-f1fa-4f5c-8006-2955f3dbc22f-removebg-preview.png" alt="">
-        </div>
+    
+	<div class="web-start">
 	<h1> Manuel S. Enverga University Foundation</h1>
 	<h2>Candelaria Inc. </h2>
+
+	</div> 
+	</div>                                            
 	</nev> 
 		<nav class="navigation">
 
@@ -25,18 +29,17 @@
 		</nav>
 	</header>
 	
-	
+	<div class="button-container">
+
 		<a href="../Finalsystem/APPOINTMENT/index.php">
 		<button type="submit" class="btn"><i class="uil uil-user-check"></i> Student / Visitors </button>
 		</a>
 		<a href="../Finalsystem/code/codeindex.php">
 		<button  type="submit" class="btn1"><i class="uil uil-users-alt"></i> Teachers Only </button>
 		</a>
-		<br><br>
 		<a href="../Finalsystem/ADMINLOGIN/adminloginindex.php">
 		<button type="submit" class="btn2"><i class="uil uil-user-square"></i> Admin of MOARS </button>
-		<br><br>
-		
+
 		
 	</div>
 		

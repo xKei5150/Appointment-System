@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+// Check if the session variable for username is set and the usertype is 'gymnasium'
+if (!isset($_SESSION['username']) || $_SESSION['usertype'] != 'emrc') {
+    // Redirect to the login page or another appropriate page
+    header("location: ../ADMINLOGIN/adminloginindex.php");
+    exit; // Ensure no further execution of the script
+}
+?>
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -39,7 +52,7 @@
 		</div>
 		<ul class="list-unstyled components">
 		<li  class="active">
-				<a href="index.html" class="dashboard"><i class="material-icons">dashboard</i>
+				<a href="index.php" class="dashboard"><i class="material-icons">dashboard</i>
 				<span>Home</span></a>
 			</li>
 	
@@ -50,10 +63,10 @@
 				<i class="material-icons">aspect_ratio</i>Profiling</a>
 				<ul class="collapse list-unstyled menu" id="homeSubmenu1">
 					<li>
-						<a href="../ADMINRESERVATIONemrc/ManageSched.html">Manage Date/Slot</a>
+						<a href="../ADMINRESERVATIONemrc/ManageSched.php">Manage Date/Slot</a>
 					</li>
 					<li>
-						<a href="../ADMINRESERVATIONemrc/managereminders.html">Manage Requirement</a>
+						<a href="../ADMINRESERVATIONemrc/managereminders.php">Manage Requirement</a>
 					</li>
 	  
 				</ul>
@@ -105,7 +118,7 @@
 								  <span class="xp-user-live"></span>
 								 </a>
 								  <ul class="dropdown-menu small-menu">
-								     <li><a href="../ADMINRESERVATIONemrc/editprofile2.html">
+								     <li><a href="../ADMINRESERVATIONemrc/editprofile2.php">
 									 <span class="material-icons">person_outline</span>
 									 Profile
 									 </a></li>

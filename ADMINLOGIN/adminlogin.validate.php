@@ -1,68 +1,52 @@
 <?php
-require_once 'connect.php';
+session_start();
+require_once 'connect.php'; // Ensure this file contains the correct database connection setup
 
-if ($_SERVER['REQUEST_METHOD']=="POST") {
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $user = $_POST['mail']; // Fetching user email from form
+    $pass = $_POST['pass']; // Fetching password from form
 
-	$user=$_POST['mail'];
-	$pass=$_POST['pass']; 
+    // Direct SQL query - vulnerable to SQL injection
+    $query = "SELECT * FROM tbladminaccounts WHERE email='$user' AND password='$pass'";
+    $result = mysqli_query($con, $query);
 
+    if ($result && mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
 
-	$query="SELECT * FROM tbladminaccounts WHERE email='$user' AND password='$pass'";
-	$num_rows =mysqli_query($con,$query);
-	$row = mysqli_fetch_array($num_rows);
+        // Assign session variables
+        $_SESSION['username'] = $user;  // Assigning the user email to the session
+        $_SESSION['usertype'] = $row['usertype'];  // Storing user type in session
 
-	if($row['usertype']=="registrar")
-	{
-		header("location: ../ADMINAPPOINTMENT/newadmin/index.html");
-
-		
-		// if($num_rows)
-		// {
-		// 	$_SESSION['username'] = $user;
-		// 	header("location: ../ADMINRESERVATION/index.html");
-		// }else{
-		// 	$_SESSION['status'] = "Email / Password is Invalid";
-		// 	header("location: ../ADMINLOGIN/adminloginindex.php");
-		// }
-		
-	}		
-	elseif($row['usertype']=="gymnasium")   
-	{
-		header("location: ../ADMINRESERVATION/index.html");
-		
-	}
-	elseif($row['usertype']=="deanoffice")   
-	{
-		header("location: ../ADMINAPPOINTMENT/deanoffice/index.html");
-		
-	}
-	
-	elseif($row['usertype']=="jhregistrar")   
-	{
-		header("location: ../ADMINAPPOINTMENT/jsregistrar/index.html");
-		
-	}
-	elseif($row['usertype']=="emrc")   
-	{
-		header("location: ../ADMINRESERVATIONemrc/index.html");
-		
-	}
-	elseif($row['usertype']=="fhall")   
-	{
-		header("location: ../ADMINRESERVATIONfhall/index.html");
-		
-	}
-
-	elseif($row['usertype']=="jhprincipal")   
-	{
-		header("location: ../ADMINAPPOINTMENT/JHprincipal/index.html");
-		
-	}
-	else
-	{
-		echo "<script>alert('user and password not match'); window.location.href=' ../ADMINLOGIN/adminloginindex.php'; </script>";
-	}
+        // Redirect based on usertype
+        switch ($row['usertype']) {
+            case "registrar":
+                header("location: ../ADMINAPPOINTMENT/newadmin/index.php");
+                break;
+            case "gymnasium":
+                header("location: ../ADMINRESERVATION/index.php");
+                break;
+            case "deanoffice":
+                header("location: ../ADMINAPPOINTMENT/deanoffice/index.php");
+                break;
+            case "jhregistrar":
+				header("location: ../ADMINAPPOINTMENT/jsregistrar/index.php");
+				break;
+			case "emrc":
+				header("location: ../ADMINRESERVATIONemrc/index.php");
+				break;
+			case "fhall":
+				header("location: ../ADMINRESERVATIONfhall/index.php");
+				break;
+			case "jhprincipal":
+				header("location: ../ADMINAPPOINTMENT/JHprincipal/index.php");
+				break;
+            default:
+                echo "<script>alert('User type not recognized'); window.location.href=' ../ADMINLOGIN/adminloginindex.php'; </script>";
+                break;
+        }
+    } else {
+        // Handle case where no user is found or query fails
+        echo "<script>alert('User and password not match'); window.location.href=' ../ADMINLOGIN/adminloginindex.php'; </script>";
+    }
 }
-
-
 ?>

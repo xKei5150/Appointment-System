@@ -39,7 +39,7 @@
 		</div>
 		<ul class="list-unstyled components">
 		<li  class="active">
-				<a href="index.html" class="dashboard"><i class="material-icons">dashboard</i>
+				<a href="index.php" class="dashboard"><i class="material-icons">dashboard</i>
 				<span>Home</span></a>
 			</li>
 	
@@ -50,10 +50,10 @@
 				<i class="material-icons">aspect_ratio</i>Profiling</a>
 				<ul class="collapse list-unstyled menu" id="homeSubmenu1">
 					<li>
-						<a href="../ADMINRESERVATION/ManageSched.html">Manage Schedule</a>
+						<a href="../ADMINRESERVATION/ManageSched.php">Manage Schedule</a>
 					</li>
 					<li>
-						<a href="../ADMINRESERVATION/managereminders.html">Manage Reminders</a>
+						<a href="../ADMINRESERVATION/managereminders.php">Manage Reminders</a>
 					</li>
 	  
 				</ul>
