@@ -76,8 +76,9 @@
 
       <div class="tab" id = "tab-2">
         <h3>Basic Information:</h3>
-        <input type = "text" placeholder="First Name" name="firstname" id="firstname">
-        <input type = "text" placeholder="Last Name" name="lastname" id="lastname">
+        <input type = "text" placeholder="Application behalf; (Bussiness, Organization)" name="org" id="org">
+        <input type = "text" placeholder="First Name Individual Reponsible for the Event" name="firstname" id="firstname">
+        <input type = "text" placeholder="Last Name Individual Reponsible for the Event" name="lastname" id="lastname">
         <input type = "text" placeholder="ID" name="ID" id="ID">
         <input type = "email" placeholder="Email" name="email" id="email">
         <input type = "number" placeholder="Phone" name="phone" id="phone">
@@ -96,7 +97,29 @@
         <div class="mb-3">
           <label for="exampleFormControlTextarea1" class="form-label" >Purpose </label>
         <textarea class="form-control" id="purpose" rows="3" ></textarea>
+
         </div>
+      
+        <div class="col-md-4">
+    <label for="validationCustom01" class="form-label">Equipment Tools</label>
+    <input type="number" class="form-control" id="table" placeholder="Number of Table">
+    <div class="valid-feedback">
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustom02" class="form-label"></label>
+    <input type="number" class="form-control" id="chair" placeholder="#Number of chair">
+    <div class="valid-feedback">
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <label for="validationCustom03" class="form-label"></label>
+    <input type="text" class="form-control" id="other" placeholder="Others equipment">
+    <div class="valid-feedback">
+    </div>
+  </div>
+
         <div class="index-btn-wrapper">
           <div class="index-btn" onclick="run(3, 2); ">Previous</div>
           <div class="index-btn" onclick="run(3, 4); ">Next</div>

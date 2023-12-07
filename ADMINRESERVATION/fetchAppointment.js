@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 let tr = document.createElement('tr');
 
                 tr.innerHTML = `
+                <td>${appointment.org}</td>
                 <td>${appointment.id}</td>
                 <td>${appointment.firstname} ${appointment.lastname}</td>
                 <td>${appointment.eu_id}</td>
@@ -99,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (appointment.status.toLowerCase() === 'approved') {
                 const row = tableBody.insertRow();
                 row.innerHTML = `
+        <td>${appointment.org}</td>
         <td>${appointment.id}</td>
         <td>${appointment.firstname} ${appointment.lastname}</td>
         <td>${appointment.eu_id}</td>
@@ -156,6 +158,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const appointmentId = this.dataset.id; // Fetch the id from the clicked button
     
         // Clear the previous details
+        const orgList = document.getElementById("org-list");
+        orgList.innerHTML = '';
         const idList = document.getElementById("id-list");
         idList.innerHTML = '';
         const nameList = document.getElementById("name-list");
@@ -172,6 +176,12 @@ document.addEventListener("DOMContentLoaded", function() {
         eventList.innerHTML = '';
         const purposeList = document.getElementById("purpose-list");
         purposeList.innerHTML = '';
+        const tableList = document.getElementById("table-list");
+        tableList.innerHTML = '';
+        const chairList = document.getElementById("chair-list");
+        chairList.innerHTML = '';
+        const otherList = document.getElementById("other-list");
+        otherList.innerHTML = '';
         const timeslotList = document.getElementById("timeslot-list");
         timeslotList.innerHTML = '';
     
@@ -183,6 +193,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 const appointment = JSON.parse(xhr.responseText);
     
                 // Assuming response is a single appointment object
+                orgList.innerHTML += appointment.org;
                 idList.innerHTML += appointment.id;
                 nameList.innerHTML += `${appointment.firstname} ${appointment.lastname}`;
                 addressList.innerHTML += appointment.eu_id;

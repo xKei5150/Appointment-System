@@ -37,25 +37,41 @@
      var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
      return emailRegex.test(email);
  }
-
+ const org = document.getElementById('org');
  const firstname = document.getElementById('firstname');
  const lastname = document.getElementById('lastname');
  const ID = document.getElementById('ID');
  const email = document.getElementById('email');
  const phone = document.getElementById('phone');
  const event = document.getElementById('event');
+ const table = document.getElementById('table');
+ const chair = document.getElementById('chair');
+ const other = document.getElementById('other');
  const purpose = document.getElementById('purpose');
       function populateSummary() {
 
         const summary = document.getElementById('summary');
         summary.innerHTML = `
+
+        <p>${org.value}</p>
+
+        <d>INDIVIDUAL RESPONSIBLE</d>
         <p>${firstname.value}</p>
         <p>${lastname.value}</p>
         <p>${ID.value}</p>
         <p>${email.value}</p>
         <p>${phone.value}</p>
+
+        <d>NATURE OF RENTAL</d>
         <p>${event.value}</p>
         <p>${purpose.value}</p>
+
+        <d>EQUIPMENT:</d>
+        <p>${table.value} #table</p>
+        <p>${chair.value} #Chair</p>
+        <p>${other.value}</p>
+
+        <d>RENTAL DATE:</d>
         <p>${selectedDate}</p>
         <p>${selectedTimeslot}</p>
         `;
@@ -80,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
     xhr.onerror = function () {
       console.error("Network error occurred.");
     };
-    xhr.send(`firstname=${firstname.value}&lastname=${lastname.value}&eu_id=${ID.value}&email=${email.value}&phone=${phone.value}&event=${event.value}&purpose=${purpose.value}&date=${selectedDate}&timeslot=${selectedTimeslot}`);
+    xhr.send(`org=${org.value}$firstname=${firstname.value}&lastname=${lastname.value}&eu_id=${ID.value}&email=${email.value}&phone=${phone.value}&event=${event.value}&purpose=${purpose.value}&Ntable=${table.value}&Nchair=${chair.value}&other=${other.value}&date=${selectedDate}&timeslot=${selectedTimeslot}`);
   });
 }
 

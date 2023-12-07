@@ -1,7 +1,8 @@
 <?php
 include 'connection.php';
 
-if (isset($_POST['firstname'])) {
+if (isset($_POST['org'])) {
+    $org = $_POST['org'];
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $eu_id = $_POST['eu_id'];
@@ -9,6 +10,9 @@ if (isset($_POST['firstname'])) {
     $email = $_POST['email'];
     $event = $_POST['event'];
     $purpose = $_POST['purpose'];
+    $table = $_POST['Ntable'];
+    $chair = $_POST['Nchair'];
+    $other = $_POST['other'];
     $date = $_POST['date'];
     $timeslot = $_POST['timeslot'];
 
@@ -17,8 +21,8 @@ if (isset($_POST['firstname'])) {
         $conn->beginTransaction();
 
         // Store data
-        $stmt = $conn->prepare("INSERT INTO tblappointment (firstname, lastname, eu_id, phone, email, event, purpose, date, timeslot, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending')");
-        $stmt->execute([$firstname, $lastname, $eu_id, $phone, $email, $event, $purpose, $date, $timeslot]);
+        $stmt = $conn->prepare("INSERT INTO tblappointment (org, firstname, lastname, eu_id, phone, email, event, purpose, Ntable, Nchair , other ,date, timeslot, status) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending')");
+        $stmt->execute([$org ,$firstname, $lastname, $eu_id, $phone, $email, $event, $purpose, $table, $chair, $other, $date, $timeslot]);
 
         // Reduce slot
         if ($timeslot == 'Whole Day') {
