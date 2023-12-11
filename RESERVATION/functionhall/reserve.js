@@ -45,6 +45,9 @@ const email = document.getElementById('email');
 const phone = document.getElementById('phone');
 const event = document.getElementById('event');
 const purpose = document.getElementById('purpose');
+const table = document.getElementById('table');
+const chair = document.getElementById('chair');
+const other = document.getElementById('other');
 function populateSummary() {
 
   const summary = document.getElementById('summary');
@@ -56,6 +59,9 @@ function populateSummary() {
   <p>${phone.value}</p>
   <p>${event.value}</p>
   <p>${purpose.value}</p>
+  <p>${table.value}</p>
+  <p>${chair.value}</p>
+  <p>${other.value}</p>
   <p>${selectedDate}</p>
   <p>${selectedTimeslot}</p>
   `;
@@ -80,7 +86,7 @@ if (xhr.status === 200 && xhr.responseText === "success") {
 xhr.onerror = function () {
 console.error("Network error occurred.");
 };
-xhr.send(`firstname=${firstname.value}&lastname=${lastname.value}&eu_id=${ID.value}&email=${email.value}&phone=${phone.value}&event=${event.value}&purpose=${purpose.value}&date=${selectedDate}&timeslot=${selectedTimeslot}`);
+xhr.send(`firstname=${firstname.value}&lastname=${lastname.value}&eu_id=${ID.value}&email=${email.value}&phone=${phone.value}&event=${event.value}&purpose=${purpose.value}&ntable=${table.value}&nchair=${chair.value}&other=${other.value}&date=${selectedDate}&timeslot=${selectedTimeslot}`);
 });
 }
 

@@ -9,6 +9,7 @@ if (isset($_POST['firstname'])) {
     $email = $_POST['email'];
     $event = $_POST['event'];
     $purpose = $_POST['purpose'];
+    $equipment = $_POST['equipment'];
     $date = $_POST['date'];
     $timeslot = $_POST['timeslot'];
 
@@ -16,8 +17,8 @@ if (isset($_POST['firstname'])) {
 
     try {
         // Store data
-        $stmt = $conn->prepare("INSERT INTO tblappointment1 (firstname, lastname, eu_id, phone, email, event, purpose, date, timeslot , status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ? , 'pending')");
-        $stmt->execute([$firstname, $lastname, $eu_id, $phone, $email, $event, $purpose, $date, $timeslot]);
+        $stmt = $conn->prepare("INSERT INTO tblappointment1 (firstname, lastname, eu_id, phone, email, event, purpose, equipment, date, timeslot , status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ? , 'pending')");
+        $stmt->execute([$firstname, $lastname, $eu_id, $phone, $email, $event, $purpose,  $equipment, $date, $timeslot]);
 
         // Reduce slot
         $stmt = $conn->prepare("UPDATE tblschedule1 SET availability = availability - 1 WHERE date = ? AND timeslot = ? AND availability > 0");

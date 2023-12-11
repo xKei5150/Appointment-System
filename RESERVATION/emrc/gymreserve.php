@@ -97,6 +97,13 @@
           <label for="exampleFormControlTextarea1" class="form-label" >Purpose </label>
         <textarea class="form-control" id="purpose" rows="3" ></textarea>
         </div>
+        <div class="col-md-4">
+    <label for="validationCustom01" class="form-label">Equipment Tools</label>
+    <input type="text" class="form-control" id="equipment" placeholder="Equipment needed">
+    <div class="valid-feedback">
+    </div>
+  </div>
+        
         <div class="index-btn-wrapper">
           <div class="index-btn" onclick="run(3, 2); ">Previous</div>
           <div class="index-btn" onclick="run(3, 4); ">Next</div>

@@ -212,6 +212,7 @@ if (!isset($_SESSION['username']) || $_SESSION['usertype'] != 'emrc') {
 							   <p><strong>Email:</strong> <span id="email-list"></span></p>
 							   <p><strong>Event:</strong> <span id="event-list"></span></p>
 							   <p><strong>Purpose:</strong> <span id="purpose-list"></span></p>
+							   <p><strong>Equipment:</strong> <span id="equipment-list"></span></p>
 							   <p><strong>Date:</strong> <span id="date-list"></span></p>
 							   <p><strong>Time:</strong> <span id="timeslot-list"></span></p>
 

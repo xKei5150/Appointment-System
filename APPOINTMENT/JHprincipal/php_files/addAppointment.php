@@ -8,11 +8,12 @@ require '../PHPMailer/src/SMTP.php';
 include 'connection.php';
 
 
-if (isset($_POST['name'], $_POST['cellnum'], $_POST['address'], $_POST['email'], $_POST['date'], $_POST['timeslot'])) {
+if (isset($_POST['name'], $_POST['cellnum'], $_POST['address'], $_POST['email'],  $_POST['purpose'],$_POST['date'], $_POST['timeslot'])) {
     $name = $_POST['name'];
     $cellnum = $_POST['cellnum'];
     $address = $_POST['address'];
     $email = $_POST['email'];
+    $purpose = $_POST['purpose'];
     $date = $_POST['date'];
     $timeslot = $_POST['timeslot'];
 
@@ -20,8 +21,9 @@ if (isset($_POST['name'], $_POST['cellnum'], $_POST['address'], $_POST['email'],
     $mail = new PHPMailer(true);
     try {
         // Store data
-        $stmt = $conn->prepare("INSERT INTO tblappointment1 (name, cellnum, address, email, date, timeslot) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$name, $cellnum, $address, $email, $date, $timeslot]);
+        $stmt = $conn->prepare("INSERT INTO tblappointment1 (name, cellnum, address, email, purpose, date, timeslot) VALUES (?, ?, ?, ?, ?, ?, ?)");
+
+        $stmt->execute([$name, $cellnum, $address, $email, $purpose, $date, $timeslot]);
 
         // Reduce slot
         $stmt = $conn->prepare("UPDATE tblschedule1 SET slots = slots - 1 WHERE date = ? AND timeslot = ? AND slots > 0");

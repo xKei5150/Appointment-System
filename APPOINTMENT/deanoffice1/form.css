@@ -617,3 +617,8 @@ line-height: normal;
   padding-right: 10px;
   background: #bb022d;
 }
+.info .input-a textarea
+{
+    border: 1px solid #900002;
+    background: #e9e7e7 ;
+}

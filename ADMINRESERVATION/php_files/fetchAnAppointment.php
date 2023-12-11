@@ -7,7 +7,7 @@ $appointmentId = isset($_GET['id']) ? $_GET['id'] : null;
 try {
     if ($appointmentId) {
         // Prepare a statement for execution
-        $stmt = $conn->prepare("SELECT * FROM tblAppointment WHERE id = :id");
+        $stmt = $conn->prepare("SELECT * FROM tblappointment WHERE id = :id");
         // Bind a value to a parameter
         $stmt->bindValue(':id', $appointmentId);
         // Execute the prepared statement
@@ -16,7 +16,7 @@ try {
         // Fetch result
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
     } else {
-        $sql = "SELECT * FROM tblAppointment";
+        $sql = "SELECT * FROM tblappointment";
         $stmt = $conn->query($sql);
         $data = $stmt->rowCount() > 0 ? $stmt->fetchAll(PDO::FETCH_ASSOC) : [];
     }

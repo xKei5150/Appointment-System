@@ -50,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 let tr = document.createElement('tr');
 
                 tr.innerHTML = `
-                <td>${appointment.org}</td>
                 <td>${appointment.id}</td>
                 <td>${appointment.firstname} ${appointment.lastname}</td>
                 <td>${appointment.eu_id}</td>
@@ -100,7 +99,6 @@ document.addEventListener("DOMContentLoaded", function() {
             if (appointment.status.toLowerCase() === 'approved') {
                 const row = tableBody.insertRow();
                 row.innerHTML = `
-        <td>${appointment.org}</td>
         <td>${appointment.id}</td>
         <td>${appointment.firstname} ${appointment.lastname}</td>
         <td>${appointment.eu_id}</td>
@@ -201,6 +199,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 emailList.innerHTML += appointment.email;
                 eventList.innerHTML += appointment.event;
                 purposeList.innerHTML += appointment.purpose;
+                tableList.innerHTML += appointment.ntable;
+                chairList.innerHTML += appointment.nchair;
+                otherList.innerHTML += appointment.other;
                 dateList.innerHTML += appointment.date;
                 timeslotList.innerHTML += appointment.timeslot;
             }

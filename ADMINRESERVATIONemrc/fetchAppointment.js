@@ -169,6 +169,8 @@ document.addEventListener("DOMContentLoaded", function() {
         eventList.innerHTML = '';
         const purposeList = document.getElementById("purpose-list");
         purposeList.innerHTML = '';
+        const equipmentList = document.getElementById("equipment-list");
+        equipmentList.innerHTML = '';
         const timeslotList = document.getElementById("timeslot-list");
         timeslotList.innerHTML = '';
     
@@ -187,6 +189,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 emailList.innerHTML += appointment.email;
                 eventList.innerHTML += appointment.event;
                 purposeList.innerHTML += appointment.purpose;
+                equipmentList.innerHTML += appointment.equipment;
                 dateList.innerHTML += appointment.date;
                 timeslotList.innerHTML += appointment.timeslot;
             }

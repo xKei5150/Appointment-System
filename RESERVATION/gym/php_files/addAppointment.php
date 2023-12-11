@@ -10,8 +10,8 @@ if (isset($_POST['org'])) {
     $email = $_POST['email'];
     $event = $_POST['event'];
     $purpose = $_POST['purpose'];
-    $table = $_POST['Ntable'];
-    $chair = $_POST['Nchair'];
+    $table = $_POST['ntable'];
+    $chair = $_POST['nchair'];
     $other = $_POST['other'];
     $date = $_POST['date'];
     $timeslot = $_POST['timeslot'];
@@ -21,7 +21,7 @@ if (isset($_POST['org'])) {
         $conn->beginTransaction();
 
         // Store data
-        $stmt = $conn->prepare("INSERT INTO tblappointment (org, firstname, lastname, eu_id, phone, email, event, purpose, Ntable, Nchair , other ,date, timeslot, status) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending')");
+        $stmt = $conn->prepare("INSERT INTO tblappointment (org, firstname, lastname, eu_id, phone, email, event, purpose, ntable, nchair , other ,date, timeslot, status) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending')");
         $stmt->execute([$org ,$firstname, $lastname, $eu_id, $phone, $email, $event, $purpose, $table, $chair, $other, $date, $timeslot]);
 
         // Reduce slot

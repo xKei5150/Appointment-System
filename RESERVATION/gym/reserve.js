@@ -54,24 +54,16 @@
         summary.innerHTML = `
 
         <p>${org.value}</p>
-
-        <d>INDIVIDUAL RESPONSIBLE</d>
         <p>${firstname.value}</p>
         <p>${lastname.value}</p>
         <p>${ID.value}</p>
         <p>${email.value}</p>
         <p>${phone.value}</p>
-
-        <d>NATURE OF RENTAL</d>
         <p>${event.value}</p>
         <p>${purpose.value}</p>
-
-        <d>EQUIPMENT:</d>
-        <p>${table.value} #table</p>
-        <p>${chair.value} #Chair</p>
+        <p>${table.value}</p>
+        <p>${chair.value}</p>
         <p>${other.value}</p>
-
-        <d>RENTAL DATE:</d>
         <p>${selectedDate}</p>
         <p>${selectedTimeslot}</p>
         `;
@@ -96,7 +88,8 @@ document.addEventListener("DOMContentLoaded", function() {
     xhr.onerror = function () {
       console.error("Network error occurred.");
     };
-    xhr.send(`org=${org.value}$firstname=${firstname.value}&lastname=${lastname.value}&eu_id=${ID.value}&email=${email.value}&phone=${phone.value}&event=${event.value}&purpose=${purpose.value}&Ntable=${table.value}&Nchair=${chair.value}&other=${other.value}&date=${selectedDate}&timeslot=${selectedTimeslot}`);
+    xhr.send(`org=${org.value}&firstname=${firstname.value}&lastname=${lastname.value}&eu_id=${ID.value}&email=${email.value}&phone=${phone.value}&event=${event.value}&purpose=${purpose.value}&ntable=${table.value}&nchair=${chair.value}&other=${other.value}&date=${selectedDate}&timeslot=${selectedTimeslot}`);
+
   });
 }
 

@@ -56,6 +56,7 @@ function setupSectionNavigation() {
         const name = document.querySelector('input[name="name"]').value;
         const cellnum = document.querySelector('input[name="cellnum"]').value;
         const address = document.querySelector('input[name="address"]').value;
+        const purpose = document.querySelector('textarea[name="purpose"]').value;
         const email = document.querySelector('input[name="email"]').value;
 
         const xhr = new XMLHttpRequest();
@@ -64,8 +65,8 @@ function setupSectionNavigation() {
         xhr.onload = function() {
             if (xhr.status === 200 && xhr.responseText === "success") {
                 console.log("Data stored and slot updated successfully.");
-        
-    
+
+
             } else {
                 console.error("Error processing the data.");
             }
@@ -73,17 +74,17 @@ function setupSectionNavigation() {
         xhr.onerror = function() {
             console.error("Network error occurred.");
         };
-        xhr.send(`name=${name}&cellnum=${cellnum}&address=${address}&email=${email}&date=${selectedDate}&timeslot=${selectedTimeslot}`);
-        
-        
-        populateTicketInfo(name, email, selectedDate, selectedTimeslot);            
+        xhr.send(`name=${name}&cellnum=${cellnum}&address=${address}&email=${email}&purpose=${purpose}&date=${selectedDate}&timeslot=${selectedTimeslot}`);
+
+
+        populateTicketInfo(name, email, selectedDate, selectedTimeslot);
         currentSectionIndex++;
         showCurrentSection();
     });
-    
-    
+
+
     hideAllSections();
-    
+
 }
 
 function showCurrentSection() {
@@ -124,17 +125,17 @@ function updateButtonVisibility() {
 
 function updateSummary() {
     const summaryInfo = document.getElementById('summaryInfo');
-/*    const name = document.querySelector('input[name=" name"]').value;
-    const cellnum = document.querySelector('input[name=" cellnum"]').value;
-    const address = document.querySelector('input[name=" address"]').value;
-    const email = document.querySelector('input[name=" email"]').value;*/
+    /*    const name = document.querySelector('input[name=" name"]').value;
+        const cellnum = document.querySelector('input[name=" cellnum"]').value;
+        const address = document.querySelector('input[name=" address"]').value;
+        const email = document.querySelector('input[name=" email"]').value;*/
     const name = document.getElementById("name").value;
     const cellnum = document.getElementById("cellnum").value;
     const address = document.getElementById("address").value;
     const email = document.getElementById("email").value;
     const summaryContent =
-    
-    `
+
+        `
         <a>Name:</a>
         <p> ${name}</p>
         <a>Number: </a> 
@@ -272,7 +273,7 @@ function populateTicketInfo(name, email, selectedDate, selectedTimeslots) {
     btn.addEventListener('click', function () {
         location.reload();
     });
-announce.style.display = 'none';
+    announce.style.display = 'none';
 
     ticketInfo.innerHTML = `
 <nav>

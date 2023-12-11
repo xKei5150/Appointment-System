@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         require_once 'connection.php';
 
         try {
-            $sql = "DELETE FROM tblAppointment WHERE id = :id";
+            $sql = "DELETE FROM tblappointment WHERE id = :id";
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(":id", $appointmentId);
             $stmt->execute();

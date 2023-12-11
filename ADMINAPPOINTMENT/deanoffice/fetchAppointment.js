@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const nameList = document.getElementById("name-list");
     const addressList = document.getElementById("address-list");
     const emailList = document.getElementById("email-list");
+    const purposeList = document.getElementById("purpose-list");
     const dateList = document.getElementById("date-list");
     const timeslotList = document.getElementById("timeslot-list");
    
@@ -64,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 nameList.innerHTML += `<div>${appointment.name}</div>`;
                 addressList.innerHTML += `<div>${appointment.address}</div>`;
                 emailList.innerHTML += `<div>${appointment.email}</div>`;
+                purposeList.innerHTML += `<div>${appointment.purpose}</div>`;
                 dateList.innerHTML += `<div>${appointment.date}</div>`;
                 timeslotList.innerHTML += `<div class="time">${appointment.timeslot}</div>`;
 

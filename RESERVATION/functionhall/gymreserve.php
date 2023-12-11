@@ -97,6 +97,25 @@
           <label for="exampleFormControlTextarea1" class="form-label" >Purpose </label>
         <textarea class="form-control" id="purpose" rows="3" ></textarea>
         </div>
+        <div class="col-md-4">
+    <label for="validationCustom01" class="form-label">Equipment Tools</label>
+    <input type="number" class="form-control" id="table" placeholder="Number of Table">
+    <div class="valid-feedback">
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustom02" class="form-label"></label>
+    <input type="number" class="form-control" id="chair" placeholder="#Number of chair">
+    <div class="valid-feedback">
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <label for="validationCustom03" class="form-label"></label>
+    <input type="text" class="form-control" id="other" placeholder="Others equipment">
+    <div class="valid-feedback">
+    </div>
+  </div>
         <div class="index-btn-wrapper">
           <div class="index-btn" onclick="run(3, 2); ">Previous</div>
           <div class="index-btn" onclick="run(3, 4); ">Next</div>

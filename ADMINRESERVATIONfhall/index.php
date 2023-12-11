@@ -206,16 +206,19 @@ if (!isset($_SESSION['username']) || $_SESSION['usertype'] != 'fhall') {
 							   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						   </div>
 						   <div class="modal-body">
-							   <p><strong>ID:</strong> <span id="id-list"></span></p>
+						  
 							   <p><strong>Name:</strong> <span id="name-list"></span></p>
+							   <p><strong>ID:</strong> <span id="id-list"></span></p>
 							   <p><strong>Address:</strong> <span id="address-list"></span></p>
 							   <p><strong>Phone Number:</strong> <span id="phone-list"></span></p>
 							   <p><strong>Email:</strong> <span id="email-list"></span></p>
 							   <p><strong>Event:</strong> <span id="event-list"></span></p>
 							   <p><strong>Purpose:</strong> <span id="purpose-list"></span></p>
+							   <p><strong>Number of table:</strong> <span id="table-list"></span></p>
+							   <p><strong>Number of Chair:</strong> <span id="chair-list"></span></p>
+							   <p><strong>Other Equipment:</strong> <span id="other-list"></span></p>
 							   <p><strong>Date:</strong> <span id="date-list"></span></p>
 							   <p><strong>Time:</strong> <span id="timeslot-list"></span></p>
-
 						   </div>
 						   <div class="modal-footer">
 							   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

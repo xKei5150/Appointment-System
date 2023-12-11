@@ -194,9 +194,10 @@ if (!isset($_SESSION['username']) || $_SESSION['usertype'] != 'deanoffice') {
 							 
 								<th><i class="material-icons">date_range</i></th>
 
-							 <th>Name</th>
+								<th>Name</th>
 							 <th>Address</th>
 							 <th>Email</th>
+							 <th>Purpose</th>
 							 <th>Date</th>
 							 <th>Time</th>
 							 <th></th>
@@ -218,6 +219,8 @@ if (!isset($_SESSION['username']) || $_SESSION['usertype'] != 'deanoffice') {
 												<th id="address-list"></th>
 										
 												<th id="email-list"></th>
+
+												<th id="purpose-list"></th>
 										
 												<th id="date-list"></th>
 											

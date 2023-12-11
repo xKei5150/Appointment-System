@@ -169,6 +169,12 @@ document.addEventListener("DOMContentLoaded", function() {
         eventList.innerHTML = '';
         const purposeList = document.getElementById("purpose-list");
         purposeList.innerHTML = '';
+        const tableList = document.getElementById("table-list");
+        tableList.innerHTML = '';
+        const chairList = document.getElementById("chair-list");
+        chairList.innerHTML = '';
+        const otherList = document.getElementById("other-list");
+        otherList.innerHTML = '';
         const timeslotList = document.getElementById("timeslot-list");
         timeslotList.innerHTML = '';
     
@@ -187,6 +193,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 emailList.innerHTML += appointment.email;
                 eventList.innerHTML += appointment.event;
                 purposeList.innerHTML += appointment.purpose;
+                tableList.innerHTML += appointment.ntable;
+                chairList.innerHTML += appointment.nchair;
+                otherList.innerHTML += appointment.other;
                 dateList.innerHTML += appointment.date;
                 timeslotList.innerHTML += appointment.timeslot;
             }

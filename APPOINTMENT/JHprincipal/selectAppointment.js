@@ -56,6 +56,7 @@ function setupSectionNavigation() {
         const name = document.querySelector('input[name="name"]').value;
         const cellnum = document.querySelector('input[name="cellnum"]').value;
         const address = document.querySelector('input[name="address"]').value;
+        const purpose = document.querySelector('textarea[name="purpose"]').value;
         const email = document.querySelector('input[name="email"]').value;
 
         const xhr = new XMLHttpRequest();
@@ -73,7 +74,7 @@ function setupSectionNavigation() {
         xhr.onerror = function() {
             console.error("Network error occurred.");
         };
-        xhr.send(`name=${name}&cellnum=${cellnum}&address=${address}&email=${email}&date=${selectedDate}&timeslot=${selectedTimeslot}`);
+        xhr.send(`name=${name}&cellnum=${cellnum}&address=${address}&email=${email}&purpose=${purpose}&date=${selectedDate}&timeslot=${selectedTimeslot}`);
 
 
         populateTicketInfo(name, email, selectedDate, selectedTimeslot);
